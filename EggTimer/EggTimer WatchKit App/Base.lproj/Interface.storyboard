@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="EggTimer_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="133" height="40" alignment="left" id="D1A-z2-ra8">
+                            <items>
+                                <imageView width="40" height="40" alignment="left" id="LMz-5I-HOl"/>
+                                <label width="90.5" height="36.5" alignment="right" text="Egg Timer" textAlignment="center" numberOfLines="2" id="vl9-Q2-9kc">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </label>
+                            </items>
+                        </group>
+                        <timer width="134" alignment="left" textAlignment="center" format="short" id="WZx-hp-VFw">
+                            <calendarUnit key="units" minute="YES" second="YES"/>
+                        </timer>
+                        <button width="1" height="30" alignment="left" title="Soft" id="hrb-Oc-tY6">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.93486344619999995" blue="0.12611665490000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="softPressed" destination="AgC-eL-Hgc" id="Lor-VJ-lmR"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="30" alignment="left" title="Medium" id="a3G-5q-uCP">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.58351826490000003" blue="0.049905821709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="mediumPressed" destination="AgC-eL-Hgc" id="xpC-BI-5ji"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="30" alignment="left" title="Hard" id="RNQ-ed-5nm">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.32716652774708999" blue="0.017545735049482425" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="hardPressed" destination="AgC-eL-Hgc" id="WTv-4V-JKU"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Reset" id="epd-sH-z3t">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="resetPressed" destination="AgC-eL-Hgc" id="tJj-Rd-Vmf"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="hardButton" destination="RNQ-ed-5nm" id="NLe-Kr-Ccg"/>
+                        <outlet property="image" destination="LMz-5I-HOl" id="GCR-Nd-cDh"/>
+                        <outlet property="mediumButton" destination="a3G-5q-uCP" id="qXX-Mw-PDu"/>
+                        <outlet property="resetButton" destination="epd-sH-z3t" id="6md-tx-lBu"/>
+                        <outlet property="softButton" destination="hrb-Oc-tY6" id="xxi-EU-ffC"/>
+                        <outlet property="timerLabel" destination="WZx-hp-VFw" id="1jS-u4-sTl"/>
+                        <outlet property="titleLabel" destination="vl9-Q2-9kc" id="ZAg-HQ-cLN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="245" y="348.25"/>
+        </scene>
+    </scenes>
+</document>

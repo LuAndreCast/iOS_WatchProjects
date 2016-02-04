@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F75FD6D11C503D57003F059B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6D01C503D57003F059B /* AppDelegate.swift */; };
+		F75FD6D31C503D57003F059B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6D21C503D57003F059B /* ViewController.swift */; };
+		F75FD6D61C503D57003F059B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6D41C503D57003F059B /* Main.storyboard */; };
+		F75FD6D81C503D57003F059B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6D71C503D57003F059B /* Assets.xcassets */; };
+		F75FD6DB1C503D57003F059B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6D91C503D57003F059B /* LaunchScreen.storyboard */; };
+		F75FD6E01C503D57003F059B /* timeNotification WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F75FD6DF1C503D57003F059B /* timeNotification WatchKit App.app */; };
+		F75FD6E61C503D57003F059B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6E41C503D57003F059B /* Interface.storyboard */; };
+		F75FD6E81C503D57003F059B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6E71C503D57003F059B /* Assets.xcassets */; };
+		F75FD6EF1C503D57003F059B /* timeNotification WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F75FD6EE1C503D57003F059B /* timeNotification WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F75FD6F61C503D57003F059B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6F51C503D57003F059B /* InterfaceController.swift */; };
+		F75FD6F81C503D57003F059B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6F71C503D57003F059B /* ExtensionDelegate.swift */; };
+		F75FD6FA1C503D57003F059B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6F91C503D57003F059B /* NotificationController.swift */; };
+		F75FD6FC1C503D57003F059B /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6FB1C503D57003F059B /* GlanceController.swift */; };
+		F75FD6FE1C503D57003F059B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75FD6FD1C503D57003F059B /* ComplicationController.swift */; };
+		F75FD7001C503D57003F059B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75FD6FF1C503D57003F059B /* Assets.xcassets */; };
+		F7DBFF791C514320008CE839 /* timeZoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBFF781C514320008CE839 /* timeZoneInterfaceController.swift */; };
+		F7DBFF7C1C514752008CE839 /* timezones.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7DBFF7B1C514752008CE839 /* timezones.plist */; };
+		F7DBFF7D1C514752008CE839 /* timezones.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7DBFF7B1C514752008CE839 /* timezones.plist */; };
+		F7DBFF7E1C514752008CE839 /* timezones.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7DBFF7B1C514752008CE839 /* timezones.plist */; };
+		F7DBFF841C51590D008CE839 /* timezoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBFF831C51590D008CE839 /* timezoneModel.swift */; };
+		F7DBFF851C51590D008CE839 /* timezoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBFF831C51590D008CE839 /* timezoneModel.swift */; };
+		F7DBFF8A1C517EE9008CE839 /* timezoneRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBFF891C517EE9008CE839 /* timezoneRowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F75FD6E11C503D57003F059B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F75FD6C51C503D57003F059B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F75FD6DE1C503D57003F059B;
+			remoteInfo = "timeNotification WatchKit App";
+		};
+		F75FD6F01C503D57003F059B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F75FD6C51C503D57003F059B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F75FD6ED1C503D57003F059B;
+			remoteInfo = "timeNotification WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F75FD7071C503D57003F059B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F75FD6EF1C503D57003F059B /* timeNotification WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75FD70B1C503D57003F059B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F75FD6E01C503D57003F059B /* timeNotification WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F75FD6CD1C503D57003F059B /* timeNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timeNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F75FD6D01C503D57003F059B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F75FD6D21C503D57003F059B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F75FD6D51C503D57003F059B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F75FD6D71C503D57003F059B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F75FD6DA1C503D57003F059B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F75FD6DC1C503D57003F059B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F75FD6DF1C503D57003F059B /* timeNotification WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "timeNotification WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F75FD6E51C503D57003F059B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F75FD6E71C503D57003F059B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F75FD6E91C503D57003F059B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F75FD6EE1C503D57003F059B /* timeNotification WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "timeNotification WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F75FD6F41C503D57003F059B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F75FD6F51C503D57003F059B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F75FD6F71C503D57003F059B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F75FD6F91C503D57003F059B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F75FD6FB1C503D57003F059B /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		F75FD6FD1C503D57003F059B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F75FD6FF1C503D57003F059B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F75FD7011C503D57003F059B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7DBFF781C514320008CE839 /* timeZoneInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeZoneInterfaceController.swift; sourceTree = "<group>"; };
+		F7DBFF7B1C514752008CE839 /* timezones.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = timezones.plist; sourceTree = "<group>"; };
+		F7DBFF831C51590D008CE839 /* timezoneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timezoneModel.swift; sourceTree = "<group>"; };
+		F7DBFF891C517EE9008CE839 /* timezoneRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timezoneRowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F75FD6CA1C503D57003F059B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75FD6EB1C503D57003F059B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F75FD6C41C503D57003F059B = {
+			isa = PBXGroup;
+			children = (
+				F7DBFF7A1C51473F008CE839 /* common */,
+				F75FD6CF1C503D57003F059B /* timeNotification */,
+				F75FD6E31C503D57003F059B /* timeNotification WatchKit App */,
+				F75FD6F21C503D57003F059B /* timeNotification WatchKit Extension */,
+				F75FD6CE1C503D57003F059B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F75FD6CE1C503D57003F059B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6CD1C503D57003F059B /* timeNotification.app */,
+				F75FD6DF1C503D57003F059B /* timeNotification WatchKit App.app */,
+				F75FD6EE1C503D57003F059B /* timeNotification WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F75FD6CF1C503D57003F059B /* timeNotification */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6D01C503D57003F059B /* AppDelegate.swift */,
+				F75FD6D21C503D57003F059B /* ViewController.swift */,
+				F75FD6D41C503D57003F059B /* Main.storyboard */,
+				F75FD6D71C503D57003F059B /* Assets.xcassets */,
+				F75FD6D91C503D57003F059B /* LaunchScreen.storyboard */,
+				F75FD6DC1C503D57003F059B /* Info.plist */,
+			);
+			path = timeNotification;
+			sourceTree = "<group>";
+		};
+		F75FD6E31C503D57003F059B /* timeNotification WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6E41C503D57003F059B /* Interface.storyboard */,
+				F75FD6E71C503D57003F059B /* Assets.xcassets */,
+				F75FD6E91C503D57003F059B /* Info.plist */,
+			);
+			path = "timeNotification WatchKit App";
+			sourceTree = "<group>";
+		};
+		F75FD6F21C503D57003F059B /* timeNotification WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBFF8B1C5180FE008CE839 /* Interface Main */,
+				F79AF61C1C504DAB007A4F2F /* Notification */,
+				F79AF61B1C504DA1007A4F2F /* Complication */,
+				F79AF61A1C504D99007A4F2F /* Glance */,
+				F75FD6F71C503D57003F059B /* ExtensionDelegate.swift */,
+				F75FD6FF1C503D57003F059B /* Assets.xcassets */,
+				F75FD7011C503D57003F059B /* Info.plist */,
+				F75FD6F31C503D57003F059B /* Supporting Files */,
+			);
+			path = "timeNotification WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F75FD6F31C503D57003F059B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6F41C503D57003F059B /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F79AF61A1C504D99007A4F2F /* Glance */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6FB1C503D57003F059B /* GlanceController.swift */,
+			);
+			name = Glance;
+			sourceTree = "<group>";
+		};
+		F79AF61B1C504DA1007A4F2F /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6FD1C503D57003F059B /* ComplicationController.swift */,
+			);
+			name = Complication;
+			sourceTree = "<group>";
+		};
+		F79AF61C1C504DAB007A4F2F /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6F91C503D57003F059B /* NotificationController.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		F7DBFF7A1C51473F008CE839 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBFF7B1C514752008CE839 /* timezones.plist */,
+				F7DBFF831C51590D008CE839 /* timezoneModel.swift */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		F7DBFF8B1C5180FE008CE839 /* Interface Main */ = {
+			isa = PBXGroup;
+			children = (
+				F75FD6F51C503D57003F059B /* InterfaceController.swift */,
+				F7DBFF8C1C518110008CE839 /* interface Row */,
+				F7DBFF8D1C518123008CE839 /* subviews */,
+			);
+			name = "Interface Main";
+			sourceTree = "<group>";
+		};
+		F7DBFF8C1C518110008CE839 /* interface Row */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBFF891C517EE9008CE839 /* timezoneRowController.swift */,
+			);
+			name = "interface Row";
+			sourceTree = "<group>";
+		};
+		F7DBFF8D1C518123008CE839 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F7DBFF781C514320008CE839 /* timeZoneInterfaceController.swift */,
+			);
+			name = subviews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F75FD6CC1C503D57003F059B /* timeNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75FD70C1C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification" */;
+			buildPhases = (
+				F75FD6C91C503D57003F059B /* Sources */,
+				F75FD6CA1C503D57003F059B /* Frameworks */,
+				F75FD6CB1C503D57003F059B /* Resources */,
+				F75FD70B1C503D57003F059B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F75FD6E21C503D57003F059B /* PBXTargetDependency */,
+			);
+			name = timeNotification;
+			productName = timeNotification;
+			productReference = F75FD6CD1C503D57003F059B /* timeNotification.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F75FD6DE1C503D57003F059B /* timeNotification WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75FD7081C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification WatchKit App" */;
+			buildPhases = (
+				F75FD6DD1C503D57003F059B /* Resources */,
+				F75FD7071C503D57003F059B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F75FD6F11C503D57003F059B /* PBXTargetDependency */,
+			);
+			name = "timeNotification WatchKit App";
+			productName = "timeNotification WatchKit App";
+			productReference = F75FD6DF1C503D57003F059B /* timeNotification WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F75FD6ED1C503D57003F059B /* timeNotification WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75FD7041C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification WatchKit Extension" */;
+			buildPhases = (
+				F75FD6EA1C503D57003F059B /* Sources */,
+				F75FD6EB1C503D57003F059B /* Frameworks */,
+				F75FD6EC1C503D57003F059B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "timeNotification WatchKit Extension";
+			productName = "timeNotification WatchKit Extension";
+			productReference = F75FD6EE1C503D57003F059B /* timeNotification WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F75FD6C51C503D57003F059B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = LC;
+				TargetAttributes = {
+					F75FD6CC1C503D57003F059B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F75FD6DE1C503D57003F059B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F75FD6ED1C503D57003F059B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = F75FD6C81C503D57003F059B /* Build configuration list for PBXProject "timeNotification" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F75FD6C41C503D57003F059B;
+			productRefGroup = F75FD6CE1C503D57003F059B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F75FD6CC1C503D57003F059B /* timeNotification */,
+				F75FD6DE1C503D57003F059B /* timeNotification WatchKit App */,
+				F75FD6ED1C503D57003F059B /* timeNotification WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F75FD6CB1C503D57003F059B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F75FD6DB1C503D57003F059B /* LaunchScreen.storyboard in Resources */,
+				F75FD6D81C503D57003F059B /* Assets.xcassets in Resources */,
+				F75FD6D61C503D57003F059B /* Main.storyboard in Resources */,
+				F7DBFF7C1C514752008CE839 /* timezones.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75FD6DD1C503D57003F059B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DBFF7D1C514752008CE839 /* timezones.plist in Resources */,
+				F75FD6E81C503D57003F059B /* Assets.xcassets in Resources */,
+				F75FD6E61C503D57003F059B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75FD6EC1C503D57003F059B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F75FD7001C503D57003F059B /* Assets.xcassets in Resources */,
+				F7DBFF7E1C514752008CE839 /* timezones.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F75FD6C91C503D57003F059B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DBFF841C51590D008CE839 /* timezoneModel.swift in Sources */,
+				F75FD6D31C503D57003F059B /* ViewController.swift in Sources */,
+				F75FD6D11C503D57003F059B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F75FD6EA1C503D57003F059B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DBFF791C514320008CE839 /* timeZoneInterfaceController.swift in Sources */,
+				F75FD6FA1C503D57003F059B /* NotificationController.swift in Sources */,
+				F75FD6F81C503D57003F059B /* ExtensionDelegate.swift in Sources */,
+				F75FD6FE1C503D57003F059B /* ComplicationController.swift in Sources */,
+				F7DBFF851C51590D008CE839 /* timezoneModel.swift in Sources */,
+				F7DBFF8A1C517EE9008CE839 /* timezoneRowController.swift in Sources */,
+				F75FD6F61C503D57003F059B /* InterfaceController.swift in Sources */,
+				F75FD6FC1C503D57003F059B /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F75FD6E21C503D57003F059B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F75FD6DE1C503D57003F059B /* timeNotification WatchKit App */;
+			targetProxy = F75FD6E11C503D57003F059B /* PBXContainerItemProxy */;
+		};
+		F75FD6F11C503D57003F059B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F75FD6ED1C503D57003F059B /* timeNotification WatchKit Extension */;
+			targetProxy = F75FD6F01C503D57003F059B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F75FD6D41C503D57003F059B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F75FD6D51C503D57003F059B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F75FD6D91C503D57003F059B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F75FD6DA1C503D57003F059B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F75FD6E41C503D57003F059B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F75FD6E51C503D57003F059B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F75FD7021C503D57003F059B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F75FD7031C503D57003F059B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F75FD7051C503D57003F059B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "timeNotification WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F75FD7061C503D57003F059B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "timeNotification WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F75FD7091C503D57003F059B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = timeNotification_WatchKit_Extension;
+				INFOPLIST_FILE = "timeNotification WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F75FD70A1C503D57003F059B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = timeNotification_WatchKit_Extension;
+				INFOPLIST_FILE = "timeNotification WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F75FD70D1C503D57003F059B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timeNotification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F75FD70E1C503D57003F059B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timeNotification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timeNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F75FD6C81C503D57003F059B /* Build configuration list for PBXProject "timeNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75FD7021C503D57003F059B /* Debug */,
+				F75FD7031C503D57003F059B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F75FD7041C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75FD7051C503D57003F059B /* Debug */,
+				F75FD7061C503D57003F059B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F75FD7081C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75FD7091C503D57003F059B /* Debug */,
+				F75FD70A1C503D57003F059B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F75FD70C1C503D57003F059B /* Build configuration list for PBXNativeTarget "timeNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F75FD70D1C503D57003F059B /* Debug */,
+				F75FD70E1C503D57003F059B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F75FD6C51C503D57003F059B /* Project object */;
+}

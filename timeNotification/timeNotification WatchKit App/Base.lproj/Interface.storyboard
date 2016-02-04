@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Timezones-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="timezoneMain" title="Timezones" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="timeNotification_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="uNA-SJ-hWg">
+                            <items>
+                                <tableRow identifier="TimeZoneCell" id="CMS-zD-uYr" customClass="timezoneRowController" customModule="timeNotification_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="56.5" alignment="left" id="vAG-mJ-orQ">
+                                        <items>
+                                            <label height="1" alignment="left" text="EST" textAlignment="center" id="p3h-a6-jfk">
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="11"/>
+                                            </label>
+                                            <label height="1" alignment="right" text="America/ New York" numberOfLines="0" id="gxI-e3-yMb">
+                                                <fontDescription key="font" type="system" pointSize="8"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="abbreviationLabel" destination="p3h-a6-jfk" id="ads-mK-fue"/>
+                                        <outlet property="timezoneLocation" destination="gxI-e3-yMb" id="aWs-P5-Wpu"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="timezoneTable" destination="uNA-SJ-hWg" id="MuI-gT-dXg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="230" y="347"/>
+        </scene>
+        <!--timeZoneController-->
+        <scene sceneID="SC1-4l-wVg">
+            <objects>
+                <controller identifier="timeZoneController" id="IBe-Pq-dli" customClass="timeZoneInterfaceController" customModule="timeNotification_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="TimeZone" textAlignment="center" id="oJx-hX-AGT">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                        </label>
+                        <label width="1" alignment="left" text="City" textAlignment="center" id="aqR-5g-Aer">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                        <label width="1" alignment="left" text="Time" textAlignment="center" id="H8z-oS-13y">
+                            <fontDescription key="font" type="system" pointSize="30"/>
+                        </label>
+                        <button width="1" height="49.5" alignment="left" title="Schedule Notification" id="2gs-tR-nda">
+                            <color key="backgroundColor" red="0.38011922520000002" green="0.70311046830000001" blue="0.82628435860000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                            <connections>
+                                <action selector="scheduleNotification" destination="IBe-Pq-dli" id="QiW-hs-qPU"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="scheduleNotficationButton" destination="2gs-tR-nda" id="Kyh-YE-ALY"/>
+                        <outlet property="timeLabel" destination="H8z-oS-13y" id="eVc-00-em8"/>
+                        <outlet property="timeZoneAbbrevLabel" destination="oJx-hX-AGT" id="ixF-xW-7HW"/>
+                        <outlet property="timeZoneLocationLabel" destination="aqR-5g-Aer" id="HMb-P3-eor"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="347"/>
+        </scene>
+        <!--glanceTimezone-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController identifier="glanceTimezone" spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="timeNotification_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="center" text="Timezone" textAlignment="center" id="JRA-Q6-RzD">
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <label alignment="left" text="Do you know your timezone?" textAlignment="center" numberOfLines="0" id="W2P-Nt-1zG">
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="What timezone are you in?" textAlignment="center" numberOfLines="0" id="XkS-y5-khE">
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                        </label>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myTimezone" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </notificationCategory>
+                    <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller contentMode="scaleAspectFit" id="gdX-wl-uQE" customClass="NotificationController" customModule="timeNotification_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="timezone" id="gEf-WS-QQl"/>
+                        <label alignment="left" text="time" id="CJ9-z2-OMx"/>
+                    </items>
+                    <connections>
+                        <outlet property="alertBodyLabel" destination="CJ9-z2-OMx" id="fYA-Lg-wO8"/>
+                        <outlet property="alertTitleLabel" destination="gEf-WS-QQl" id="sVg-26-enx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="457" y="1001"/>
+        </scene>
+    </scenes>
+</document>

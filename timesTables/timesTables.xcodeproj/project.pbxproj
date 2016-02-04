@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F77DC9DC1C3DD2E400A874F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DC9DB1C3DD2E400A874F6 /* AppDelegate.swift */; };
+		F77DC9DE1C3DD2E400A874F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DC9DD1C3DD2E400A874F6 /* ViewController.swift */; };
+		F77DC9E11C3DD2E400A874F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77DC9DF1C3DD2E400A874F6 /* Main.storyboard */; };
+		F77DC9E31C3DD2E400A874F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77DC9E21C3DD2E400A874F6 /* Assets.xcassets */; };
+		F77DC9E61C3DD2E400A874F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77DC9E41C3DD2E400A874F6 /* LaunchScreen.storyboard */; };
+		F77DC9EB1C3DD2E400A874F6 /* timesTables WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F77DC9EA1C3DD2E400A874F6 /* timesTables WatchKit App.app */; };
+		F77DC9F11C3DD2E400A874F6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77DC9EF1C3DD2E400A874F6 /* Interface.storyboard */; };
+		F77DC9F31C3DD2E400A874F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77DC9F21C3DD2E400A874F6 /* Assets.xcassets */; };
+		F77DC9FA1C3DD2E400A874F6 /* timesTables WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F77DC9F91C3DD2E400A874F6 /* timesTables WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F77DCA011C3DD2E400A874F6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA001C3DD2E400A874F6 /* InterfaceController.swift */; };
+		F77DCA031C3DD2E500A874F6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA021C3DD2E500A874F6 /* ExtensionDelegate.swift */; };
+		F77DCA051C3DD2E500A874F6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA041C3DD2E500A874F6 /* NotificationController.swift */; };
+		F77DCA071C3DD2E500A874F6 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA061C3DD2E500A874F6 /* GlanceController.swift */; };
+		F77DCA091C3DD2E500A874F6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA081C3DD2E500A874F6 /* ComplicationController.swift */; };
+		F77DCA0B1C3DD2E500A874F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77DCA0A1C3DD2E500A874F6 /* Assets.xcassets */; };
+		F77DCA201C3DD44A00A874F6 /* timesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77DCA1F1C3DD44A00A874F6 /* timesTableRowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F77DC9EC1C3DD2E400A874F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77DC9D01C3DD2E400A874F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77DC9E91C3DD2E400A874F6;
+			remoteInfo = "timesTables WatchKit App";
+		};
+		F77DC9FB1C3DD2E400A874F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77DC9D01C3DD2E400A874F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77DC9F81C3DD2E400A874F6;
+			remoteInfo = "timesTables WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F77DCA121C3DD2E500A874F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F77DC9FA1C3DD2E400A874F6 /* timesTables WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77DCA161C3DD2E500A874F6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F77DC9EB1C3DD2E400A874F6 /* timesTables WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F77DC9D81C3DD2E400A874F6 /* timesTables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timesTables.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77DC9DB1C3DD2E400A874F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F77DC9DD1C3DD2E400A874F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F77DC9E01C3DD2E400A874F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F77DC9E21C3DD2E400A874F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77DC9E51C3DD2E400A874F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F77DC9E71C3DD2E400A874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77DC9EA1C3DD2E400A874F6 /* timesTables WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "timesTables WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77DC9F01C3DD2E400A874F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F77DC9F21C3DD2E400A874F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77DC9F41C3DD2E400A874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77DC9F91C3DD2E400A874F6 /* timesTables WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "timesTables WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77DC9FF1C3DD2E400A874F6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F77DCA001C3DD2E400A874F6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F77DCA021C3DD2E500A874F6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F77DCA041C3DD2E500A874F6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F77DCA061C3DD2E500A874F6 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		F77DCA081C3DD2E500A874F6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F77DCA0A1C3DD2E500A874F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77DCA0C1C3DD2E500A874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77DCA1F1C3DD44A00A874F6 /* timesTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timesTableRowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F77DC9D51C3DD2E400A874F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77DC9F61C3DD2E400A874F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F77DC9CF1C3DD2E400A874F6 = {
+			isa = PBXGroup;
+			children = (
+				F77DC9DA1C3DD2E400A874F6 /* timesTables */,
+				F77DC9EE1C3DD2E400A874F6 /* timesTables WatchKit App */,
+				F77DC9FD1C3DD2E400A874F6 /* timesTables WatchKit Extension */,
+				F77DC9D91C3DD2E400A874F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F77DC9D91C3DD2E400A874F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F77DC9D81C3DD2E400A874F6 /* timesTables.app */,
+				F77DC9EA1C3DD2E400A874F6 /* timesTables WatchKit App.app */,
+				F77DC9F91C3DD2E400A874F6 /* timesTables WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F77DC9DA1C3DD2E400A874F6 /* timesTables */ = {
+			isa = PBXGroup;
+			children = (
+				F77DC9DB1C3DD2E400A874F6 /* AppDelegate.swift */,
+				F77DC9DD1C3DD2E400A874F6 /* ViewController.swift */,
+				F77DC9DF1C3DD2E400A874F6 /* Main.storyboard */,
+				F77DC9E21C3DD2E400A874F6 /* Assets.xcassets */,
+				F77DC9E41C3DD2E400A874F6 /* LaunchScreen.storyboard */,
+				F77DC9E71C3DD2E400A874F6 /* Info.plist */,
+			);
+			path = timesTables;
+			sourceTree = "<group>";
+		};
+		F77DC9EE1C3DD2E400A874F6 /* timesTables WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F77DC9EF1C3DD2E400A874F6 /* Interface.storyboard */,
+				F77DC9F21C3DD2E400A874F6 /* Assets.xcassets */,
+				F77DC9F41C3DD2E400A874F6 /* Info.plist */,
+			);
+			path = "timesTables WatchKit App";
+			sourceTree = "<group>";
+		};
+		F77DC9FD1C3DD2E400A874F6 /* timesTables WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F77DCA1C1C3DD30800A874F6 /* Notification */,
+				F77DCA1B1C3DD2FD00A874F6 /* Complication */,
+				F77DCA1A1C3DD2F400A874F6 /* Glance */,
+				F77DCA001C3DD2E400A874F6 /* InterfaceController.swift */,
+				F77DCA1F1C3DD44A00A874F6 /* timesTableRowController.swift */,
+				F77DCA021C3DD2E500A874F6 /* ExtensionDelegate.swift */,
+				F77DCA0A1C3DD2E500A874F6 /* Assets.xcassets */,
+				F77DCA0C1C3DD2E500A874F6 /* Info.plist */,
+				F77DC9FE1C3DD2E400A874F6 /* Supporting Files */,
+			);
+			path = "timesTables WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F77DC9FE1C3DD2E400A874F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F77DC9FF1C3DD2E400A874F6 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F77DCA1A1C3DD2F400A874F6 /* Glance */ = {
+			isa = PBXGroup;
+			children = (
+				F77DCA061C3DD2E500A874F6 /* GlanceController.swift */,
+			);
+			name = Glance;
+			sourceTree = "<group>";
+		};
+		F77DCA1B1C3DD2FD00A874F6 /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				F77DCA081C3DD2E500A874F6 /* ComplicationController.swift */,
+			);
+			name = Complication;
+			sourceTree = "<group>";
+		};
+		F77DCA1C1C3DD30800A874F6 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F77DCA041C3DD2E500A874F6 /* NotificationController.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F77DC9D71C3DD2E400A874F6 /* timesTables */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77DCA171C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables" */;
+			buildPhases = (
+				F77DC9D41C3DD2E400A874F6 /* Sources */,
+				F77DC9D51C3DD2E400A874F6 /* Frameworks */,
+				F77DC9D61C3DD2E400A874F6 /* Resources */,
+				F77DCA161C3DD2E500A874F6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77DC9ED1C3DD2E400A874F6 /* PBXTargetDependency */,
+			);
+			name = timesTables;
+			productName = timesTables;
+			productReference = F77DC9D81C3DD2E400A874F6 /* timesTables.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F77DC9E91C3DD2E400A874F6 /* timesTables WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77DCA131C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables WatchKit App" */;
+			buildPhases = (
+				F77DC9E81C3DD2E400A874F6 /* Resources */,
+				F77DCA121C3DD2E500A874F6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77DC9FC1C3DD2E400A874F6 /* PBXTargetDependency */,
+			);
+			name = "timesTables WatchKit App";
+			productName = "timesTables WatchKit App";
+			productReference = F77DC9EA1C3DD2E400A874F6 /* timesTables WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F77DC9F81C3DD2E400A874F6 /* timesTables WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77DCA0F1C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables WatchKit Extension" */;
+			buildPhases = (
+				F77DC9F51C3DD2E400A874F6 /* Sources */,
+				F77DC9F61C3DD2E400A874F6 /* Frameworks */,
+				F77DC9F71C3DD2E400A874F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "timesTables WatchKit Extension";
+			productName = "timesTables WatchKit Extension";
+			productReference = F77DC9F91C3DD2E400A874F6 /* timesTables WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F77DC9D01C3DD2E400A874F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Luis Castillo";
+				TargetAttributes = {
+					F77DC9D71C3DD2E400A874F6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F77DC9E91C3DD2E400A874F6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F77DC9F81C3DD2E400A874F6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = F77DC9D31C3DD2E400A874F6 /* Build configuration list for PBXProject "timesTables" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F77DC9CF1C3DD2E400A874F6;
+			productRefGroup = F77DC9D91C3DD2E400A874F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F77DC9D71C3DD2E400A874F6 /* timesTables */,
+				F77DC9E91C3DD2E400A874F6 /* timesTables WatchKit App */,
+				F77DC9F81C3DD2E400A874F6 /* timesTables WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F77DC9D61C3DD2E400A874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77DC9E61C3DD2E400A874F6 /* LaunchScreen.storyboard in Resources */,
+				F77DC9E31C3DD2E400A874F6 /* Assets.xcassets in Resources */,
+				F77DC9E11C3DD2E400A874F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77DC9E81C3DD2E400A874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77DC9F31C3DD2E400A874F6 /* Assets.xcassets in Resources */,
+				F77DC9F11C3DD2E400A874F6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77DC9F71C3DD2E400A874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77DCA0B1C3DD2E500A874F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F77DC9D41C3DD2E400A874F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77DC9DE1C3DD2E400A874F6 /* ViewController.swift in Sources */,
+				F77DC9DC1C3DD2E400A874F6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77DC9F51C3DD2E400A874F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77DCA051C3DD2E500A874F6 /* NotificationController.swift in Sources */,
+				F77DCA031C3DD2E500A874F6 /* ExtensionDelegate.swift in Sources */,
+				F77DCA201C3DD44A00A874F6 /* timesTableRowController.swift in Sources */,
+				F77DCA091C3DD2E500A874F6 /* ComplicationController.swift in Sources */,
+				F77DCA011C3DD2E400A874F6 /* InterfaceController.swift in Sources */,
+				F77DCA071C3DD2E500A874F6 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F77DC9ED1C3DD2E400A874F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77DC9E91C3DD2E400A874F6 /* timesTables WatchKit App */;
+			targetProxy = F77DC9EC1C3DD2E400A874F6 /* PBXContainerItemProxy */;
+		};
+		F77DC9FC1C3DD2E400A874F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77DC9F81C3DD2E400A874F6 /* timesTables WatchKit Extension */;
+			targetProxy = F77DC9FB1C3DD2E400A874F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F77DC9DF1C3DD2E400A874F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77DC9E01C3DD2E400A874F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F77DC9E41C3DD2E400A874F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77DC9E51C3DD2E400A874F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F77DC9EF1C3DD2E400A874F6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F77DC9F01C3DD2E400A874F6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F77DCA0D1C3DD2E500A874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F77DCA0E1C3DD2E500A874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F77DCA101C3DD2E500A874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "timesTables WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F77DCA111C3DD2E500A874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "timesTables WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F77DCA141C3DD2E500A874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = timesTables_WatchKit_Extension;
+				INFOPLIST_FILE = "timesTables WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F77DCA151C3DD2E500A874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = timesTables_WatchKit_Extension;
+				INFOPLIST_FILE = "timesTables WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F77DCA181C3DD2E500A874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timesTables/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F77DCA191C3DD2E500A874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timesTables/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.timesTables;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F77DC9D31C3DD2E400A874F6 /* Build configuration list for PBXProject "timesTables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77DCA0D1C3DD2E500A874F6 /* Debug */,
+				F77DCA0E1C3DD2E500A874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77DCA0F1C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77DCA101C3DD2E500A874F6 /* Debug */,
+				F77DCA111C3DD2E500A874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F77DCA131C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77DCA141C3DD2E500A874F6 /* Debug */,
+				F77DCA151C3DD2E500A874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F77DCA171C3DD2E500A874F6 /* Build configuration list for PBXNativeTarget "timesTables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77DCA181C3DD2E500A874F6 /* Debug */,
+				F77DCA191C3DD2E500A874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F77DC9D01C3DD2E400A874F6 /* Project object */;
+}

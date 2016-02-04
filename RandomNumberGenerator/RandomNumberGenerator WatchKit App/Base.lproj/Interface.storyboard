@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RandomNumberGenerator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" height="45.5" alignment="left" text="Random Number Generator" textAlignment="center" numberOfLines="2" id="PRa-t7-R3a"/>
+                        <button width="1" height="35.5" alignment="left" title="Tap" id="P4f-RX-sml">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="0.93486344619999995" blue="0.12611665490000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <connections>
+                                <action selector="createRandomNumber" destination="AgC-eL-Hgc" id="pn5-SH-cfo"/>
+                            </connections>
+                        </button>
+                        <label width="135.5" height="20.5" alignment="center" text="Label" textAlignment="center" id="dii-9C-Tt5">
+                            <color key="textColor" red="0.2314430294" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="27"/>
+                        </label>
+                        <group width="1" alignment="left" id="YtI-i4-GCr">
+                            <items>
+                                <button width="35" alignment="left" title="-" id="QuB-p0-2sR">
+                                    <connections>
+                                        <action selector="decreaseLimit" destination="AgC-eL-Hgc" id="TFq-T4-zNe"/>
+                                    </connections>
+                                </button>
+                                <label height="36.5" alignment="center" text="Label" id="0S9-Di-FCq"/>
+                                <button width="41" alignment="right" title="+" id="WpA-cP-fVm">
+                                    <connections>
+                                        <action selector="increaseLimit" destination="AgC-eL-Hgc" id="FZN-W3-ye6"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="decreaseLimitButton" destination="QuB-p0-2sR" id="Vfr-uO-KKG"/>
+                        <outlet property="increaseLimitButton" destination="WpA-cP-fVm" id="rOX-ox-TEr"/>
+                        <outlet property="limitNumberLabel" destination="0S9-Di-FCq" id="J6G-lO-fLT"/>
+                        <outlet property="randomNumberLabel" destination="dii-9C-Tt5" id="wSH-JB-aO5"/>
+                        <outlet property="tapButton" destination="P4f-RX-sml" id="nlb-uA-NHz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="245" y="341"/>
+        </scene>
+    </scenes>
+</document>

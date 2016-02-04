@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PrimeNumbers_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <slider width="1" alignment="left" value="0.5" maximum="100" steps="100" id="yh2-iw-GSs">
+                            <connections>
+                                <action selector="sliderValueChanged:" destination="AgC-eL-Hgc" id="nBv-mW-eBe"/>
+                            </connections>
+                        </slider>
+                        <label alignment="left" text="Is 5 Prime?" textAlignment="center" id="RTB-5H-Ypt"/>
+                        <button width="1" alignment="left" title="Find Out!" id="0d3-4y-sXl">
+                            <color key="backgroundColor" red="1" green="0.58351826490000003" blue="0.049905821709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="findOut" destination="AgC-eL-Hgc" id="mpF-Tg-NKw"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="result" textAlignment="center" id="C0M-Bd-sqm"/>
+                    </items>
+                    <connections>
+                        <outlet property="Updatebutton" destination="0d3-4y-sXl" id="LFj-OS-X1J"/>
+                        <outlet property="numberSlider" destination="yh2-iw-GSs" id="tTe-gP-alc"/>
+                        <outlet property="primeQLabel" destination="RTB-5H-Ypt" id="xE2-pY-JOw"/>
+                        <outlet property="resultLabel" destination="C0M-Bd-sqm" id="KmU-YC-2Lr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="PrimeNumbers_WatchKit_App" customModuleProvider="target">
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

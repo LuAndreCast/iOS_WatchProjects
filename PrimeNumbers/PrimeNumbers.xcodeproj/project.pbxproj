@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F760C29E1C3D642C00A24112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C29D1C3D642C00A24112 /* AppDelegate.swift */; };
+		F760C2A01C3D642C00A24112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C29F1C3D642C00A24112 /* ViewController.swift */; };
+		F760C2A31C3D642C00A24112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F760C2A11C3D642C00A24112 /* Main.storyboard */; };
+		F760C2A51C3D642C00A24112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F760C2A41C3D642C00A24112 /* Assets.xcassets */; };
+		F760C2A81C3D642C00A24112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F760C2A61C3D642C00A24112 /* LaunchScreen.storyboard */; };
+		F760C2AD1C3D642C00A24112 /* PrimeNumbers WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F760C2AC1C3D642C00A24112 /* PrimeNumbers WatchKit App.app */; };
+		F760C2B31C3D642C00A24112 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F760C2B11C3D642C00A24112 /* Interface.storyboard */; };
+		F760C2B51C3D642C00A24112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F760C2B41C3D642C00A24112 /* Assets.xcassets */; };
+		F760C2BC1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F760C2BB1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F760C2C31C3D642D00A24112 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C2C21C3D642D00A24112 /* InterfaceController.swift */; };
+		F760C2C51C3D642D00A24112 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C2C41C3D642D00A24112 /* ExtensionDelegate.swift */; };
+		F760C2C71C3D642D00A24112 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760C2C61C3D642D00A24112 /* NotificationController.swift */; };
+		F760C2C91C3D642D00A24112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F760C2C81C3D642D00A24112 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F760C2AE1C3D642C00A24112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F760C2921C3D642C00A24112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F760C2AB1C3D642C00A24112;
+			remoteInfo = "PrimeNumbers WatchKit App";
+		};
+		F760C2BD1C3D642D00A24112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F760C2921C3D642C00A24112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F760C2BA1C3D642D00A24112;
+			remoteInfo = "PrimeNumbers WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F760C2D01C3D642D00A24112 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F760C2BC1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F760C2D41C3D642D00A24112 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F760C2AD1C3D642C00A24112 /* PrimeNumbers WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F760C29A1C3D642C00A24112 /* PrimeNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F760C29D1C3D642C00A24112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F760C29F1C3D642C00A24112 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F760C2A21C3D642C00A24112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F760C2A41C3D642C00A24112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F760C2A71C3D642C00A24112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F760C2A91C3D642C00A24112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F760C2AC1C3D642C00A24112 /* PrimeNumbers WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrimeNumbers WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F760C2B21C3D642C00A24112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F760C2B41C3D642C00A24112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F760C2B61C3D642C00A24112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F760C2BB1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PrimeNumbers WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F760C2C11C3D642D00A24112 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F760C2C21C3D642D00A24112 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F760C2C41C3D642D00A24112 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F760C2C61C3D642D00A24112 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F760C2C81C3D642D00A24112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F760C2CA1C3D642D00A24112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F760C2971C3D642C00A24112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F760C2B81C3D642D00A24112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F760C2911C3D642C00A24112 = {
+			isa = PBXGroup;
+			children = (
+				F760C29C1C3D642C00A24112 /* PrimeNumbers */,
+				F760C2B01C3D642C00A24112 /* PrimeNumbers WatchKit App */,
+				F760C2BF1C3D642D00A24112 /* PrimeNumbers WatchKit Extension */,
+				F760C29B1C3D642C00A24112 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F760C29B1C3D642C00A24112 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F760C29A1C3D642C00A24112 /* PrimeNumbers.app */,
+				F760C2AC1C3D642C00A24112 /* PrimeNumbers WatchKit App.app */,
+				F760C2BB1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F760C29C1C3D642C00A24112 /* PrimeNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				F760C29D1C3D642C00A24112 /* AppDelegate.swift */,
+				F760C29F1C3D642C00A24112 /* ViewController.swift */,
+				F760C2A11C3D642C00A24112 /* Main.storyboard */,
+				F760C2A41C3D642C00A24112 /* Assets.xcassets */,
+				F760C2A61C3D642C00A24112 /* LaunchScreen.storyboard */,
+				F760C2A91C3D642C00A24112 /* Info.plist */,
+			);
+			path = PrimeNumbers;
+			sourceTree = "<group>";
+		};
+		F760C2B01C3D642C00A24112 /* PrimeNumbers WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F760C2B11C3D642C00A24112 /* Interface.storyboard */,
+				F760C2B41C3D642C00A24112 /* Assets.xcassets */,
+				F760C2B61C3D642C00A24112 /* Info.plist */,
+			);
+			path = "PrimeNumbers WatchKit App";
+			sourceTree = "<group>";
+		};
+		F760C2BF1C3D642D00A24112 /* PrimeNumbers WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F760C2C21C3D642D00A24112 /* InterfaceController.swift */,
+				F760C2C41C3D642D00A24112 /* ExtensionDelegate.swift */,
+				F760C2C61C3D642D00A24112 /* NotificationController.swift */,
+				F760C2C81C3D642D00A24112 /* Assets.xcassets */,
+				F760C2CA1C3D642D00A24112 /* Info.plist */,
+				F760C2C01C3D642D00A24112 /* Supporting Files */,
+			);
+			path = "PrimeNumbers WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F760C2C01C3D642D00A24112 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F760C2C11C3D642D00A24112 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F760C2991C3D642C00A24112 /* PrimeNumbers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F760C2D51C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers" */;
+			buildPhases = (
+				F760C2961C3D642C00A24112 /* Sources */,
+				F760C2971C3D642C00A24112 /* Frameworks */,
+				F760C2981C3D642C00A24112 /* Resources */,
+				F760C2D41C3D642D00A24112 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F760C2AF1C3D642C00A24112 /* PBXTargetDependency */,
+			);
+			name = PrimeNumbers;
+			productName = PrimeNumbers;
+			productReference = F760C29A1C3D642C00A24112 /* PrimeNumbers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F760C2AB1C3D642C00A24112 /* PrimeNumbers WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F760C2D11C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers WatchKit App" */;
+			buildPhases = (
+				F760C2AA1C3D642C00A24112 /* Resources */,
+				F760C2D01C3D642D00A24112 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F760C2BE1C3D642D00A24112 /* PBXTargetDependency */,
+			);
+			name = "PrimeNumbers WatchKit App";
+			productName = "PrimeNumbers WatchKit App";
+			productReference = F760C2AC1C3D642C00A24112 /* PrimeNumbers WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F760C2BA1C3D642D00A24112 /* PrimeNumbers WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F760C2CD1C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers WatchKit Extension" */;
+			buildPhases = (
+				F760C2B71C3D642D00A24112 /* Sources */,
+				F760C2B81C3D642D00A24112 /* Frameworks */,
+				F760C2B91C3D642D00A24112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PrimeNumbers WatchKit Extension";
+			productName = "PrimeNumbers WatchKit Extension";
+			productReference = F760C2BB1C3D642D00A24112 /* PrimeNumbers WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F760C2921C3D642C00A24112 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Luis Castillo";
+				TargetAttributes = {
+					F760C2991C3D642C00A24112 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y24U4BPF65;
+					};
+					F760C2AB1C3D642C00A24112 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y24U4BPF65;
+					};
+					F760C2BA1C3D642D00A24112 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Y24U4BPF65;
+					};
+				};
+			};
+			buildConfigurationList = F760C2951C3D642C00A24112 /* Build configuration list for PBXProject "PrimeNumbers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F760C2911C3D642C00A24112;
+			productRefGroup = F760C29B1C3D642C00A24112 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F760C2991C3D642C00A24112 /* PrimeNumbers */,
+				F760C2AB1C3D642C00A24112 /* PrimeNumbers WatchKit App */,
+				F760C2BA1C3D642D00A24112 /* PrimeNumbers WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F760C2981C3D642C00A24112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F760C2A81C3D642C00A24112 /* LaunchScreen.storyboard in Resources */,
+				F760C2A51C3D642C00A24112 /* Assets.xcassets in Resources */,
+				F760C2A31C3D642C00A24112 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F760C2AA1C3D642C00A24112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F760C2B51C3D642C00A24112 /* Assets.xcassets in Resources */,
+				F760C2B31C3D642C00A24112 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F760C2B91C3D642D00A24112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F760C2C91C3D642D00A24112 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F760C2961C3D642C00A24112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F760C2A01C3D642C00A24112 /* ViewController.swift in Sources */,
+				F760C29E1C3D642C00A24112 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F760C2B71C3D642D00A24112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F760C2C71C3D642D00A24112 /* NotificationController.swift in Sources */,
+				F760C2C51C3D642D00A24112 /* ExtensionDelegate.swift in Sources */,
+				F760C2C31C3D642D00A24112 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F760C2AF1C3D642C00A24112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F760C2AB1C3D642C00A24112 /* PrimeNumbers WatchKit App */;
+			targetProxy = F760C2AE1C3D642C00A24112 /* PBXContainerItemProxy */;
+		};
+		F760C2BE1C3D642D00A24112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F760C2BA1C3D642D00A24112 /* PrimeNumbers WatchKit Extension */;
+			targetProxy = F760C2BD1C3D642D00A24112 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F760C2A11C3D642C00A24112 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F760C2A21C3D642C00A24112 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F760C2A61C3D642C00A24112 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F760C2A71C3D642C00A24112 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F760C2B11C3D642C00A24112 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F760C2B21C3D642C00A24112 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F760C2CB1C3D642D00A24112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F760C2CC1C3D642D00A24112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F760C2CE1C3D642D00A24112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "PrimeNumbers WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F760C2CF1C3D642D00A24112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "PrimeNumbers WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F760C2D21C3D642D00A24112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = PrimeNumbers_WatchKit_Extension;
+				INFOPLIST_FILE = "PrimeNumbers WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F760C2D31C3D642D00A24112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = PrimeNumbers_WatchKit_Extension;
+				INFOPLIST_FILE = "PrimeNumbers WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F760C2D61C3D642D00A24112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PrimeNumbers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F760C2D71C3D642D00A24112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PrimeNumbers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.PrimeNumbers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F760C2951C3D642C00A24112 /* Build configuration list for PBXProject "PrimeNumbers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F760C2CB1C3D642D00A24112 /* Debug */,
+				F760C2CC1C3D642D00A24112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F760C2CD1C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F760C2CE1C3D642D00A24112 /* Debug */,
+				F760C2CF1C3D642D00A24112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F760C2D11C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F760C2D21C3D642D00A24112 /* Debug */,
+				F760C2D31C3D642D00A24112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F760C2D51C3D642D00A24112 /* Build configuration list for PBXNativeTarget "PrimeNumbers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F760C2D61C3D642D00A24112 /* Debug */,
+				F760C2D71C3D642D00A24112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F760C2921C3D642C00A24112 /* Project object */;
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="tipCalculator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="Tip Calculator" textAlignment="center" id="9T9-Lf-0VI">
+                            <color key="textColor" red="0.38011922520000002" green="0.70311046830000001" blue="0.82628435860000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label width="1" alignment="center" text="Enter Bill Amount" id="4Aa-0s-7oi"/>
+                        <group width="1" alignment="center" id="BaK-AA-WQV">
+                            <items>
+                                <button width="40" height="30" alignment="left" title="-" id="Xxi-IA-Vop">
+                                    <connections>
+                                        <action selector="decreaseAmount" destination="AgC-eL-Hgc" id="9ja-ZT-R5t"/>
+                                    </connections>
+                                </button>
+                                <label width="46.5" height="29.5" alignment="center" text="$ 0" textAlignment="center" id="02J-14-Giu"/>
+                                <button width="40" height="30" alignment="right" title="+" id="f1S-yz-6n2">
+                                    <connections>
+                                        <action selector="increaseAmount" destination="AgC-eL-Hgc" id="dKu-Wy-GFq"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" id="e6h-tx-QHq">
+                            <items>
+                                <label width="60" alignment="left" text="15 % = " textAlignment="right" id="UUe-Aw-l1j">
+                                    <color key="textColor" red="0.2314430294" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label width="60" alignment="right" text=" 0" textAlignment="left" id="o2i-oJ-E3w">
+                                    <color key="textColor" red="0.2314430294" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" id="5zK-qz-MzS">
+                            <items>
+                                <label width="60" alignment="left" text="18 % =" textAlignment="right" id="x6h-68-wZg">
+                                    <color key="textColor" red="1" green="0.93486344619999995" blue="0.12611665490000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label width="60" alignment="right" text=" 0" textAlignment="left" id="WMg-QU-lRO">
+                                    <color key="textColor" red="1" green="0.93486344619999995" blue="0.12611665490000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" id="ZNv-j0-Q5S">
+                            <items>
+                                <label width="60" alignment="left" text="20 % =" textAlignment="right" id="G4l-gK-Xlg">
+                                    <color key="textColor" red="1" green="0.58351826490000003" blue="0.049905821709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label width="60" alignment="right" text=" 0" textAlignment="left" id="fZj-9R-69o">
+                                    <color key="textColor" red="1" green="0.58351826490000003" blue="0.049905821709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="decreaseAmountButton" destination="Xxi-IA-Vop" id="Z56-37-ovx"/>
+                        <outlet property="increaseAmountButton" destination="f1S-yz-6n2" id="N8o-Pt-9Fh"/>
+                        <outlet property="inputAmountLabel" destination="02J-14-Giu" id="G4T-Ge-hoT"/>
+                        <outlet property="percent15Label" destination="o2i-oJ-E3w" id="UEq-ud-qV4"/>
+                        <outlet property="percent18Label" destination="WMg-QU-lRO" id="cMh-I1-Oe4"/>
+                        <outlet property="percent20Label" destination="fZj-9R-69o" id="cSg-yA-8BV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" topTemplateType="groupBody2" bottomTemplateType="body6Footer" id="0uZ-2p-rRc" customClass="GlanceController" customModule="tipCalculator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <label alignment="left" text="Tipping Fact" id="5bf-lL-1fT">
+                            <color key="textColor" red="0.38011922520000002" green="0.70311046830000001" blue="0.82628435860000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" id="qcD-Rh-mr0"/>
+                        <label alignment="left" id="Ldk-pt-WMj"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="factLabel" destination="qcD-Rh-mr0" id="x4U-cq-m1o"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="tipCalculator_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>

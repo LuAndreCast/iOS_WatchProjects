@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>abbreviation</key>
+		<string>AST</string>
+		<key>timezone</key>
+		<string>ATLANTIC</string>
+		<key>location</key>
+		<string>Halifax</string>
+	</dict>
+	<dict>
+		<key>abbreviation</key>
+		<string>CST</string>
+		<key>timezone</key>
+		<string>CENTRAL</string>
+		<key>location</key>
+		<string>Chicago</string>
+	</dict>
+	<dict>
+		<key>abbreviation</key>
+		<string>EST</string>
+		<key>timezone</key>
+		<string>EASTERN</string>
+		<key>location</key>
+		<string>New_York</string>
+	</dict>
+	<dict>
+		<key>abbreviation</key>
+		<string>HST</string>
+		<key>timezone</key>
+		<string>HAWAII</string>
+		<key>location</key>
+		<string>Honolulu</string>
+	</dict>
+	<dict>
+		<key>abbreviation</key>
+		<string>MST</string>
+		<key>timezone</key>
+		<string>MOUNTAIN</string>
+		<key>location</key>
+		<string>Denver</string>
+	</dict>
+	<dict>
+		<key>abbreviation</key>
+		<string>PST</string>
+		<key>timezone</key>
+		<string>PACIFIC</string>
+		<key>location</key>
+		<string>Los_Angeles</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7A992A81C3ABF1C00FBFC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A992A71C3ABF1C00FBFC5E /* AppDelegate.swift */; };
+		F7A992AA1C3ABF1C00FBFC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A992A91C3ABF1C00FBFC5E /* ViewController.swift */; };
+		F7A992AD1C3ABF1C00FBFC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A992AB1C3ABF1C00FBFC5E /* Main.storyboard */; };
+		F7A992AF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A992AE1C3ABF1C00FBFC5E /* Assets.xcassets */; };
+		F7A992B21C3ABF1C00FBFC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A992B01C3ABF1C00FBFC5E /* LaunchScreen.storyboard */; };
+		F7A992B71C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F7A992B61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app */; };
+		F7A992BD1C3ABF1C00FBFC5E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A992BB1C3ABF1C00FBFC5E /* Interface.storyboard */; };
+		F7A992BF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A992BE1C3ABF1C00FBFC5E /* Assets.xcassets */; };
+		F7A992C61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F7A992C51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F7A992CB1C3ABF1C00FBFC5E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A992CA1C3ABF1C00FBFC5E /* InterfaceController.swift */; };
+		F7A992CD1C3ABF1C00FBFC5E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A992CC1C3ABF1C00FBFC5E /* ExtensionDelegate.swift */; };
+		F7A992CF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A992CE1C3ABF1C00FBFC5E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7A992B81C3ABF1C00FBFC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A9929C1C3ABF1C00FBFC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A992B51C3ABF1C00FBFC5E;
+			remoteInfo = "RandomNumberGenerator WatchKit App";
+		};
+		F7A992C71C3ABF1C00FBFC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A9929C1C3ABF1C00FBFC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A992C41C3ABF1C00FBFC5E;
+			remoteInfo = "RandomNumberGenerator WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F7A992D61C3ABF1C00FBFC5E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F7A992C61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A992DA1C3ABF1C00FBFC5E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F7A992B71C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F7A992A41C3ABF1C00FBFC5E /* RandomNumberGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomNumberGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A992A71C3ABF1C00FBFC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7A992A91C3ABF1C00FBFC5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7A992AC1C3ABF1C00FBFC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7A992AE1C3ABF1C00FBFC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A992B11C3ABF1C00FBFC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7A992B31C3ABF1C00FBFC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A992B61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RandomNumberGenerator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A992BC1C3ABF1C00FBFC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F7A992BE1C3ABF1C00FBFC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A992C01C3ABF1C00FBFC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A992C51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RandomNumberGenerator WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A992CA1C3ABF1C00FBFC5E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F7A992CC1C3ABF1C00FBFC5E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F7A992CE1C3ABF1C00FBFC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A992D01C3ABF1C00FBFC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7A992A11C3ABF1C00FBFC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A992C21C3ABF1C00FBFC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7A9929B1C3ABF1C00FBFC5E = {
+			isa = PBXGroup;
+			children = (
+				F7A992A61C3ABF1C00FBFC5E /* RandomNumberGenerator */,
+				F7A992BA1C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App */,
+				F7A992C91C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension */,
+				F7A992A51C3ABF1C00FBFC5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7A992A51C3ABF1C00FBFC5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7A992A41C3ABF1C00FBFC5E /* RandomNumberGenerator.app */,
+				F7A992B61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app */,
+				F7A992C51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7A992A61C3ABF1C00FBFC5E /* RandomNumberGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				F7A992A71C3ABF1C00FBFC5E /* AppDelegate.swift */,
+				F7A992A91C3ABF1C00FBFC5E /* ViewController.swift */,
+				F7A992AB1C3ABF1C00FBFC5E /* Main.storyboard */,
+				F7A992AE1C3ABF1C00FBFC5E /* Assets.xcassets */,
+				F7A992B01C3ABF1C00FBFC5E /* LaunchScreen.storyboard */,
+				F7A992B31C3ABF1C00FBFC5E /* Info.plist */,
+			);
+			path = RandomNumberGenerator;
+			sourceTree = "<group>";
+		};
+		F7A992BA1C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F7A992BB1C3ABF1C00FBFC5E /* Interface.storyboard */,
+				F7A992BE1C3ABF1C00FBFC5E /* Assets.xcassets */,
+				F7A992C01C3ABF1C00FBFC5E /* Info.plist */,
+			);
+			path = "RandomNumberGenerator WatchKit App";
+			sourceTree = "<group>";
+		};
+		F7A992C91C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F7A992CA1C3ABF1C00FBFC5E /* InterfaceController.swift */,
+				F7A992CC1C3ABF1C00FBFC5E /* ExtensionDelegate.swift */,
+				F7A992CE1C3ABF1C00FBFC5E /* Assets.xcassets */,
+				F7A992D01C3ABF1C00FBFC5E /* Info.plist */,
+			);
+			path = "RandomNumberGenerator WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7A992A31C3ABF1C00FBFC5E /* RandomNumberGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A992DB1C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator" */;
+			buildPhases = (
+				F7A992A01C3ABF1C00FBFC5E /* Sources */,
+				F7A992A11C3ABF1C00FBFC5E /* Frameworks */,
+				F7A992A21C3ABF1C00FBFC5E /* Resources */,
+				F7A992DA1C3ABF1C00FBFC5E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A992B91C3ABF1C00FBFC5E /* PBXTargetDependency */,
+			);
+			name = RandomNumberGenerator;
+			productName = RandomNumberGenerator;
+			productReference = F7A992A41C3ABF1C00FBFC5E /* RandomNumberGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7A992B51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A992D71C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator WatchKit App" */;
+			buildPhases = (
+				F7A992B41C3ABF1C00FBFC5E /* Resources */,
+				F7A992D61C3ABF1C00FBFC5E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A992C81C3ABF1C00FBFC5E /* PBXTargetDependency */,
+			);
+			name = "RandomNumberGenerator WatchKit App";
+			productName = "RandomNumberGenerator WatchKit App";
+			productReference = F7A992B61C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F7A992C41C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A992D31C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator WatchKit Extension" */;
+			buildPhases = (
+				F7A992C11C3ABF1C00FBFC5E /* Sources */,
+				F7A992C21C3ABF1C00FBFC5E /* Frameworks */,
+				F7A992C31C3ABF1C00FBFC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RandomNumberGenerator WatchKit Extension";
+			productName = "RandomNumberGenerator WatchKit Extension";
+			productReference = F7A992C51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7A9929C1C3ABF1C00FBFC5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Luis Castillo";
+				TargetAttributes = {
+					F7A992A31C3ABF1C00FBFC5E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F7A992B51C3ABF1C00FBFC5E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F7A992C41C3ABF1C00FBFC5E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = F7A9929F1C3ABF1C00FBFC5E /* Build configuration list for PBXProject "RandomNumberGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7A9929B1C3ABF1C00FBFC5E;
+			productRefGroup = F7A992A51C3ABF1C00FBFC5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7A992A31C3ABF1C00FBFC5E /* RandomNumberGenerator */,
+				F7A992B51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App */,
+				F7A992C41C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7A992A21C3ABF1C00FBFC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A992B21C3ABF1C00FBFC5E /* LaunchScreen.storyboard in Resources */,
+				F7A992AF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */,
+				F7A992AD1C3ABF1C00FBFC5E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A992B41C3ABF1C00FBFC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A992BF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */,
+				F7A992BD1C3ABF1C00FBFC5E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A992C31C3ABF1C00FBFC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A992CF1C3ABF1C00FBFC5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7A992A01C3ABF1C00FBFC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A992AA1C3ABF1C00FBFC5E /* ViewController.swift in Sources */,
+				F7A992A81C3ABF1C00FBFC5E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A992C11C3ABF1C00FBFC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A992CD1C3ABF1C00FBFC5E /* ExtensionDelegate.swift in Sources */,
+				F7A992CB1C3ABF1C00FBFC5E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7A992B91C3ABF1C00FBFC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A992B51C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit App */;
+			targetProxy = F7A992B81C3ABF1C00FBFC5E /* PBXContainerItemProxy */;
+		};
+		F7A992C81C3ABF1C00FBFC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A992C41C3ABF1C00FBFC5E /* RandomNumberGenerator WatchKit Extension */;
+			targetProxy = F7A992C71C3ABF1C00FBFC5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7A992AB1C3ABF1C00FBFC5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A992AC1C3ABF1C00FBFC5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7A992B01C3ABF1C00FBFC5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A992B11C3ABF1C00FBFC5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F7A992BB1C3ABF1C00FBFC5E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A992BC1C3ABF1C00FBFC5E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7A992D11C3ABF1C00FBFC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7A992D21C3ABF1C00FBFC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7A992D41C3ABF1C00FBFC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "RandomNumberGenerator WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F7A992D51C3ABF1C00FBFC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "RandomNumberGenerator WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F7A992D81C3ABF1C00FBFC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = RandomNumberGenerator_WatchKit_Extension;
+				INFOPLIST_FILE = "RandomNumberGenerator WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F7A992D91C3ABF1C00FBFC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = RandomNumberGenerator_WatchKit_Extension;
+				INFOPLIST_FILE = "RandomNumberGenerator WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F7A992DC1C3ABF1C00FBFC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RandomNumberGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F7A992DD1C3ABF1C00FBFC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RandomNumberGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.RandomNumberGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7A9929F1C3ABF1C00FBFC5E /* Build configuration list for PBXProject "RandomNumberGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A992D11C3ABF1C00FBFC5E /* Debug */,
+				F7A992D21C3ABF1C00FBFC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A992D31C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A992D41C3ABF1C00FBFC5E /* Debug */,
+				F7A992D51C3ABF1C00FBFC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F7A992D71C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A992D81C3ABF1C00FBFC5E /* Debug */,
+				F7A992D91C3ABF1C00FBFC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F7A992DB1C3ABF1C00FBFC5E /* Build configuration list for PBXNativeTarget "RandomNumberGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A992DC1C3ABF1C00FBFC5E /* Debug */,
+				F7A992DD1C3ABF1C00FBFC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7A9929C1C3ABF1C00FBFC5E /* Project object */;
+}
