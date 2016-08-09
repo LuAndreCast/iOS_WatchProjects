@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="HealthWatchExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO MESSAGE RECEIVED" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D13-DP-FI3">
+                                <rect key="frame" x="40" y="40" width="520" height="340"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lQD-bc-8X9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lQD-bc-8X9"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-VS-nbP">
+                                <rect key="frame" x="40" y="480" width="520" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jP9-md-FEe"/>
+                                </constraints>
+                                <state key="normal" title="Start Monitoring"/>
+                                <connections>
+                                    <action selector="startEndMonitoring:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsN-wL-UCE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UzH-VS-nbP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3w4-Oz-VtQ"/>
+                            <constraint firstItem="D13-DP-FI3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bs3-id-kQ8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UzH-VS-nbP" secondAttribute="trailing" constant="20" id="MBg-83-oyL"/>
+                            <constraint firstItem="D13-DP-FI3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="NsY-8P-Pb7"/>
+                            <constraint firstItem="UzH-VS-nbP" firstAttribute="top" secondItem="D13-DP-FI3" secondAttribute="bottom" constant="100" id="PnA-nI-rJv"/>
+                            <constraint firstItem="UzH-VS-nbP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYv-ib-w7P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UzH-VS-nbP" secondAttribute="bottom" constant="20" id="eug-wb-TMI"/>
+                            <constraint firstItem="D13-DP-FI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hDg-Sl-Sr9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D13-DP-FI3" secondAttribute="trailing" constant="20" id="kjY-wx-6Fo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="D13-DP-FI3" id="wCJ-Dn-oAz"/>
+                        <outlet property="startEndMonitoringButton" destination="UzH-VS-nbP" id="Hc7-n2-YdL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="273"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="message to sent to watch" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HT3-Jn-VN0">
+                                <rect key="frame" x="150" y="101" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gk7-de-H5L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4wN-07-c9A"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmB-xt-OYW">
+                                <rect key="frame" x="194" y="151" width="212" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="kzV-pO-rQE"/>
+                                </constraints>
+                                <state key="normal" title="Send Message">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL7-0O-EYM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message From Watch:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb1-Ea-SBO">
+                                <rect key="frame" x="215" y="325" width="171" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="kJw-iq-797"/>
+                                    <constraint firstAttribute="height" constant="21" id="olO-RR-7q5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU5-EK-FBw">
+                                <rect key="frame" x="56" y="394" width="488" height="186"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="Hp0-Nd-KD6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch is Reachable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIr-lJ-OfM">
+                                <rect key="frame" x="221" y="20" width="159" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="akg-IZ-9NZ"/>
+                                    <constraint firstAttribute="width" constant="159" id="eim-Pv-fNt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38011922520000002" green="0.70311046830000001" blue="0.82628435860000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AU5-EK-FBw" firstAttribute="centerX" secondItem="cb1-Ea-SBO" secondAttribute="centerX" id="5zA-s7-UOr"/>
+                            <constraint firstItem="LIr-lJ-OfM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="105" id="6fE-9t-eSa"/>
+                            <constraint firstItem="AU5-EK-FBw" firstAttribute="top" secondItem="cb1-Ea-SBO" secondAttribute="bottom" constant="48" id="ACU-zs-tYL"/>
+                            <constraint firstItem="cb1-Ea-SBO" firstAttribute="centerX" secondItem="lmB-xt-OYW" secondAttribute="centerX" id="Bey-iA-bcM"/>
+                            <constraint firstItem="lmB-xt-OYW" firstAttribute="top" secondItem="HT3-Jn-VN0" secondAttribute="bottom" constant="20" id="FW7-EK-NeL"/>
+                            <constraint firstItem="AU5-EK-FBw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="Hue-nc-14d"/>
+                            <constraint firstAttribute="bottom" secondItem="AU5-EK-FBw" secondAttribute="bottom" constant="20" symbolic="YES" id="Lmy-Gs-bpp"/>
+                            <constraint firstItem="LIr-lJ-OfM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="b39-sz-Cey"/>
+                            <constraint firstItem="lmB-xt-OYW" firstAttribute="centerX" secondItem="HT3-Jn-VN0" secondAttribute="centerX" id="eko-xV-mNw"/>
+                            <constraint firstItem="lmB-xt-OYW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nd5-IH-QLO"/>
+                            <constraint firstItem="HT3-Jn-VN0" firstAttribute="top" secondItem="LIr-lJ-OfM" secondAttribute="bottom" constant="26" id="nkb-AA-3xY"/>
+                            <constraint firstItem="LIr-lJ-OfM" firstAttribute="centerX" secondItem="HT3-Jn-VN0" secondAttribute="centerX" id="oNB-70-gb0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6fE-9t-eSa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="isWatchReachableLabel" destination="LIr-lJ-OfM" id="git-Sc-2gX"/>
+                        <outlet property="messageTextfield" destination="HT3-Jn-VN0" id="GFT-4L-7YH"/>
+                        <outlet property="replyFromWatchLabel" destination="AU5-EK-FBw" id="i3X-jG-Bjr"/>
+                        <outlet property="sendMessageButton" destination="lmB-xt-OYW" id="eea-wA-zAg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="401"/>
+        </scene>
+    </scenes>
+</document>

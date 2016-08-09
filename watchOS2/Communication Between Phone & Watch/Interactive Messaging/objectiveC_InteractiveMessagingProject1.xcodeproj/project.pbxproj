@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F774ECAF1C406082003DB01E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F774ECAE1C406082003DB01E /* main.m */; };
+		F774ECB21C406082003DB01E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F774ECB11C406082003DB01E /* AppDelegate.m */; };
+		F774ECB51C406082003DB01E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F774ECB41C406082003DB01E /* ViewController.m */; };
+		F774ECB81C406083003DB01E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774ECB61C406082003DB01E /* Main.storyboard */; };
+		F774ECBA1C406083003DB01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F774ECB91C406083003DB01E /* Assets.xcassets */; };
+		F774ECBD1C406083003DB01E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774ECBB1C406083003DB01E /* LaunchScreen.storyboard */; };
+		F774ECC21C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F774ECC11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app */; };
+		F774ECC81C406083003DB01E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774ECC61C406083003DB01E /* Interface.storyboard */; };
+		F774ECCA1C406083003DB01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F774ECC91C406083003DB01E /* Assets.xcassets */; };
+		F774ECD11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F774ECD01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F774ECD71C406083003DB01E /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F774ECD61C406083003DB01E /* InterfaceController.m */; };
+		F774ECDA1C406083003DB01E /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F774ECD91C406083003DB01E /* ExtensionDelegate.m */; };
+		F774ECDC1C406083003DB01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F774ECDB1C406083003DB01E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F774ECC31C406083003DB01E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F774ECA21C406082003DB01E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F774ECC01C406083003DB01E;
+			remoteInfo = "objectiveC_InteractiveMessagingProject1 WatchKit App";
+		};
+		F774ECD21C406083003DB01E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F774ECA21C406082003DB01E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F774ECCF1C406083003DB01E;
+			remoteInfo = "objectiveC_InteractiveMessagingProject1 WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F774ECE31C406083003DB01E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F774ECD11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F774ECE71C406083003DB01E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F774ECC21C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F774ECAA1C406082003DB01E /* objectiveC_InteractiveMessagingProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = objectiveC_InteractiveMessagingProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F774ECAE1C406082003DB01E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F774ECB01C406082003DB01E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F774ECB11C406082003DB01E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F774ECB31C406082003DB01E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F774ECB41C406082003DB01E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F774ECB71C406082003DB01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F774ECB91C406083003DB01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F774ECBC1C406083003DB01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F774ECBE1C406083003DB01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F774ECC11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "objectiveC_InteractiveMessagingProject1 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F774ECC71C406083003DB01E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F774ECC91C406083003DB01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F774ECCB1C406083003DB01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F774ECD01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F774ECD51C406083003DB01E /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		F774ECD61C406083003DB01E /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		F774ECD81C406083003DB01E /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		F774ECD91C406083003DB01E /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		F774ECDB1C406083003DB01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F774ECDD1C406083003DB01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F774ECA71C406082003DB01E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F774ECCD1C406083003DB01E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F774ECA11C406082003DB01E = {
+			isa = PBXGroup;
+			children = (
+				F774ECAC1C406082003DB01E /* objectiveC_InteractiveMessagingProject1 */,
+				F774ECC51C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App */,
+				F774ECD41C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension */,
+				F774ECAB1C406082003DB01E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F774ECAB1C406082003DB01E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F774ECAA1C406082003DB01E /* objectiveC_InteractiveMessagingProject1.app */,
+				F774ECC11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app */,
+				F774ECD01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F774ECAC1C406082003DB01E /* objectiveC_InteractiveMessagingProject1 */ = {
+			isa = PBXGroup;
+			children = (
+				F774ECB01C406082003DB01E /* AppDelegate.h */,
+				F774ECB11C406082003DB01E /* AppDelegate.m */,
+				F774ECB31C406082003DB01E /* ViewController.h */,
+				F774ECB41C406082003DB01E /* ViewController.m */,
+				F774ECB61C406082003DB01E /* Main.storyboard */,
+				F774ECB91C406083003DB01E /* Assets.xcassets */,
+				F774ECBB1C406083003DB01E /* LaunchScreen.storyboard */,
+				F774ECBE1C406083003DB01E /* Info.plist */,
+				F774ECAD1C406082003DB01E /* Supporting Files */,
+			);
+			path = objectiveC_InteractiveMessagingProject1;
+			sourceTree = "<group>";
+		};
+		F774ECAD1C406082003DB01E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F774ECAE1C406082003DB01E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F774ECC51C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F774ECC61C406083003DB01E /* Interface.storyboard */,
+				F774ECC91C406083003DB01E /* Assets.xcassets */,
+				F774ECCB1C406083003DB01E /* Info.plist */,
+			);
+			path = "objectiveC_InteractiveMessagingProject1 WatchKit App";
+			sourceTree = "<group>";
+		};
+		F774ECD41C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F774ECD51C406083003DB01E /* InterfaceController.h */,
+				F774ECD61C406083003DB01E /* InterfaceController.m */,
+				F774ECD81C406083003DB01E /* ExtensionDelegate.h */,
+				F774ECD91C406083003DB01E /* ExtensionDelegate.m */,
+				F774ECDB1C406083003DB01E /* Assets.xcassets */,
+				F774ECDD1C406083003DB01E /* Info.plist */,
+			);
+			path = "objectiveC_InteractiveMessagingProject1 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F774ECA91C406082003DB01E /* objectiveC_InteractiveMessagingProject1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F774ECE81C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1" */;
+			buildPhases = (
+				F774ECA61C406082003DB01E /* Sources */,
+				F774ECA71C406082003DB01E /* Frameworks */,
+				F774ECA81C406082003DB01E /* Resources */,
+				F774ECE71C406083003DB01E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F774ECC41C406083003DB01E /* PBXTargetDependency */,
+			);
+			name = objectiveC_InteractiveMessagingProject1;
+			productName = objectiveC_InteractiveMessagingProject1;
+			productReference = F774ECAA1C406082003DB01E /* objectiveC_InteractiveMessagingProject1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F774ECC01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F774ECE41C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1 WatchKit App" */;
+			buildPhases = (
+				F774ECBF1C406083003DB01E /* Resources */,
+				F774ECE31C406083003DB01E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F774ECD31C406083003DB01E /* PBXTargetDependency */,
+			);
+			name = "objectiveC_InteractiveMessagingProject1 WatchKit App";
+			productName = "objectiveC_InteractiveMessagingProject1 WatchKit App";
+			productReference = F774ECC11C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F774ECCF1C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F774ECE01C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1 WatchKit Extension" */;
+			buildPhases = (
+				F774ECCC1C406083003DB01E /* Sources */,
+				F774ECCD1C406083003DB01E /* Frameworks */,
+				F774ECCE1C406083003DB01E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "objectiveC_InteractiveMessagingProject1 WatchKit Extension";
+			productName = "objectiveC_InteractiveMessagingProject1 WatchKit Extension";
+			productReference = F774ECD01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F774ECA21C406082003DB01E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = T2;
+				TargetAttributes = {
+					F774ECA91C406082003DB01E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F774ECC01C406083003DB01E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F774ECCF1C406083003DB01E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = F774ECA51C406082003DB01E /* Build configuration list for PBXProject "objectiveC_InteractiveMessagingProject1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F774ECA11C406082003DB01E;
+			productRefGroup = F774ECAB1C406082003DB01E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F774ECA91C406082003DB01E /* objectiveC_InteractiveMessagingProject1 */,
+				F774ECC01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App */,
+				F774ECCF1C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F774ECA81C406082003DB01E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F774ECBD1C406083003DB01E /* LaunchScreen.storyboard in Resources */,
+				F774ECBA1C406083003DB01E /* Assets.xcassets in Resources */,
+				F774ECB81C406083003DB01E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F774ECBF1C406083003DB01E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F774ECCA1C406083003DB01E /* Assets.xcassets in Resources */,
+				F774ECC81C406083003DB01E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F774ECCE1C406083003DB01E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F774ECDC1C406083003DB01E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F774ECA61C406082003DB01E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F774ECB51C406082003DB01E /* ViewController.m in Sources */,
+				F774ECB21C406082003DB01E /* AppDelegate.m in Sources */,
+				F774ECAF1C406082003DB01E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F774ECCC1C406083003DB01E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F774ECDA1C406083003DB01E /* ExtensionDelegate.m in Sources */,
+				F774ECD71C406083003DB01E /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F774ECC41C406083003DB01E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F774ECC01C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit App */;
+			targetProxy = F774ECC31C406083003DB01E /* PBXContainerItemProxy */;
+		};
+		F774ECD31C406083003DB01E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F774ECCF1C406083003DB01E /* objectiveC_InteractiveMessagingProject1 WatchKit Extension */;
+			targetProxy = F774ECD21C406083003DB01E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F774ECB61C406082003DB01E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F774ECB71C406082003DB01E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F774ECBB1C406083003DB01E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F774ECBC1C406083003DB01E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F774ECC61C406083003DB01E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F774ECC71C406083003DB01E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F774ECDE1C406083003DB01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F774ECDF1C406083003DB01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F774ECE11C406083003DB01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "objectiveC_InteractiveMessagingProject1 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F774ECE21C406083003DB01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "objectiveC_InteractiveMessagingProject1 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F774ECE51C406083003DB01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = objectiveC_InteractiveMessagingProject1_WatchKit_Extension;
+				INFOPLIST_FILE = "objectiveC_InteractiveMessagingProject1 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F774ECE61C406083003DB01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = objectiveC_InteractiveMessagingProject1_WatchKit_Extension;
+				INFOPLIST_FILE = "objectiveC_InteractiveMessagingProject1 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F774ECE91C406083003DB01E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = objectiveC_InteractiveMessagingProject1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F774ECEA1C406083003DB01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = objectiveC_InteractiveMessagingProject1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LC.objectiveC-InteractiveMessagingProject1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F774ECA51C406082003DB01E /* Build configuration list for PBXProject "objectiveC_InteractiveMessagingProject1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F774ECDE1C406083003DB01E /* Debug */,
+				F774ECDF1C406083003DB01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F774ECE01C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F774ECE11C406083003DB01E /* Debug */,
+				F774ECE21C406083003DB01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F774ECE41C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F774ECE51C406083003DB01E /* Debug */,
+				F774ECE61C406083003DB01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F774ECE81C406083003DB01E /* Build configuration list for PBXNativeTarget "objectiveC_InteractiveMessagingProject1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F774ECE91C406083003DB01E /* Debug */,
+				F774ECEA1C406083003DB01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F774ECA21C406082003DB01E /* Project object */;
+}
