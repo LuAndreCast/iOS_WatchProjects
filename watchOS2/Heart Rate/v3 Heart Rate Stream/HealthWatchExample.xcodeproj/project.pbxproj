@@ -108,7 +108,7 @@
 		F75E88431D5293C800514ABA /* HealthWatchExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthWatchExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75E88451D5293C800514ABA /* HealthWatchExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWatchExampleTests.swift; sourceTree = "<group>"; };
 		F75E88471D5293C800514ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F79AC9341C6549C400F36994 /* HealthWatchExample WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthWatchExample WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
+		F79AC9341C6549C400F36994 /* HealthWatchExample WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthWatchExample WatchKit App-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F7C9479D1D4FB7C700F69D9F /* HeartRateMonitorOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateMonitorOld.swift; sourceTree = "<group>"; };
 		F7D674EC1C616A7600AD2836 /* HealthWatchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWatchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D674EF1C616A7600AD2836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,22 +173,26 @@
 			path = HealthWatchExampleTests;
 			sourceTree = "<group>";
 		};
-		F79AC9331C65498B00F36994 /* Common */ = {
+		F79AC9331C65498B00F36994 /* Heart Rate Models */ = {
 			isa = PBXGroup;
 			children = (
-				F79AC9341C6549C400F36994 /* HealthWatchExample WatchKit App-Bridging-Header.h */,
-				F7C9479D1D4FB7C700F69D9F /* HeartRateMonitorOld.swift */,
+				F7E07E821D55145F00EBCFAC /* WatchMessenger.swift */,
+				F711266A1D5A3A0400CA6035 /* CommunicationKeys.swift */,
 				F7E07E7A1D5501B100EBCFAC /* Error.swift */,
-				F7E07E811D5513F800EBCFAC /* HealthStore */,
+				F7E07E711D54EE1100EBCFAC /* HealthStoreMonitor.swift */,
+				F7E07E761D54FB8000EBCFAC /* HeartRatePermission.swift */,
+				F71126671D5A33F800CA6035 /* HeartRateParser.swift */,
+				F7E07E7D1D550D9000EBCFAC /* HeartRate.swift */,
+				F7E07E811D5513F800EBCFAC /* Watch Only */,
 				F7E07E801D5513C900EBCFAC /* Interactive Messaging */,
 			);
-			name = Common;
+			name = "Heart Rate Models";
 			sourceTree = "<group>";
 		};
 		F7D674E31C616A7600AD2836 = {
 			isa = PBXGroup;
 			children = (
-				F79AC9331C65498B00F36994 /* Common */,
+				F79AC9331C65498B00F36994 /* Heart Rate Models */,
 				F7D6752F1C616A8F00AD2836 /* HealthKit.framework */,
 				F7D674EE1C616A7600AD2836 /* HealthWatchExample */,
 				F7D675021C616A7600AD2836 /* HealthWatchExample WatchKit App */,
@@ -279,6 +283,7 @@
 		F7D675391C6264C200AD2836 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F79AC9341C6549C400F36994 /* HealthWatchExample WatchKit App-Bridging-Header.h */,
 				F7D6752E1C616A8F00AD2836 /* HealthWatchExample.entitlements */,
 				F7D674F61C616A7600AD2836 /* Assets.xcassets */,
 				F7D674FB1C616A7600AD2836 /* Info.plist */,
@@ -286,34 +291,29 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		F7E07E781D54FB8700EBCFAC /* Heart Rate */ = {
+		F7E07E781D54FB8700EBCFAC /* Old */ = {
 			isa = PBXGroup;
 			children = (
-				F711266D1D5A45D400CA6035 /* HeartRateMonitor.swift */,
-				F7E07E761D54FB8000EBCFAC /* HeartRatePermission.swift */,
-				F71126671D5A33F800CA6035 /* HeartRateParser.swift */,
-				F7E07E7D1D550D9000EBCFAC /* HeartRate.swift */,
+				F7C9479D1D4FB7C700F69D9F /* HeartRateMonitorOld.swift */,
 			);
-			name = "Heart Rate";
+			name = Old;
 			sourceTree = "<group>";
 		};
 		F7E07E801D5513C900EBCFAC /* Interactive Messaging */ = {
 			isa = PBXGroup;
 			children = (
-				F711266A1D5A3A0400CA6035 /* CommunicationKeys.swift */,
-				F7E07E821D55145F00EBCFAC /* WatchMessenger.swift */,
 			);
 			name = "Interactive Messaging";
 			sourceTree = "<group>";
 		};
-		F7E07E811D5513F800EBCFAC /* HealthStore */ = {
+		F7E07E811D5513F800EBCFAC /* Watch Only */ = {
 			isa = PBXGroup;
 			children = (
+				F711266D1D5A45D400CA6035 /* HeartRateMonitor.swift */,
 				F7E07E741D54EE2700EBCFAC /* HealthStoreWorkout.swift */,
-				F7E07E711D54EE1100EBCFAC /* HealthStoreMonitor.swift */,
-				F7E07E781D54FB8700EBCFAC /* Heart Rate */,
+				F7E07E781D54FB8700EBCFAC /* Old */,
 			);
-			name = HealthStore;
+			name = "Watch Only";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +407,7 @@
 					};
 					F7D674EB1C616A7600AD2836 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = LM8B99RWJA;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -421,6 +422,7 @@
 					};
 					F7D6750C1C616A7600AD2836 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = LM8B99RWJA;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;

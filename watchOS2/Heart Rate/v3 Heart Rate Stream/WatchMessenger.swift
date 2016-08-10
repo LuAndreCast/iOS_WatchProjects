@@ -17,7 +17,6 @@ protocol watchMessengerDelegate
     
     /* Interactive messaging */
     func watchMessenger_didReceiveMessage(message:[String:AnyObject])
-    optional func watchMessenger_reachabilityStatusChanged(isReachable:Bool)
 }
 
 
@@ -39,7 +38,7 @@ class WatchMessenger: NSObject, WCSessionDelegate
             self.session .delegate = self
             self.session .activateSession()
             
-            if verbose {  print("[\(self)] started successfully") }//debug
+            if verbose {  print("[\(self.debugDescription)] started successfully") }//debug
             
             //notify listener
             self.delegate?.watchMessenger_startResults(true, error: nil)

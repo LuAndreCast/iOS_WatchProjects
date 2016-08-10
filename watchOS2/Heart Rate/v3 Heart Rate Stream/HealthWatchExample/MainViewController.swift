@@ -98,10 +98,12 @@ class MainViewController: UIViewController,watchMessengerDelegate
     {
         if self.startEndMonitoringButton.selected
         {
+            self.messageLabel.text = "Started Monitoring"
             self.startEndMonitoringButton.setTitle("End Monitoring", forState: UIControlState.Normal)
         }
         else
         {
+            self.messageLabel.text = "Ended Monitoring"
             self.startEndMonitoringButton.setTitle("Start Monitoring", forState: UIControlState.Normal)
         }
     }//eom
@@ -111,33 +113,20 @@ class MainViewController: UIViewController,watchMessengerDelegate
     {
         dispatch_async(dispatch_get_main_queue()) {
             
-            if let commandReceived:String = message[keys.Command.toString()] as? String
+            //reponses
+            if let commandReceived:String = message[keys.Response.toString()] as? String
             {
                 switch commandReceived
                 {
-                    case command.StartMonitoring.toString():
-                        self.messageLabel.text = "Started Monitoring"
+                    case response.StartedMonitoring.toString():
                         self.startEndMonitoringButton.selected = true
                         self.updateUI()
                         break
-                    case command.EndMonitoring.toString():
-                        self.messageLabel.text = "Ended Monitoring"
+                    case response.EndedMonitoring.toString():
                         self.startEndMonitoringButton.selected = false
                         self.updateUI()
                         break
-                    default:
-                        
-                        self.messageLabel.text = "Unknown command received"
-                        break
-                }
-            }
-            //reponses
-            else if let responseReceived:String = message[keys.Response.toString()] as? String
-            {
-                switch responseReceived
-                {
                     case response.Data.toString():
-                        
                         let hrValue:Double? = message[keys.HeartRate.toString()] as? Double
                         let hrTime:String? = message[keys.Time.toString()] as? String
                         let hrDate:String? = message[keys.Date.toString()] as? String

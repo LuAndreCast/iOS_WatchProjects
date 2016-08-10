@@ -9,6 +9,11 @@
 import Foundation
 import HealthKit
 
+protocol heartRateMonitorDelegate {
+    func heartRateMonitorStateChanged(isMonitoring:Bool)
+    func heartRateMonitorError(error:NSError)
+    func heartRateMonitorResponse(heartRates:[HeartRate])
+}
 
 class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkoutDelegate {
     
@@ -18,12 +23,13 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     let healthMonitor = HealthStoreMonitor()
     let hrParser = HeartRateParser()
     
-    //handlers
-    typealias handlerResponse = (heartRates:[HeartRate])->Void
-    typealias handlerError = (error:NSError)->Void
+    private var _isMonitoring = false
     
-    var responseHandler:handlerResponse?
-    var errorHandler:handlerError?
+    var isMonitoring:Bool{
+        return _isMonitoring
+    }
+    
+    var delegate:heartRateMonitorDelegate?
     
     
     //MARK: - Constructor
@@ -33,33 +39,40 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
         
         self.healthMonitor.delegate = self
         self.healthWorkOut.delegate = self
-    }
+    }//eom
     
     //MARK: - Monitoring
     func start()
     {
-        //requesting permission - just in case
-        self.hrPermission.requestPermission(healthStore)
-        { (success:Bool, error:NSError?) in
-            
-            if let errorFound:NSError = error
-            {
-                self.stopAndSendError(errorFound, endWorkOut: false, endMonitor: false)
-            }
-            //startWorkout
-            else
-            {
-                self.healthWorkOut.startWorkout()
+        if self._isMonitoring == false
+        {
+            //requesting permission - just in case
+            self.hrPermission.requestPermission(healthStore)
+            { (success:Bool, error:NSError?) in
+                
+                if let errorFound:NSError = error
+                {
+                    self.stopAndSendError(errorFound, endWorkOut: false, endMonitor: false)
+                }
+                //startWorkout
+                else
+                {
+                    self.healthWorkOut.startWorkout()
+                    self._isMonitoring = true
+                    self.delegate?.heartRateMonitorStateChanged(true)
+                }
             }
         }
     }//eom
     
     func end()
     {
-        self.healthWorkOut.endWorkout()
-        
-        self.responseHandler = nil
-        self.errorHandler = nil
+        if self._isMonitoring
+        {
+            self.healthWorkOut.endWorkout()
+            self._isMonitoring = false
+            self.delegate?.heartRateMonitorStateChanged(false)
+        }
     }//eom
     
     //MARK: - WorkOut Delegates
@@ -100,7 +113,9 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
                     self.healthMonitor.endMonitoring()
                 break
             case .NotStarted:
-                //nothing to do
+                //nothing to do - just incase
+                self._isMonitoring = false
+                self.delegate?.heartRateMonitorStateChanged(false)
                 break
         }
     }//eom
@@ -109,7 +124,8 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     func healthStoreMonitorResults(results:[HKSample])
     {
         let parsedResults:[HeartRate] = hrParser.parse(results)
-        self.responseHandler?(heartRates:parsedResults)
+        
+        self.delegate?.heartRateMonitorResponse(parsedResults)
     }//eom
     
     func healthStoreMonitorError(error:NSError)
@@ -134,13 +150,13 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     //MARK: - Errors
     private func stopAndSendError(error:NSError, endWorkOut:Bool = false, endMonitor:Bool = false)
     {
+        self._isMonitoring = false
+        self.delegate?.heartRateMonitorStateChanged(false)
+        
         if endWorkOut { self.healthWorkOut.endWorkout() }
         if endMonitor { self.healthMonitor.endMonitoring() }
         
-        self.responseHandler = nil
-        self.errorHandler = nil
-        
-        self.errorHandler?(error:error)
+        self.delegate?.heartRateMonitorError(error)
     }//eom
 }//eoc
 

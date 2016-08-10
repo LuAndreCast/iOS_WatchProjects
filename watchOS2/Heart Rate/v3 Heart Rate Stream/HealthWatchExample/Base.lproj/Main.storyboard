@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="jP9-md-FEe"/>
                                 </constraints>
-                                <state key="normal" title="Start Monitoring"/>
+                                <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startEndMonitoring:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsN-wL-UCE"/>
                                 </connections>
