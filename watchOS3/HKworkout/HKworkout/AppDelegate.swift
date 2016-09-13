@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Request Permission
     func requestHKpermission()
     {
-        //temp
-        let temp1 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
-        let temp3 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!
-        let temp2 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
+//        //temp
+//        let temp1 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
+//        let temp3 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!
+//        let temp2 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
         
         
         if let hrQuantityType:HKQuantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
@@ -34,11 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if #available(iOS 10.0, *)
             {
-                hkQuantities = [ hrQuantityType, HKObjectType.workoutType() , temp1, temp2, temp3]
+                hkQuantities = [ hrQuantityType, HKObjectType.workoutType() ]
             }
             else
             {
-                hkQuantities = [ hrQuantityType, temp1, temp2, temp3 ]
+                hkQuantities = [ hrQuantityType ]
             }
             
             

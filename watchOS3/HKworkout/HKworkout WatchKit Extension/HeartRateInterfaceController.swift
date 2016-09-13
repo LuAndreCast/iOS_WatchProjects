@@ -239,7 +239,6 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         print("workout session did fail with error: \(error)")
         
         //notify iphone
-        
         self.messageLabel.setText("workout error: \(error.localizedDescription)")
     }//eom
     

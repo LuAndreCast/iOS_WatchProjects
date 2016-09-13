@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F7682B891D8841AF00C86B0D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B881D8841AF00C86B0D /* Error.swift */; };
 		F7682B8A1D8841AF00C86B0D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B881D8841AF00C86B0D /* Error.swift */; };
+		F7682B8C1D8854F600C86B0D /* HealthStoreMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B8B1D8854F600C86B0D /* HealthStoreMonitor.swift */; };
+		F7682B901D8857AE00C86B0D /* HeartRateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B8F1D8857AE00C86B0D /* HeartRateParser.swift */; };
+		F7682B921D8857B800C86B0D /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B911D8857B800C86B0D /* HeartRate.swift */; };
 		F77C6C791D8755600095D2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C781D8755600095D2FA /* AppDelegate.swift */; };
 		F77C6C7B1D8755600095D2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C7A1D8755600095D2FA /* ViewController.swift */; };
 		F77C6C7E1D8755600095D2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C6C7C1D8755600095D2FA /* Main.storyboard */; };
@@ -28,8 +31,6 @@
 		F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
 		F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
 		F77C6CBE1D875AE80095D2FA /* ParentConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */; };
-		F77C6CC01D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */; };
-		F77C6CC11D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,9 @@
 
 /* Begin PBXFileReference section */
 		F7682B881D8841AF00C86B0D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		F7682B8B1D8854F600C86B0D /* HealthStoreMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreMonitor.swift; sourceTree = "<group>"; };
+		F7682B8F1D8857AE00C86B0D /* HeartRateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateParser.swift; sourceTree = "<group>"; };
+		F7682B911D8857B800C86B0D /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		F77C6C751D8755600095D2FA /* HKworkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKworkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77C6C781D8755600095D2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F77C6C7A1D8755600095D2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +103,6 @@
 		F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStorePermission.swift; sourceTree = "<group>"; };
 		F77C6CB91D875AE10095D2FA /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentConnector.swift; sourceTree = "<group>"; };
-		F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKQuantityTypeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +125,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F77C6C6C1D8755600095D2FA = {
+		F7682B8D1D88552C00C86B0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */,
-				F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */,
+				F7682B8F1D8857AE00C86B0D /* HeartRateParser.swift */,
+				F7682B911D8857B800C86B0D /* HeartRate.swift */,
 				F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */,
 				F77C6CB91D875AE10095D2FA /* Utilities.swift */,
 				F7682B881D8841AF00C86B0D /* Error.swift */,
+				F7682B8E1D88554000C86B0D /* Health Store */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F7682B8E1D88554000C86B0D /* Health Store */ = {
+			isa = PBXGroup;
+			children = (
+				F7682B8B1D8854F600C86B0D /* HealthStoreMonitor.swift */,
+				F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */,
+			);
+			name = "Health Store";
+			sourceTree = "<group>";
+		};
+		F77C6C6C1D8755600095D2FA = {
+			isa = PBXGroup;
+			children = (
+				F7682B8D1D88552C00C86B0D /* Models */,
 				F77C6C771D8755600095D2FA /* HKworkout */,
 				F77C6C8B1D8755600095D2FA /* HKworkout WatchKit App */,
 				F77C6C9A1D8755600095D2FA /* HKworkout WatchKit Extension */,
@@ -344,12 +365,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7682B8C1D8854F600C86B0D /* HealthStoreMonitor.swift in Sources */,
 				F77C6C7B1D8755600095D2FA /* ViewController.swift in Sources */,
+				F7682B921D8857B800C86B0D /* HeartRate.swift in Sources */,
 				F77C6CB71D8756800095D2FA /* HealthStorePermission.swift in Sources */,
 				F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */,
 				F77C6C791D8755600095D2FA /* AppDelegate.swift in Sources */,
+				F7682B901D8857AE00C86B0D /* HeartRateParser.swift in Sources */,
 				F7682B891D8841AF00C86B0D /* Error.swift in Sources */,
-				F77C6CC01D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +386,6 @@
 				F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */,
 				F77C6C9C1D8755600095D2FA /* HeartRateInterfaceController.swift in Sources */,
 				F7682B8A1D8841AF00C86B0D /* Error.swift in Sources */,
-				F77C6CC11D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

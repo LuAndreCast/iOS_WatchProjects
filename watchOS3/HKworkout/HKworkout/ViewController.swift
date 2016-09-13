@@ -10,39 +10,36 @@ import UIKit
 import WatchConnectivity
 import HealthKit
 
-class ViewController: UIViewController, WCSessionDelegate {
+class ViewController: UIViewController, WCSessionDelegate, healthStoreMonitorDelegate {
     
     //MARK: - Models
+    let hkMonitor:HealthStoreMonitor = HealthStoreMonitor()
+    let hrParser:HeartRateParser = HeartRateParser()
     
     //MARK: - UI Properties
     @IBOutlet var workoutSessionState: UILabel!
+    @IBOutlet var heartRateInfoLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
     @IBOutlet weak var startAppButton: UIButton!
+    
     
     //MARK: - Properties
     var configuration:HKWorkoutConfiguration?
     let healthStore:HKHealthStore = HKHealthStore()
     var wcSessionActivationCompletion: ( (WCSession)->Void  )?
     
-    
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }//eom
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        
+        hkMonitor.delegate = self
     }//eom
-
-    
+   
+    //MARK: - Actions
     @IBAction func startApp(_ sender: AnyObject) {
         self.startWatchApp()
     }
-    
     
     //MARK: - Workout
     func startWatchApp()
@@ -61,26 +58,37 @@ class ViewController: UIViewController, WCSessionDelegate {
                         { (success:Bool, error:Error?) in
                             if error != nil
                             {
-                                print("\(error?.localizedDescription)")
+                                self.updateMessage(message: error!.localizedDescription)
                             }
                             else if success
                             {
-                                print("Started watch app!")
+                                self.updateMessage(message: "started watch app")
                             }
                             else
                             {
-                                print("what happen!?")
+                                self.updateMessage(message: "What happen with start watch app!?")
                             }
                     })
                 }
                 else
                 {
-                    //send message to phone
+                    //send a message to watch
                 }
             }
             else
             {
-                // notify user watch app is not installed
+                if session.isReachable == false
+                {
+                    self.updateMessage(message: "watch is not reachable")
+                }
+                else if session.isWatchAppInstalled == false
+                {
+                    self.updateMessage(message: "watch app is not installed")
+                }
+                else
+                {
+                    self.updateMessage(message: "un-able to communicate with watch")
+                }
             }
         }
     }//eom
@@ -114,8 +122,40 @@ class ViewController: UIViewController, WCSessionDelegate {
     //MARK: - UI Helpers
     func updateSessionState(_ state:String)
     {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async
+        {
             self.workoutSessionState.text = state
+            
+            if state == "running"
+            {
+                self.startMonitoringHR()
+            }
+            else
+            {
+                self.endMonitoringHR()
+            }
+        }
+    }//eom
+    
+    func updateResults(results:[HeartRate])
+    {
+        let firstSample:HeartRate = results.first!
+        let hrDate = firstSample.dateString
+        let hrTime = firstSample.timeString
+        let hrValue = firstSample.value
+        
+        DispatchQueue.main.async {
+            self.heartRateInfoLabel.text = "\(hrValue) bpm \n\(hrTime) \n\(hrDate)"
+            print("\(hrValue) bpm \n\(hrTime) \n\(hrDate)")
+        }
+    }//eom
+    
+    func updateMessage(message:String)
+    {
+        print("\(message)")
+        
+        DispatchQueue.main.sync {
+            self.messageLabel.text = "\(message)"
         }
     }//eom
     
@@ -126,7 +166,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     {
         if error != nil
         {
-            print("\(error?.localizedDescription)")
+            self.updateMessage(message: error!.localizedDescription)
         }
         
         switch activationState
@@ -164,12 +204,38 @@ class ViewController: UIViewController, WCSessionDelegate {
     }//eom
     
     
+    
+    //MARK: - Health Store Monitor Helpers
+    func startMonitoringHR()
+    {
+        if let sampleHRType:HKSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
+        {
+            hkMonitor.startMonitoring(healthStore: self.healthStore, sampleType: sampleHRType)
+        }
+    }//eom
+    
+    func endMonitoringHR()
+    {
+        hkMonitor.endMonitoring()
+    }//eom
+    
+    //MARK: - Health Store Monitor Delegates
+    func healthStoreMonitorError(error: NSError) {
+        self.updateMessage(message: error.localizedDescription)
+    }//eom
+    
+    func healthStoreMonitorResults(results: [HKSample]) {
+        if results.count > 0 {
+            let hrSamples:[HeartRate] = hrParser.parseFromSamples(samples: results)
+            self.updateResults(results: hrSamples)
+        }
+    }//eom
+    
     //MARK: - Memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }//eoc
 

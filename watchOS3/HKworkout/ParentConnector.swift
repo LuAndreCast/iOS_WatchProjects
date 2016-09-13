@@ -12,13 +12,10 @@ import WatchConnectivity
 class ParentConnector : NSObject, WCSessionDelegate
 {
     // MARK: Properties
-    
     var wcSession: WCSession?
-    
     var statesToSend = [String]()
     
     // MARK: Utility methods
-    
     func send(state: String)
     {
         if let session = wcSession
@@ -40,12 +37,19 @@ class ParentConnector : NSObject, WCSessionDelegate
     func session(_ session: WCSession,
                  activationDidCompleteWith activationState: WCSessionActivationState, error: Error?)
     {
-        if activationState == .activated
+        if error != nil
         {
-            wcSession = session
-            sendPending()
+        
         }
-    }
+        else
+        {
+            if activationState == .activated
+            {
+                wcSession = session
+                sendPending()
+            }
+        }
+    }//eom
     
     
     //MARK: - WCSession helpers
@@ -62,5 +66,5 @@ class ParentConnector : NSObject, WCSessionDelegate
                 statesToSend.removeAll()
             }
         }
-    }
+    }//eom
 }
