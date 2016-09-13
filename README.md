@@ -32,6 +32,30 @@ The Apple Watch is able to send message to phone
 The phone will recognize this - error sending message.
 
 
+###watchOS3
+
+
+#####App Launching
+
+
+#####HealthKitWorkout
+Make sure to update the plist with health kit share and update descriptions:
+
+<key>NSHealthUpdateUsageDescription</key>
+<string>testing health kit</string>
+<key>NSHealthShareUsageDescription</key>
+<string>testing health kit</string>
+
+
+
+#####Heart Rate Streaming
+
+
+
+###Xcode Issues
+Problem: (No Paired Apple Watch)
+Solution: Cloxe Xcode and remove directories inside the path ~/Library/Developer/Xcode/watchOS DeviceSupport/
+
 
 
 
