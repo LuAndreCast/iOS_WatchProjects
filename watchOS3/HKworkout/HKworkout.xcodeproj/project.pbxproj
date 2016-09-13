@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7682B891D8841AF00C86B0D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B881D8841AF00C86B0D /* Error.swift */; };
+		F7682B8A1D8841AF00C86B0D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7682B881D8841AF00C86B0D /* Error.swift */; };
 		F77C6C791D8755600095D2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C781D8755600095D2FA /* AppDelegate.swift */; };
 		F77C6C7B1D8755600095D2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C7A1D8755600095D2FA /* ViewController.swift */; };
 		F77C6C7E1D8755600095D2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C6C7C1D8755600095D2FA /* Main.storyboard */; };
@@ -16,9 +18,18 @@
 		F77C6C8E1D8755600095D2FA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C6C8C1D8755600095D2FA /* Interface.storyboard */; };
 		F77C6C901D8755600095D2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77C6C8F1D8755600095D2FA /* Assets.xcassets */; };
 		F77C6C971D8755600095D2FA /* HKworkout WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F77C6C961D8755600095D2FA /* HKworkout WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F77C6C9C1D8755600095D2FA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C9B1D8755600095D2FA /* InterfaceController.swift */; };
+		F77C6C9C1D8755600095D2FA /* HeartRateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C9B1D8755600095D2FA /* HeartRateInterfaceController.swift */; };
 		F77C6C9E1D8755600095D2FA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6C9D1D8755600095D2FA /* ExtensionDelegate.swift */; };
 		F77C6CA01D8755600095D2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77C6C9F1D8755600095D2FA /* Assets.xcassets */; };
+		F77C6CB21D8755680095D2FA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77C6CB11D8755680095D2FA /* HealthKit.framework */; };
+		F77C6CB51D87557E0095D2FA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77C6CB41D87557E0095D2FA /* HealthKit.framework */; };
+		F77C6CB71D8756800095D2FA /* HealthStorePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */; };
+		F77C6CB81D8756800095D2FA /* HealthStorePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */; };
+		F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
+		F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
+		F77C6CBE1D875AE80095D2FA /* ParentConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */; };
+		F77C6CC01D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */; };
+		F77C6CC11D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F7682B881D8841AF00C86B0D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		F77C6C751D8755600095D2FA /* HKworkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKworkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77C6C781D8755600095D2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F77C6C7A1D8755600095D2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,10 +88,18 @@
 		F77C6C8F1D8755600095D2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F77C6C911D8755600095D2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F77C6C961D8755600095D2FA /* HKworkout WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HKworkout WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F77C6C9B1D8755600095D2FA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F77C6C9B1D8755600095D2FA /* HeartRateInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateInterfaceController.swift; sourceTree = "<group>"; };
 		F77C6C9D1D8755600095D2FA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		F77C6C9F1D8755600095D2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F77C6CA11D8755600095D2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77C6CAF1D8755670095D2FA /* HKworkout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HKworkout.entitlements; sourceTree = "<group>"; };
+		F77C6CB11D8755680095D2FA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F77C6CB31D87557E0095D2FA /* HKworkout WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HKworkout WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		F77C6CB41D87557E0095D2FA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStorePermission.swift; sourceTree = "<group>"; };
+		F77C6CB91D875AE10095D2FA /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentConnector.swift; sourceTree = "<group>"; };
+		F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKQuantityTypeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77C6CB21D8755680095D2FA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77C6CB51D87557E0095D2FA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +125,16 @@
 		F77C6C6C1D8755600095D2FA = {
 			isa = PBXGroup;
 			children = (
+				F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */,
+				F77C6CBF1D875AEF0095D2FA /* HKQuantityTypeExtension.swift */,
+				F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */,
+				F77C6CB91D875AE10095D2FA /* Utilities.swift */,
+				F7682B881D8841AF00C86B0D /* Error.swift */,
 				F77C6C771D8755600095D2FA /* HKworkout */,
 				F77C6C8B1D8755600095D2FA /* HKworkout WatchKit App */,
 				F77C6C9A1D8755600095D2FA /* HKworkout WatchKit Extension */,
 				F77C6C761D8755600095D2FA /* Products */,
+				F77C6CB01D8755680095D2FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +151,7 @@
 		F77C6C771D8755600095D2FA /* HKworkout */ = {
 			isa = PBXGroup;
 			children = (
+				F77C6CAF1D8755670095D2FA /* HKworkout.entitlements */,
 				F77C6C781D8755600095D2FA /* AppDelegate.swift */,
 				F77C6C7A1D8755600095D2FA /* ViewController.swift */,
 				F77C6C7C1D8755600095D2FA /* Main.storyboard */,
@@ -146,12 +175,22 @@
 		F77C6C9A1D8755600095D2FA /* HKworkout WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F77C6C9B1D8755600095D2FA /* InterfaceController.swift */,
+				F77C6CB31D87557E0095D2FA /* HKworkout WatchKit Extension.entitlements */,
 				F77C6C9D1D8755600095D2FA /* ExtensionDelegate.swift */,
+				F77C6C9B1D8755600095D2FA /* HeartRateInterfaceController.swift */,
 				F77C6C9F1D8755600095D2FA /* Assets.xcassets */,
 				F77C6CA11D8755600095D2FA /* Info.plist */,
 			);
 			path = "HKworkout WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F77C6CB01D8755680095D2FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F77C6CB41D87557E0095D2FA /* HealthKit.framework */,
+				F77C6CB11D8755680095D2FA /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +263,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y24U4BPF65;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					F77C6C861D8755600095D2FA = {
 						CreatedOnToolsVersion = 8.0;
@@ -234,6 +278,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y24U4BPF65;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -293,7 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77C6C7B1D8755600095D2FA /* ViewController.swift in Sources */,
+				F77C6CB71D8756800095D2FA /* HealthStorePermission.swift in Sources */,
+				F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */,
 				F77C6C791D8755600095D2FA /* AppDelegate.swift in Sources */,
+				F7682B891D8841AF00C86B0D /* Error.swift in Sources */,
+				F77C6CC01D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +358,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77C6C9E1D8755600095D2FA /* ExtensionDelegate.swift in Sources */,
-				F77C6C9C1D8755600095D2FA /* InterfaceController.swift in Sources */,
+				F77C6CB81D8756800095D2FA /* HealthStorePermission.swift in Sources */,
+				F77C6CBE1D875AE80095D2FA /* ParentConnector.swift in Sources */,
+				F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */,
+				F77C6C9C1D8755600095D2FA /* HeartRateInterfaceController.swift in Sources */,
+				F7682B8A1D8841AF00C86B0D /* Error.swift in Sources */,
+				F77C6CC11D875AEF0095D2FA /* HKQuantityTypeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HKworkout WatchKit Extension/HKworkout WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = "HKworkout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -461,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HKworkout WatchKit Extension/HKworkout WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = "HKworkout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -514,8 +577,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HKworkout/HKworkout.entitlements;
 				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = HKworkout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.HKworkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,8 +592,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HKworkout/HKworkout.entitlements;
 				DEVELOPMENT_TEAM = Y24U4BPF65;
 				INFOPLIST_FILE = HKworkout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LC.HKworkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,6 +622,7 @@
 				F77C6CA61D8755600095D2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F77C6CA81D8755600095D2FA /* Build configuration list for PBXNativeTarget "HKworkout WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +631,7 @@
 				F77C6CAA1D8755600095D2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F77C6CAC1D8755600095D2FA /* Build configuration list for PBXNativeTarget "HKworkout" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +640,7 @@
 				F77C6CAE1D8755600095D2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

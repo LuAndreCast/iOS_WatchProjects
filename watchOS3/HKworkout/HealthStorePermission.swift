@@ -10,7 +10,7 @@ class HealthStorePermission: NSObject
 {
     //MARK: - Permission Request
     func requestPermission(healthStore:HKHealthStore,
-                           types:[HKQuantityType],
+                           types:[HKObjectType],
                            withWriting:Bool = false,
                            completionHandler:@escaping (Bool, Error?)->Void )
     {
@@ -20,17 +20,18 @@ class HealthStorePermission: NSObject
             var readingSets:Set<HKObjectType> = []
             var writingSets:Set<HKSampleType> = []
         
-            for currType:HKQuantityType in types
+            for currType:HKObjectType in types
             {
                 //reading rights
-                let currObjectType:HKObjectType = currType
-                readingSets.insert(currObjectType)
+                readingSets.insert(currType)
                 
                 //writing rights
                 if withWriting == true
                 {
-                    let currSampleType:HKSampleType = currType
-                    writingSets.insert(currSampleType)
+                    if let currSampleType:HKSampleType = currType as? HKSampleType
+                    {
+                        writingSets.insert(currSampleType)
+                    }
                 }
             }//eom
             

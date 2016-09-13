@@ -8,16 +8,64 @@
 
 import UIKit
 
+import HealthKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
+    //MARK: - Request Permission
+    func requestHKpermission()
+    {
+        //temp
+        let temp1 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
+        let temp3 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!
+        let temp2 = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
+        
+        
+        if let hrQuantityType:HKQuantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
+        {
+            let healthStore:HKHealthStore = HKHealthStore()
+            let hkPermission:HealthStorePermission = HealthStorePermission()
+            
+            var hkQuantities:[HKObjectType] = []
+            
+            if #available(iOS 10.0, *)
+            {
+                hkQuantities = [ hrQuantityType, HKObjectType.workoutType() , temp1, temp2, temp3]
+            }
+            else
+            {
+                hkQuantities = [ hrQuantityType, temp1, temp2, temp3 ]
+            }
+            
+            
+            hkPermission.requestPermission(healthStore: healthStore,
+                                                      types: hkQuantities,
+                                                      withWriting: false)
+            { (success:Bool, error:Error?) in
+                if error != nil
+                {
+                    print("\(error!.localizedDescription)")
+                }
+            }
+            
+        }
+    }//eom
+    
+    
+    //MARK: - Lifecycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /* request HealthStore Permission */
+        self.requestHKpermission()
+            
         return true
-    }
+    }//eom
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -8,8 +8,24 @@
 
 import WatchKit
 
+import HealthKit
+
+
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    
+    //MARK: - Workout Configuration
+    @available(iOS 10.0, *)
+    func handle(_ workoutConfiguration: HKWorkoutConfiguration)
+    {
+        let controllerNames = ["HeartRateInterfaceController"]
+        let contextPassing = [workoutConfiguration]
+        
+        WKInterfaceController.reloadRootControllers(withNames: controllerNames, contexts: contextPassing)
+    }//eom
+    
+    //MARK: -
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
     }
