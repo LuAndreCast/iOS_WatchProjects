@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--HeartRateInterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="HeartRateInterfaceController" id="AgC-eL-Hgc" customClass="HeartRateInterfaceController" customModule="HKworkout_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Label" numberOfLines="2" id="cPG-lF-3tm">
+                            <color key="textColor" red="1" green="0.041046944600000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="center" text="Label" id="Ugi-As-aAc">
+                            <color key="textColor" red="1" green="0.97880674710000004" blue="0.13324607359999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label width="136" alignment="left" alpha="0.0" text="Marker Saved!" textAlignment="right" id="AvK-b6-jkN">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <group width="1" alignment="left" id="bs0-s2-1fg">
+                            <items>
+                                <button width="0.5" alignment="left" title="Pause" id="bAR-50-nYa">
+                                    <connections>
+                                        <action selector="didTapPauseResumeButton" destination="AgC-eL-Hgc" id="gfS-eg-RmQ"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Stop" id="q2o-v9-mhL">
+                                    <connections>
+                                        <action selector="didTapStopButton" destination="AgC-eL-Hgc" id="3Yz-ws-oOz"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="right" verticalAlignment="bottom" title="Start" id="MyQ-gI-KK7">
+                            <connections>
+                                <action selector="didTapStartButton" destination="AgC-eL-Hgc" id="XCa-V1-HmC"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="heartRateLabel" destination="cPG-lF-3tm" id="mr5-aJ-oiW"/>
+                        <outlet property="markerLabel" destination="AvK-b6-jkN" id="m0f-yZ-8SQ"/>
+                        <outlet property="messageLabel" destination="Ugi-As-aAc" id="5pu-N0-tqQ"/>
+                        <outlet property="pauseResumeButton" destination="bAR-50-nYa" id="vuq-Vj-gBz"/>
+                        <outlet property="startButton" destination="MyQ-gI-KK7" id="MbP-hd-WHh"/>
+                        <outlet property="stopButton" destination="q2o-v9-mhL" id="dEZ-tj-iHV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-32" y="31"/>
+        </scene>
+    </scenes>
+</document>
