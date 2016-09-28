@@ -8,11 +8,19 @@
 
 import Foundation
 
-struct Errors {
-    
-    
-    //MARK: - HealthStore
+@objc enum heartRateMonitoringError:Int
+{
+    case communicationWithWatch
+    case healthStoreMonitor
+    case workout
+    case notSupported
+    case none
+}//eom
 
+
+struct Errors
+{
+    //MARK: - HealthStore
     struct healthStore
     {
         static let domain:String = "healthkit.healthStore"

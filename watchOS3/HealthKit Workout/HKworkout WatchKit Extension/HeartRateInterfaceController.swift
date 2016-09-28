@@ -10,13 +10,10 @@ import WatchKit
 import Foundation
 import HealthKit
 
-class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
+class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WatchCommunicatorDelegate {
 
-//    let heartRate:HKQuantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-    
     //MARK: - Models
-    let parentConnector = ParentConnector()
-    
+    let watchCom:WatchCommunicator = WatchCommunicator()
     
     //MARK: -Properties
     let healthStore = HKHealthStore()
@@ -30,158 +27,106 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     var workoutEvents = [HKWorkoutEvent]()
     var metadata = [String: AnyObject]()
     
-    //var timer : Timer?
+    var timer : Timer?
     var isPaused = false
     
     // MARK: IBOutlets
     @IBOutlet var heartRateLabel: WKInterfaceLabel!
     @IBOutlet var messageLabel: WKInterfaceLabel!
-    
-    @IBOutlet var markerLabel: WKInterfaceLabel!
+    @IBOutlet var workoutStateLabel: WKInterfaceLabel!
     
     @IBOutlet var pauseResumeButton : WKInterfaceButton!
     @IBOutlet var stopButton: WKInterfaceButton!
     @IBOutlet var startButton: WKInterfaceButton!
     
     
-    // MARK: Interface Controller Overrides
-    
+    // MARK: - Lifecycle
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        /* */
-        self.heartRateLabel.setText(" ")
-        self.messageLabel.setText(" ")
+        /* UI Setup */
+        heartRateLabel.setText(" ")
+        messageLabel.setText(" ")
+        workoutStateLabel.setText(" ")
+        
+        /* Communicator Setup */
+        watchCom.delegate = self
+        watchCom.setup()
         
         /* Start a workout session with the configuration */
         if #available(watchOSApplicationExtension 3.0, *)
         {
-            let workoutConfiguration:HKWorkoutConfiguration? = context as! HKWorkoutConfiguration?
-            self.prepWorkoutConfigAndAttemptToStartWorkout(workoutConfig: workoutConfiguration)
+            if context != nil
+            {
+                let workoutConfiguration:HKWorkoutConfiguration? = context as! HKWorkoutConfiguration?
+                self.prepWorkoutConfigAndAttemptToStartWorkout(workoutConfig: workoutConfiguration)
+            }
         }
         else
         {
             self.prepDefaultAndStartWorkout()
         }
+    }//eom
+    
+    override func willDisappear() {
+        super.willDisappear()
         
     }//eom
     
-    // MARK: UI Actions
+    // MARK: - UI Actions
     @IBAction func didTapPauseResumeButton()
     {
-        if let session = workoutSession
-        {
-            switch session.state
-            {
-                case .running:
-                    healthStore.pause(_: session)
-                case .paused:
-                    healthStore.resumeWorkoutSession(_: session)
-                default:
-                    break
-            }
-        }
-    }
+        self.pauseWorkoutSession()
+    }//eo-a
     
     @IBAction func didTapStopButton()
     {
-        self.workoutEndDate = Date()
-        
-        // End the Workout Session
-        self.healthStore.end(workoutSession!)
-    }
+        self.stopWorkoutSession()
+    }//eo-a
     
     @IBAction func didTapStartButton()
     {
         self.prepDefaultAndStartWorkout()
-    }//eom
+    }//eo-a
     
-    @available(watchOSApplicationExtension 2.0, *)
-    private func prepDefaultAndStartWorkout()
+    
+    // MARK: - UI Helpers
+    func updateLabels()
     {
-        let workoutActivity:HKWorkoutActivityType = HKWorkoutActivityType.other
-        let workoutLocation:HKWorkoutSessionLocationType = HKWorkoutSessionLocationType.unknown
-        
-        self.workoutSession = HKWorkoutSession(activityType: workoutActivity, locationType: workoutLocation)
-        
-        self.startWorkoutSession()
+        let duration = computeDurationOfWorkout(withEvents: workoutEvents, startDate: workoutStartDate, endDate: workoutEndDate)
+        print("duration \(duration)")
     }//eom
     
-    
-    @available(watchOSApplicationExtension 3.0, *)
-    private func prepWorkoutConfigAndAttemptToStartWorkout(workoutConfig:HKWorkoutConfiguration?)
+    func updateState()
     {
-        /* attempting to set workout with workconfig provided */
-        if workoutConfig != nil
-        {
-            do
-            {
-                self.workoutSession = try HKWorkoutSession(configuration: workoutConfig!)
-                self.startWorkoutSession()
-            }
-            catch
-            {
-                self.messageLabel.setText("un-able to start workout")
-                
-                /* provided workout config failed, attempting generic/defualt config */
-                self.prepDefaultAndStartWorkout()
-            }
-        }
-        /* no config, resorting to default config */
-        else
-        {
-            self.prepDefaultAndStartWorkout()
-        }
-    }//eom
-    
-    private func startWorkoutSession()
-    {
-        self.workoutSession?.delegate = self
-        
-        self.workoutStartDate = Date()
-        self.healthStore.start(workoutSession!)
-        
-        self.messageLabel.setText("workout setup")
-    }//eom
-    
-    // MARK: Convenience
-    func updateState() {
         if let session = workoutSession
         {
             switch session.state {
             case .running:
                 setTitle("Active Workout")
-                parentConnector.send(state: "running")
+                watchCom.sendState(state:workoutState.running.toString())
                 pauseResumeButton.setTitle("Pause")
-                
-                self.messageLabel.setText("workout: running")
+                self.workoutStateLabel.setText("workout: running")
             case .paused:
                 setTitle("Paused Workout")
-                parentConnector.send(state: "paused")
+                watchCom.sendState(state:workoutState.paused.toString())
                 pauseResumeButton.setTitle("Resume")
-                self.messageLabel.setText("workout: paused")
+                self.workoutStateLabel.setText("workout: paused")
                 
-            case .notStarted, .ended:
+            case .ended:
                 setTitle("Workout")
-                parentConnector.send(state: "ended")
-                self.messageLabel.setText("workout: ended")
+                watchCom.sendState(state:workoutState.ended.toString())
+                self.workoutStateLabel.setText("workout: ended")
+                workoutEvents .removeAll()
+            case .notStarted:
+                setTitle("Workout")
+                watchCom.sendState(state:workoutState.notStarted.toString())
+                self.workoutStateLabel.setText("workout: notStarted")
             }
-        }
-    }
-    
-    func notifyEvent(_: HKWorkoutEvent)
-    {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async
-        {
-            weakSelf?.markerLabel.setAlpha(1)
-            WKInterfaceDevice.current().play(.notification)
-            DispatchQueue.main.asyncAfter (deadline: .now()+1) {
-                weakSelf?.markerLabel.setAlpha(0)
-            }
+            
         }
     }//eom
+ 
     
     // MARK: - Data Queries
     func startQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier)
@@ -226,12 +171,11 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
                     }
                     else
                     {
-                        print("unknown type! \(quantityTypeIdentifier) with sample: \(sample)")
-                        
                         strongSelf.messageLabel.setText("unknown type! \(quantityTypeIdentifier)")
                     }
                 }//eofl
-            }
+            }//eo-samples
+            strongSelf.updateLabels()
         }
     }//eom
     
@@ -239,7 +183,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     func startAccumulatingData(startDate: Date) {
         startQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier.heartRate)
         
-        //startTimer()
+        startTimer()
     }//eom
     
     func stopAccumulatingData() {
@@ -248,7 +192,7 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         }
         
         activeDataQueries.removeAll()
-        //stopTimer()
+        stopTimer()
         
         if self.workoutSession != nil
         {
@@ -270,29 +214,139 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
     }//eom
     
     // MARK: - Timer
-//    func startTimer() {
-//        timer = Timer.scheduledTimer(timeInterval: 1,
-//                                     target: self,
-//                                     selector: #selector(timerDidFire),
-//                                     userInfo: nil,
-//                                     repeats: true)
-//    }//eom
-//    
-//    func timerDidFire(timer: Timer) {
-//        
-//    }//eom
-//    
-//    func stopTimer() {
-//        timer?.invalidate()
-//    }//eom
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerDidFire),
+                                     userInfo: nil,
+                                     repeats: true)
+    }//eom
+    
+    func timerDidFire(timer: Timer) {
+         updateLabels()
+    }//eom
+    
+    func stopTimer() {
+        timer?.invalidate()
+    }//eom
+    
+    //MARK: - Workout Handlers
+    func handleWorkoutCommand(commandReceived:String)
+    {
+        switch commandReceived
+        {
+            case "Start":
+                self.prepDefaultAndStartWorkout()
+                break
+                
+            case "Stop":
+                self.stopWorkoutSession()
+                break
+                
+            case "Pause":
+                self.pauseWorkoutSession()
+                break
+            default:
+                break
+        }
+    }//eom
+    
+    //MARK: - Workout Session (Stop / Pause)
+    private func stopWorkoutSession()
+    {
+        messageLabel.setText(" ")
+        workoutStateLabel.setText(" ")
+        
+        workoutEndDate = Date()
+        healthStore.end(workoutSession!)
+    }//eom
+    
+    private func pauseWorkoutSession()
+    {
+        workoutStateLabel.setText(" ")
+        
+        if let session = workoutSession
+        {
+            switch session.state
+            {
+                case .running:
+                    healthStore.pause(_: session)
+                case .paused:
+                    healthStore.resumeWorkoutSession(_: session)
+                default:
+                    break
+            }
+        }
+    }//eom
+    
+    //MARK: Workout Session (Start)
+    @available(watchOSApplicationExtension 2.0, *)
+    private func prepDefaultAndStartWorkout()
+    {
+//        guard workoutSession == nil else
+//        {
+//            messageLabel.setText("wk. alr. started")
+//            return
+//        }
+        
+        messageLabel.setText(" ")
+        
+        let workoutActivity:HKWorkoutActivityType = HKWorkoutActivityType.other
+        let workoutLocation:HKWorkoutSessionLocationType = HKWorkoutSessionLocationType.unknown
+        
+        workoutSession = HKWorkoutSession(activityType: workoutActivity, locationType: workoutLocation)
+        
+        workoutSession?.delegate = self
+        
+        workoutStartDate = Date()
+        healthStore.start(workoutSession!)
+        
+        messageLabel.setText("workout setup")
+
+    }//eom
+    
+    
+    @available(watchOSApplicationExtension 3.0, *)
+    private func prepWorkoutConfigAndAttemptToStartWorkout(workoutConfig:HKWorkoutConfiguration?)
+    {
+//        guard workoutSession == nil else
+//        {
+//            messageLabel.setText("wk. alr. started")
+//            return
+//        }
+        
+        /* attempting to set workout with workconfig provided */
+        if workoutConfig != nil
+        {
+            do
+            {
+                workoutSession = try HKWorkoutSession(configuration: workoutConfig!)
+                workoutSession?.delegate = self
+                
+                workoutStartDate = Date()
+                healthStore.start(workoutSession!)
+                
+                messageLabel.setText("workout setup")
+            }
+            catch
+            {
+                messageLabel.setText("un-able to start workout")
+                
+                /* provided workout config failed, attempting generic/defualt config */
+                prepDefaultAndStartWorkout()
+            }
+        }
+        /* no config, resorting to default config */
+        else
+        {
+            prepDefaultAndStartWorkout()
+        }
+    }//eom
     
     // MARK: - HKWorkoutSessionDelegate
-    
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
-        print("workout session did fail with error: \(error)")
-        
         //notify iphone
-        self.messageLabel.setText("workout error: \(error.localizedDescription)")
+        messageLabel.setText("wk error: \(error.localizedDescription)")
     }//eom
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didGenerate event: HKWorkoutEvent) {
@@ -327,6 +381,76 @@ class HeartRateInterfaceController: WKInterfaceController, HKWorkoutSessionDeleg
         updateState()
     }//eom
     
+    // MARK: - Communicator Delegates
+    func watchCommunicator(stateChanged: connectionState) {
+        switch stateChanged
+        {
+            case .activated:
+                messageLabel.setText("comm activated")
+                break
+            case .deactivated:
+                messageLabel.setText("comm deactived")
+                watchCom.setup()
+                break
+            case .inactive:
+                //stop sending messages
+                messageLabel.setText("comm inactive")
+                break
+            case .notActivated:
+                messageLabel.setText("comm not actived")
+                break
+            case .notSupported:
+                messageLabel.setText("comm not supported")
+                //let user know
+                break
+            case .unknownActivation:
+                messageLabel.setText("comm unknown")
+                break
+            default:
+                break
+        }
+    }//eom
     
+    func watchCommunicator(messageReceived: [String : Any] )->[String : Any]
+    {
+        print("message Received \(messageReceived)")
+        
+        if let commandRcvd:String = messageReceived["Command"] as! String?
+        {
+            if Thread.isMainThread
+            {
+                handleWorkoutCommand(commandReceived: commandRcvd)
+            }
+            else
+            {
+                DispatchQueue.main.async {
+                    self.handleWorkoutCommand(commandReceived: commandRcvd)
+                }
+            }
+        }//eo-command
+        
+        let message = ["reply":"msg rcvd"]
+        return message
+        
+    }//eom
+    
+    func watchCommunicator(contextReceived: [String : Any] )
+    {
+        print("context received \(contextReceived)")
+        
+        if let commandRcvd:String = contextReceived["Command"] as! String?
+        {
+            if Thread.isMainThread
+            {
+                handleWorkoutCommand(commandReceived: commandRcvd)
+            }
+            else
+            {
+                DispatchQueue.main.async {
+                    self.handleWorkoutCommand(commandReceived: commandRcvd)
+                }
+            }
+        }//eo-command
+    }//eom
     
 }//eoc

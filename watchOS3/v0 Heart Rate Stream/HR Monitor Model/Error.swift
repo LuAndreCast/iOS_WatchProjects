@@ -16,17 +16,43 @@ struct Errors {
     struct healthStore
     {
         static let domain:String = "healthkit.healthStore"
-        
+        struct unknown
+        {
+            static let code         = 100
+            static let description  = [NSLocalizedDescriptionKey : "unknown"]
+            func toString()->String
+            {
+                return "unknown"
+            }
+        }
         struct avaliableData
         {
             static let code         = 101
             static let description  = [NSLocalizedDescriptionKey : "Health Store Data is Not avaliable"]
+        }
+        struct permission
+        {
+            static let code         = 102
+            static let description  = [NSLocalizedDescriptionKey : "Health Store permission not granted"]
+            func toString()->String
+            {
+                return "permission"
+            }
         }
     }//eo
     
     struct heartRate
     {
         static let domain:String = "healthkit.heartRate"
+        struct unknown
+        {
+            static let code         = 200
+            static let description  = [NSLocalizedDescriptionKey : "unknown"]
+            func toString()->String
+            {
+                return "unknown"
+            }
+        }
         struct quantity
         {
             static let code         = 201
@@ -37,6 +63,15 @@ struct Errors {
     struct workOut
     {
         static let domain:String = "healthkit.workout"
+        struct unknown
+        {
+            static let code         = 300
+            static let description  = [NSLocalizedDescriptionKey : "unknown"]
+            func toString()->String
+            {
+                return "unknown"
+            }
+        }
         struct start
         {
             static let code         = 301
@@ -47,6 +82,7 @@ struct Errors {
             static let code         = 302
             static let description  = [NSLocalizedDescriptionKey : "un-able to end workout"]
         }
+        
     }//eo
     
     
@@ -54,6 +90,15 @@ struct Errors {
     struct monitoring
     {
         static let domain:String = ""
+        struct unknown
+        {
+            static let code         = 400
+            static let description  = [NSLocalizedDescriptionKey : "unknown"]
+            func toString()->String
+            {
+                return "unknown"
+            }
+        }
         struct type
         {
             static let code = 401
@@ -72,6 +117,15 @@ struct Errors {
     struct wcSession
     {
         static let domain:String = "watchconnectivity.wcession"
+        struct unknown
+        {
+            static let code         = 500
+            static let description  = [NSLocalizedDescriptionKey : "unknown"]
+            func toString()->String
+            {
+                return "unknown"
+            }
+        }
         struct supported
         {
             static let code         = 501

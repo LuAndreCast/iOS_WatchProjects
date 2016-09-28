@@ -51,6 +51,17 @@ Make sure to update the plist with health kit share and update descriptions:
 #####Heart Rate Streaming
 
 
+###Apple Watch Interface Controller Lifecycle
+awake(withContext context: Any?) // context from controller that did push or modal presentation. default does nothing
+
+willActivate() // Called when watch interface is active and able to be updated. Can be called when interface is not visible.
+
+didDeactivate() // Called when watch interface is no longer active and cannot be updated.
+
+didAppear() // Called when watch interface is visible to user
+
+willDisappear() // Called when watch interface is about to no longer be visible
+
 
 ###Xcode Issues
 Problem: (No Paired Apple Watch)

@@ -15,6 +15,7 @@ import Foundation
     case Time
     case Date
     case Response
+    case ErrorDescription
     
     func toString()->String
     {
@@ -30,6 +31,8 @@ import Foundation
             return "Date"
         case .Response:
             return "Response"
+        case .ErrorDescription:
+            return "ErrorDescription"
         }
     }
 }
@@ -58,6 +61,7 @@ import Foundation
     case StartedMonitoring
     case EndedMonitoring
     case ErrorMonitoring
+    case ErrorWorkout
     case ErrorHealthKit
     
     func toString()->String
@@ -74,6 +78,8 @@ import Foundation
             return "Data"
         case .ErrorMonitoring:
             return "ErrorMonitoring"
+        case .ErrorWorkout:
+            return "ErrorWorkout"
         case .ErrorHealthKit:
             return "ErrorHealthKit"
         }

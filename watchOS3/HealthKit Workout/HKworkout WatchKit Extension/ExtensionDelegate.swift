@@ -13,7 +13,6 @@ import HealthKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-    
     //MARK: - Workout Configuration
     @available(iOS 10.0, *)
     func handle(_ workoutConfiguration: HKWorkoutConfiguration)

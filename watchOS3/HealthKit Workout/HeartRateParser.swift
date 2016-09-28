@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 
-class HeartRateParser: NSObject {
+@objc class HeartRateParser: NSObject {
     
     private let heartRateUnit:HKUnit = HKUnit(from: "count/min")
     private let _dateFormatter:DateFormatter = DateFormatter()

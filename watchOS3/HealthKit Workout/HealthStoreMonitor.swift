@@ -9,7 +9,7 @@
 //import Foundation
 import HealthKit
 
-protocol healthStoreMonitorDelegate {
+@objc protocol healthStoreMonitorDelegate {
     func healthStoreMonitorResults(results:[HKSample])
     func healthStoreMonitorError(error:NSError)
 }
@@ -21,10 +21,10 @@ class HealthStoreMonitor: NSObject {
     var delegate:healthStoreMonitorDelegate?
     
     /* time looking back (in seconds) when performing sample query */
-    private let dateInterval:TimeInterval = -40.0
+    private let dateInterval:TimeInterval = -60.0
     
     /* Polling time (in seconds) */
-    private let pollingInterval:TimeInterval = 1.5
+    private let pollingInterval:TimeInterval = 2.5
     private var continuePolling:Bool = true
     
     private var sampleType:HKSampleType?
@@ -36,6 +36,7 @@ class HealthStoreMonitor: NSObject {
     //ascending
     var ascending:Bool = true
     
+    var timeoutLimit:Int = 240 //in secs - default 4 mins
     
     //MARK: - Start / End Monitoring
     func startMonitoring(healthStore:HKHealthStore, sampleType:HKSampleType)
@@ -113,16 +114,9 @@ class HealthStoreMonitor: NSObject {
             else
             {
                 //data
-                if let queryResults:[HKSample] = samples
+                if samples != nil
                 {
-                    if queryResults.count > 0
-                    {
-                        self.delegate?.healthStoreMonitorResults(results: queryResults)
-                    }
-                    else
-                    {
-                        //no sample data
-                    }
+                    self.delegate?.healthStoreMonitorResults(results: samples!)
                 }
                 else
                 {

@@ -9,6 +9,34 @@
 import Foundation
 import HealthKit
 
+
+
+//MARK: -
+
+@objc enum workoutState:Int {
+    case running
+    case paused
+    case notStarted
+    case ended
+    
+    func toString()->String
+    {
+        switch self {
+        case .running:
+            return "running"
+        case .paused:
+            return "paused"
+        case .notStarted:
+            return "notStarted"
+        case .ended:
+            return "ended"
+        }
+    }//eom
+}
+
+
+//MARK: -
+
 func computeDurationOfWorkout(withEvents workoutEvents: [HKWorkoutEvent]?,
                               startDate: Date?,
                               endDate: Date?) -> TimeInterval
@@ -48,13 +76,6 @@ func computeDurationOfWorkout(withEvents workoutEvents: [HKWorkoutEvent]?,
     return duration
 }
 
-func format(energy: HKQuantity) -> String {
-    return String(format: "%.1f Calories", energy.doubleValue(for: HKUnit.kilocalorie()))
-}
-
-func format(distance: HKQuantity) -> String {
-    return String(format: "%.1f Meters", distance.doubleValue(for: HKUnit.meter()))
-}
 
 func format(duration: TimeInterval) -> String {
     let durationFormatter = DateComponentsFormatter()

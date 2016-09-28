@@ -9,24 +9,29 @@
 import Foundation
 import WatchConnectivity
 
+
+@available(watchOSApplicationExtension 2.0, *)
+@available(iOS 9.0, *)
 @objc
 protocol watchMessengerDelegate
 {
     /* Activation */
-    func watchMessenger_startResults(error:NSError?)
-    
     @available(iOS 9.3, watchOSApplicationExtension 2.2, *)
     optional func watchMessenger_activationCompletedWithState(activationState: WCSessionActivationState, error: NSError?)
     
     /* Watch Only */
     #if os(watchOS)
-    @available(watchOSApplicationExtension 2.2 , *)
-    optional func watchMessenger_sessionStateChanged(state: WCSessionActivationState)
-    optional func watchMessenger_watchStatesChanged(states:NSDictionary)
+    
     #endif
     
     /* iphone Only */
+    #if os(iOS)
+        @available(iOS 9.0, *)
+        optional func watchMessenger_watchStatesChanged(states:NSDictionary)
     
+        @available(iOS 9.3, *)
+        optional func watchMessenger_sessionStateChanged(state: WCSessionActivationState)
+    #endif
     
     /* Reachability */
     func watchMessenger_reachabilityStateChanged(reachable:Bool)
@@ -37,10 +42,13 @@ protocol watchMessengerDelegate
 }//eo-delegate
 
 
+
+@available(watchOSApplicationExtension 2.0, *)
+@available(iOS 9.0, *)
 @objc
 class WatchMessenger: NSObject, WCSessionDelegate
 {
-    static let shared = WatchMessenger()
+    static let sharedInstance = WatchMessenger()
     
     var delegate:watchMessengerDelegate?
     
@@ -95,14 +103,14 @@ class WatchMessenger: NSObject, WCSessionDelegate
     }//eom
     
     //MARK: - Start
-    func start()
+    func start( completion:(NSError?)->Void )
     {
         if WCSession.isSupported()
         {
             self.session .delegate = self
             self.session .activateSession()
 
-            self.delegate?.watchMessenger_startResults(nil)
+            completion(nil)
         }
         else
         {
@@ -113,15 +121,24 @@ class WatchMessenger: NSObject, WCSessionDelegate
                 print("[\(self)] error : \(error)")
             #endif
             
-            self.delegate?.watchMessenger_startResults(error)
+            completion(error)
         }
     }//eom
     
     //MARK: - Activation
     @available(iOS 9.3, watchOSApplicationExtension 2.2, *)
-    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?)
+    func session(session: WCSession,
+                 activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?)
     {
-        self.delegate?.watchMessenger_activationCompletedWithState!(activationState, error: error)
+        if self.delegate != nil
+        {
+            #if os(watchOS)
+                self.delegate?.watchMessenger_activationCompletedWithState!(activationState, error: error)
+            #elseif os(iOS)
+                self.delegate?.watchMessenger_activationCompletedWithState!(activationState, error: error)
+            #endif
+        }
+       
         
         #if DEBUG
             var state = "''"
@@ -137,56 +154,52 @@ class WatchMessenger: NSObject, WCSessionDelegate
                 break
             }
             print("[\(self)] activationDidCompleteWithState: \(state)")
+            
+            if error != nil
+            {
+                print("error: \(error?.localizedDescription)")
+            }
         #endif
     }//eom
     
-    //MARK: - Watch Only 
-    //MARK: iOS States for watch
-        func sessionWatchStateDidChange(session: WCSession)
-        {
-            let states:NSDictionary = self .getSessionInfo();
-            #if os(watchOS)
-                self.delegate?.watchMessenger_watchStatesChanged!(states)
-            #endif
-        }//eom
+    //MARK: - Iphone Only
+    @available(iOS 9.0, *)
+    func sessionWatchStateDidChange(session: WCSession)
+    {
+        let states:NSDictionary = self .getSessionInfo();
+        self.delegate?.watchMessenger_watchStatesChanged!(states)
         
-        @available(watchOSApplicationExtension 2.0 , *)
-        func sessionDidDeactivate(session: WCSession)
-        {
-            #if os(watchOS)
-                if #available(watchOSApplicationExtension 2.2, *)
-                {
-                    self.delegate?.watchMessenger_sessionStateChanged!(WCSessionActivationState.NotActivated)
-                }
-                else
-                {
-                    // TODO: Fallback on earlier versions
-                }
-            #endif
-            
-            #if DEBUG
-                print("[\(self)] sessionDidDeactivate")
-            #endif
-        }//eom
+        #if DEBUG
+            print("[\(self)] sessionWatchStateDidChange  | states: \(states)")
+        #endif
+    }//eom
+    
+    @available(iOS 9.3, *)
+    func sessionDidDeactivate(session: WCSession)
+    {
+        #if os(iOS)
+            self.delegate?.watchMessenger_sessionStateChanged!(WCSessionActivationState.NotActivated)
+        #endif
         
-        @available(watchOSApplicationExtension 2.0 , *)
-        func sessionDidBecomeInactive(session: WCSession)
-        {
-            #if os(watchOS)
-                if #available(watchOSApplicationExtension 2.2, *)
-                {
-                    self.delegate?.watchMessenger_sessionStateChanged!(WCSessionActivationState.Inactive)
-                }
-                else
-                {
-                    //TODO: Fallback on earlier versions
-                }
-            #endif
-            
-            #if DEBUG
-                print("[\(self)] sessionDidBecomeInactive")
-            #endif
-        }//eom
+        #if DEBUG
+            print("[\(self)] sessionDidDeactivate")
+        #endif
+    }//eom
+
+    @available(iOS 9.3, *)
+    func sessionDidBecomeInactive(session: WCSession)
+    {
+        #if os(iOS)
+            self.delegate?.watchMessenger_sessionStateChanged!(WCSessionActivationState.Inactive)
+        #endif
+        
+        #if DEBUG
+            print("[\(self)] sessionDidBecomeInactive")
+        #endif
+    }//eom
+    
+    //MARK: - Watch Only
+    
     
     //MARK: - Session Reachability
     func sessionReachabilityDidChange(session: WCSession)
@@ -239,8 +252,8 @@ class WatchMessenger: NSObject, WCSessionDelegate
     }//eom
     
     func session(session: WCSession,
-                 didReceiveMessage message: [String : AnyObject],
-                                   replyHandler: ([String : AnyObject]) -> Void)
+     didReceiveMessage message: [String : AnyObject],
+                   replyHandler: ([String : AnyObject]) -> Void)
     {
         #if DEBUG
             print("[\(self)] message received: \(message)")

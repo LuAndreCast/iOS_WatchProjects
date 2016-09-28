@@ -30,7 +30,10 @@
 		F77C6CB81D8756800095D2FA /* HealthStorePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */; };
 		F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
 		F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CB91D875AE10095D2FA /* Utilities.swift */; };
-		F77C6CBE1D875AE80095D2FA /* ParentConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */; };
+		F7D5CF851D888ADD00DC10ED /* WatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5CF841D888ADD00DC10ED /* WatchCommunicator.swift */; };
+		F7D5CF871D888AF800DC10ED /* PhoneCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5CF861D888AF800DC10ED /* PhoneCommunicator.swift */; };
+		F7D5CF891D88985400DC10ED /* CommunicatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5CF881D88985400DC10ED /* CommunicatorUtilities.swift */; };
+		F7D5CF8A1D88985400DC10ED /* CommunicatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5CF881D88985400DC10ED /* CommunicatorUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +105,9 @@
 		F77C6CB41D87557E0095D2FA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		F77C6CB61D8756800095D2FA /* HealthStorePermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStorePermission.swift; sourceTree = "<group>"; };
 		F77C6CB91D875AE10095D2FA /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentConnector.swift; sourceTree = "<group>"; };
+		F7D5CF841D888ADD00DC10ED /* WatchCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCommunicator.swift; sourceTree = "<group>"; };
+		F7D5CF861D888AF800DC10ED /* PhoneCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCommunicator.swift; sourceTree = "<group>"; };
+		F7D5CF881D88985400DC10ED /* CommunicatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicatorUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +135,9 @@
 			children = (
 				F7682B8F1D8857AE00C86B0D /* HeartRateParser.swift */,
 				F7682B911D8857B800C86B0D /* HeartRate.swift */,
-				F77C6CBC1D875AE80095D2FA /* ParentConnector.swift */,
 				F77C6CB91D875AE10095D2FA /* Utilities.swift */,
 				F7682B881D8841AF00C86B0D /* Error.swift */,
+				F7D5CF831D888AB500DC10ED /* Messengers */,
 				F7682B8E1D88554000C86B0D /* Health Store */,
 			);
 			name = Models;
@@ -212,6 +217,16 @@
 				F77C6CB11D8755680095D2FA /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7D5CF831D888AB500DC10ED /* Messengers */ = {
+			isa = PBXGroup;
+			children = (
+				F7D5CF841D888ADD00DC10ED /* WatchCommunicator.swift */,
+				F7D5CF861D888AF800DC10ED /* PhoneCommunicator.swift */,
+				F7D5CF881D88985400DC10ED /* CommunicatorUtilities.swift */,
+			);
+			name = Messengers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +386,8 @@
 				F77C6CB71D8756800095D2FA /* HealthStorePermission.swift in Sources */,
 				F77C6CBA1D875AE10095D2FA /* Utilities.swift in Sources */,
 				F77C6C791D8755600095D2FA /* AppDelegate.swift in Sources */,
+				F7D5CF871D888AF800DC10ED /* PhoneCommunicator.swift in Sources */,
+				F7D5CF891D88985400DC10ED /* CommunicatorUtilities.swift in Sources */,
 				F7682B901D8857AE00C86B0D /* HeartRateParser.swift in Sources */,
 				F7682B891D8841AF00C86B0D /* Error.swift in Sources */,
 			);
@@ -382,9 +399,10 @@
 			files = (
 				F77C6C9E1D8755600095D2FA /* ExtensionDelegate.swift in Sources */,
 				F77C6CB81D8756800095D2FA /* HealthStorePermission.swift in Sources */,
-				F77C6CBE1D875AE80095D2FA /* ParentConnector.swift in Sources */,
+				F7D5CF8A1D88985400DC10ED /* CommunicatorUtilities.swift in Sources */,
 				F77C6CBB1D875AE10095D2FA /* Utilities.swift in Sources */,
 				F77C6C9C1D8755600095D2FA /* HeartRateInterfaceController.swift in Sources */,
+				F7D5CF851D888ADD00DC10ED /* WatchCommunicator.swift in Sources */,
 				F7682B8A1D8841AF00C86B0D /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let hkPermission:HealthStorePermission = HealthStorePermission()
             
             let hkQuantities:[HKObjectType] = [ hrQuantityType, HKObjectType.workoutType() ]
+//            let hkQuantities:[HKObjectType] = [ hrQuantityType ]
             
             hkPermission.requestPermission(healthStore: healthStore,
                                                       types: hkQuantities,
