@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="JlJ-l4-ERB">
+                            <items>
+                                <label width="1" alignment="center" text="Start: Time" textAlignment="center" id="2DV-A5-b1z"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="rIf-D7-kC4">
+                            <items>
+                                <label width="1" alignment="center" text="End: Time" textAlignment="center" numberOfLines="2" id="hmP-I9-BBe"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Bue-xV-mVy">
+                            <items>
+                                <label width="1" alignment="center" text="Hr Value" textAlignment="center" id="vdh-l3-shG">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="8ds-Sr-k48">
+                            <items>
+                                <button width="1" alignment="left" title="Start" id="MUZ-89-9bo">
+                                    <color key="backgroundColor" red="0.2212862599" green="1" blue="0.078696395249999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="StartWorkout" destination="AgC-eL-Hgc" id="vQk-5W-RqR"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="4Dq-ik-2mZ">
+                            <items>
+                                <button width="1" alignment="left" title="End" id="K21-hi-Yps">
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="EndWorkout" destination="AgC-eL-Hgc" id="Teg-PV-lf8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="endWkButton" destination="K21-hi-Yps" id="THH-9R-BBA"/>
+                        <outlet property="startWkButton" destination="MUZ-89-9bo" id="rvb-Es-Rat"/>
+                        <outlet property="wkEndDateLabel" destination="hmP-I9-BBe" id="tDa-dp-2Fh"/>
+                        <outlet property="wkHrValueLabel" destination="vdh-l3-shG" id="6J2-bq-fTl"/>
+                        <outlet property="wkStartDateLabel" destination="2DV-A5-b1z" id="wnE-3t-k8n"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

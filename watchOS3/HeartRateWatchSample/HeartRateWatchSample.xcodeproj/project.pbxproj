@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F71CF1061DA58ABB0015461E /* HealthDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1041DA58ABB0015461E /* HealthDataService.m */; };
+		F71CF10B1DA58C270015461E /* HealthDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1041DA58ABB0015461E /* HealthDataService.m */; };
+		F71CF10C1DA58C2B0015461E /* HealthDataService_Watch.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */; };
+		F71CF10D1DA58C320015461E /* WorkoutSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */; };
+		F76E00001DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F76EFFFF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F76E00081DA421CF00A92F8D /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76E00071DA421CF00A92F8D /* InterfaceController.m */; };
+		F76E000B1DA421CF00A92F8D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */; };
+		F76E00101DA421CF00A92F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76E000F1DA421CF00A92F8D /* Assets.xcassets */; };
+		F76E00211DA421D300A92F8D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E00201DA421D300A92F8D /* HealthKit.framework */; };
+		F76E00251DA421E600A92F8D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E00241DA421E600A92F8D /* HealthKit.framework */; };
+		F76EFFDE1DA421CE00A92F8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76EFFDD1DA421CE00A92F8D /* main.m */; };
+		F76EFFE11DA421CE00A92F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76EFFE01DA421CE00A92F8D /* AppDelegate.m */; };
+		F76EFFE41DA421CE00A92F8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76EFFE31DA421CE00A92F8D /* ViewController.m */; };
+		F76EFFE71DA421CE00A92F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76EFFE51DA421CE00A92F8D /* Main.storyboard */; };
+		F76EFFE91DA421CF00A92F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76EFFE81DA421CF00A92F8D /* Assets.xcassets */; };
+		F76EFFEC1DA421CF00A92F8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76EFFEA1DA421CF00A92F8D /* LaunchScreen.storyboard */; };
+		F76EFFF11DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F76EFFF01DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app */; };
+		F76EFFF71DA421CF00A92F8D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76EFFF51DA421CF00A92F8D /* Interface.storyboard */; };
+		F76EFFF91DA421CF00A92F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76EFFF81DA421CF00A92F8D /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F76E00011DA421CF00A92F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76EFFD11DA421CE00A92F8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F76EFFFE1DA421CF00A92F8D;
+			remoteInfo = "HeartRateWatchSample WatchKit Extension";
+		};
+		F76EFFF21DA421CF00A92F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76EFFD11DA421CE00A92F8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F76EFFEF1DA421CF00A92F8D;
+			remoteInfo = "HeartRateWatchSample WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F76E00171DA421CF00A92F8D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F76E00001DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76E001B1DA421CF00A92F8D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F76EFFF11DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F71CF0FE1DA58AB20015461E /* WorkoutSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSessionService.h; path = "HeartRate Model/Workout/WorkoutSessionService.h"; sourceTree = "<group>"; };
+		F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSessionService.m; path = "HeartRate Model/Workout/WorkoutSessionService.m"; sourceTree = "<group>"; };
+		F71CF1011DA58ABB0015461E /* HealthDataService_Watch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthDataService_Watch.h; path = "HeartRate Model/Healthkit/HealthDataService_Watch.h"; sourceTree = "<group>"; };
+		F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthDataService_Watch.m; path = "HeartRate Model/Healthkit/HealthDataService_Watch.m"; sourceTree = "<group>"; };
+		F71CF1031DA58ABB0015461E /* HealthDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthDataService.h; path = "HeartRate Model/Healthkit/HealthDataService.h"; sourceTree = "<group>"; };
+		F71CF1041DA58ABB0015461E /* HealthDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthDataService.m; path = "HeartRate Model/Healthkit/HealthDataService.m"; sourceTree = "<group>"; };
+		F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeartRateModelConstants.h; path = "HeartRate Model/HeartRateModelConstants.h"; sourceTree = "<group>"; };
+		F76E00061DA421CF00A92F8D /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		F76E00071DA421CF00A92F8D /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		F76E00091DA421CF00A92F8D /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		F76E000F1DA421CF00A92F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F76E00111DA421CF00A92F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76E00201DA421D300A92F8D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F76E00221DA421D300A92F8D /* HeartRateWatchSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeartRateWatchSample.entitlements; sourceTree = "<group>"; };
+		F76E00231DA421E600A92F8D /* HeartRateWatchSample WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HeartRateWatchSample WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		F76E00241DA421E600A92F8D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		F76EFFD91DA421CE00A92F8D /* HeartRateWatchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartRateWatchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76EFFDD1DA421CE00A92F8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F76EFFDF1DA421CE00A92F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F76EFFE01DA421CE00A92F8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F76EFFE21DA421CE00A92F8D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F76EFFE31DA421CE00A92F8D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F76EFFE61DA421CE00A92F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F76EFFE81DA421CF00A92F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F76EFFEB1DA421CF00A92F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F76EFFED1DA421CF00A92F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76EFFF01DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartRateWatchSample WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76EFFF61DA421CF00A92F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F76EFFF81DA421CF00A92F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F76EFFFA1DA421CF00A92F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76EFFFF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HeartRateWatchSample WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F76EFFD61DA421CE00A92F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76E00211DA421D300A92F8D /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76EFFFC1DA421CF00A92F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76E00251DA421E600A92F8D /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F71CF0F81DA58A130015461E /* Healthkit */ = {
+			isa = PBXGroup;
+			children = (
+				F71CF1031DA58ABB0015461E /* HealthDataService.h */,
+				F71CF1041DA58ABB0015461E /* HealthDataService.m */,
+				F71CF1011DA58ABB0015461E /* HealthDataService_Watch.h */,
+				F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */,
+			);
+			name = Healthkit;
+			sourceTree = "<group>";
+		};
+		F71CF0F91DA58A290015461E /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				F71CF0FE1DA58AB20015461E /* WorkoutSessionService.h */,
+				F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */,
+			);
+			name = Workout;
+			sourceTree = "<group>";
+		};
+		F76E00031DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F76E00231DA421E600A92F8D /* HeartRateWatchSample WatchKit Extension.entitlements */,
+				F76E00091DA421CF00A92F8D /* ExtensionDelegate.h */,
+				F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */,
+				F76E00061DA421CF00A92F8D /* InterfaceController.h */,
+				F76E00071DA421CF00A92F8D /* InterfaceController.m */,
+				F76E000F1DA421CF00A92F8D /* Assets.xcassets */,
+				F76E00111DA421CF00A92F8D /* Info.plist */,
+				F76E00041DA421CF00A92F8D /* Supporting Files */,
+			);
+			path = "HeartRateWatchSample WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F76E00041DA421CF00A92F8D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76E001F1DA421D300A92F8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F76E00241DA421E600A92F8D /* HealthKit.framework */,
+				F76E00201DA421D300A92F8D /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F76E00261DA4236100A92F8D /* Heartrate Model */ = {
+			isa = PBXGroup;
+			children = (
+				F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */,
+				F71CF0F91DA58A290015461E /* Workout */,
+				F71CF0F81DA58A130015461E /* Healthkit */,
+			);
+			name = "Heartrate Model";
+			path = HeartRateWatchSample;
+			sourceTree = "<group>";
+		};
+		F76EFFD01DA421CE00A92F8D = {
+			isa = PBXGroup;
+			children = (
+				F76E00261DA4236100A92F8D /* Heartrate Model */,
+				F76EFFDB1DA421CE00A92F8D /* HeartRateWatchSample */,
+				F76EFFF41DA421CF00A92F8D /* HeartRateWatchSample WatchKit App */,
+				F76E00031DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */,
+				F76EFFDA1DA421CE00A92F8D /* Products */,
+				F76E001F1DA421D300A92F8D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F76EFFDA1DA421CE00A92F8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F76EFFD91DA421CE00A92F8D /* HeartRateWatchSample.app */,
+				F76EFFF01DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app */,
+				F76EFFFF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F76EFFDB1DA421CE00A92F8D /* HeartRateWatchSample */ = {
+			isa = PBXGroup;
+			children = (
+				F76E00221DA421D300A92F8D /* HeartRateWatchSample.entitlements */,
+				F76EFFDF1DA421CE00A92F8D /* AppDelegate.h */,
+				F76EFFE01DA421CE00A92F8D /* AppDelegate.m */,
+				F76EFFE21DA421CE00A92F8D /* ViewController.h */,
+				F76EFFE31DA421CE00A92F8D /* ViewController.m */,
+				F76EFFE51DA421CE00A92F8D /* Main.storyboard */,
+				F76EFFE81DA421CF00A92F8D /* Assets.xcassets */,
+				F76EFFEA1DA421CF00A92F8D /* LaunchScreen.storyboard */,
+				F76EFFED1DA421CF00A92F8D /* Info.plist */,
+				F76EFFDC1DA421CE00A92F8D /* Supporting Files */,
+			);
+			path = HeartRateWatchSample;
+			sourceTree = "<group>";
+		};
+		F76EFFDC1DA421CE00A92F8D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F76EFFDD1DA421CE00A92F8D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76EFFF41DA421CF00A92F8D /* HeartRateWatchSample WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F76EFFF51DA421CF00A92F8D /* Interface.storyboard */,
+				F76EFFF81DA421CF00A92F8D /* Assets.xcassets */,
+				F76EFFFA1DA421CF00A92F8D /* Info.plist */,
+			);
+			path = "HeartRateWatchSample WatchKit App";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F76EFFD81DA421CE00A92F8D /* HeartRateWatchSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76E001C1DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample" */;
+			buildPhases = (
+				F76EFFD51DA421CE00A92F8D /* Sources */,
+				F76EFFD61DA421CE00A92F8D /* Frameworks */,
+				F76EFFD71DA421CE00A92F8D /* Resources */,
+				F76E001B1DA421CF00A92F8D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F76EFFF31DA421CF00A92F8D /* PBXTargetDependency */,
+			);
+			name = HeartRateWatchSample;
+			productName = HeartRateWatchSample;
+			productReference = F76EFFD91DA421CE00A92F8D /* HeartRateWatchSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F76EFFEF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76E00181DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample WatchKit App" */;
+			buildPhases = (
+				F76EFFEE1DA421CF00A92F8D /* Resources */,
+				F76E00171DA421CF00A92F8D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F76E00021DA421CF00A92F8D /* PBXTargetDependency */,
+			);
+			name = "HeartRateWatchSample WatchKit App";
+			productName = "HeartRateWatchSample WatchKit App";
+			productReference = F76EFFF01DA421CF00A92F8D /* HeartRateWatchSample WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F76EFFFE1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76E00141DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample WatchKit Extension" */;
+			buildPhases = (
+				F76EFFFB1DA421CF00A92F8D /* Sources */,
+				F76EFFFC1DA421CF00A92F8D /* Frameworks */,
+				F76EFFFD1DA421CF00A92F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HeartRateWatchSample WatchKit Extension";
+			productName = "HeartRateWatchSample WatchKit Extension";
+			productReference = F76EFFFF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F76EFFD11DA421CE00A92F8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = LC;
+				TargetAttributes = {
+					F76EFFD81DA421CE00A92F8D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LM8B99RWJA;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					F76EFFEF1DA421CF00A92F8D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LM8B99RWJA;
+						ProvisioningStyle = Automatic;
+					};
+					F76EFFFE1DA421CF00A92F8D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LM8B99RWJA;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = F76EFFD41DA421CE00A92F8D /* Build configuration list for PBXProject "HeartRateWatchSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F76EFFD01DA421CE00A92F8D;
+			productRefGroup = F76EFFDA1DA421CE00A92F8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F76EFFD81DA421CE00A92F8D /* HeartRateWatchSample */,
+				F76EFFEF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit App */,
+				F76EFFFE1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F76EFFD71DA421CE00A92F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76EFFEC1DA421CF00A92F8D /* LaunchScreen.storyboard in Resources */,
+				F76EFFE91DA421CF00A92F8D /* Assets.xcassets in Resources */,
+				F76EFFE71DA421CE00A92F8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76EFFEE1DA421CF00A92F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76EFFF91DA421CF00A92F8D /* Assets.xcassets in Resources */,
+				F76EFFF71DA421CF00A92F8D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76EFFFD1DA421CF00A92F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76E00101DA421CF00A92F8D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F76EFFD51DA421CE00A92F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76EFFE41DA421CE00A92F8D /* ViewController.m in Sources */,
+				F76EFFE11DA421CE00A92F8D /* AppDelegate.m in Sources */,
+				F71CF1061DA58ABB0015461E /* HealthDataService.m in Sources */,
+				F76EFFDE1DA421CE00A92F8D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76EFFFB1DA421CF00A92F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76E000B1DA421CF00A92F8D /* ExtensionDelegate.m in Sources */,
+				F71CF10C1DA58C2B0015461E /* HealthDataService_Watch.m in Sources */,
+				F71CF10D1DA58C320015461E /* WorkoutSessionService.m in Sources */,
+				F76E00081DA421CF00A92F8D /* InterfaceController.m in Sources */,
+				F71CF10B1DA58C270015461E /* HealthDataService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F76E00021DA421CF00A92F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F76EFFFE1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */;
+			targetProxy = F76E00011DA421CF00A92F8D /* PBXContainerItemProxy */;
+		};
+		F76EFFF31DA421CF00A92F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F76EFFEF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit App */;
+			targetProxy = F76EFFF21DA421CF00A92F8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F76EFFE51DA421CE00A92F8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76EFFE61DA421CE00A92F8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F76EFFEA1DA421CF00A92F8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76EFFEB1DA421CF00A92F8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F76EFFF51DA421CF00A92F8D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76EFFF61DA421CF00A92F8D /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F76E00121DA421CF00A92F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F76E00131DA421CF00A92F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F76E00151DA421CF00A92F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateWatchSample WatchKit Extension/HeartRateWatchSample WatchKit Extension.entitlements";
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				INFOPLIST_FILE = "HeartRateWatchSample WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		F76E00161DA421CF00A92F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "HeartRateWatchSample WatchKit Extension/HeartRateWatchSample WatchKit Extension.entitlements";
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				INFOPLIST_FILE = "HeartRateWatchSample WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		F76E00191DA421CF00A92F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				IBSC_MODULE = HeartRateWatchSample_WatchKit_Extension;
+				INFOPLIST_FILE = "HeartRateWatchSample WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		F76E001A1DA421CF00A92F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				IBSC_MODULE = HeartRateWatchSample_WatchKit_Extension;
+				INFOPLIST_FILE = "HeartRateWatchSample WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		F76E001D1DA421CF00A92F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartRateWatchSample/HeartRateWatchSample.entitlements;
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				INFOPLIST_FILE = HeartRateWatchSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F76E001E1DA421CF00A92F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeartRateWatchSample/HeartRateWatchSample.entitlements;
+				DEVELOPMENT_TEAM = LM8B99RWJA;
+				INFOPLIST_FILE = HeartRateWatchSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LC.HeartRateWatchSample1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F76E00141DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76E00151DA421CF00A92F8D /* Debug */,
+				F76E00161DA421CF00A92F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76E00181DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76E00191DA421CF00A92F8D /* Debug */,
+				F76E001A1DA421CF00A92F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76E001C1DA421CF00A92F8D /* Build configuration list for PBXNativeTarget "HeartRateWatchSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76E001D1DA421CF00A92F8D /* Debug */,
+				F76E001E1DA421CF00A92F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76EFFD41DA421CE00A92F8D /* Build configuration list for PBXProject "HeartRateWatchSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76E00121DA421CF00A92F8D /* Debug */,
+				F76E00131DA421CF00A92F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F76EFFD11DA421CE00A92F8D /* Project object */;
+}

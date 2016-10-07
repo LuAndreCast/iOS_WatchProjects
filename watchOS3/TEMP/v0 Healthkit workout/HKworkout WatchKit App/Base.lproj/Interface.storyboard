@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--HRInterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="HRInterfaceController" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="HKworkout_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="64h-Wq-FuP">
+                            <items>
+                                <label width="1" alignment="left" text="   " textAlignment="center" id="Ugi-As-aAc">
+                                    <color key="textColor" red="1" green="0.97880674710000004" blue="0.13324607359999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Bdd-mG-bML">
+                            <items>
+                                <label width="1" alignment="left" text="  " textAlignment="center" numberOfLines="2" id="cPG-lF-3tm">
+                                    <color key="textColor" red="1" green="0.041046944600000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="X5f-1j-OIc">
+                            <items>
+                                <label width="1" alignment="left" text="   " textAlignment="center" id="AvK-b6-jkN">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="bs0-s2-1fg">
+                            <items>
+                                <button width="0.5" alignment="left" title="Pause" id="bAR-50-nYa">
+                                    <connections>
+                                        <action selector="pauseWorkout" destination="AgC-eL-Hgc" id="bFi-XN-JOh"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="right" title="Stop" id="q2o-v9-mhL">
+                                    <connections>
+                                        <action selector="stopWorkout" destination="AgC-eL-Hgc" id="qBE-Yb-2cN"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Rg9-ge-hxj">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Start" id="MyQ-gI-KK7">
+                                    <connections>
+                                        <action selector="startWorkout" destination="AgC-eL-Hgc" id="qqs-xB-YJn"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="hrLabel" destination="AvK-b6-jkN" id="B81-Um-2vE"/>
+                        <outlet property="messengerStatusLabel" destination="Ugi-As-aAc" id="tkU-NJ-ist"/>
+                        <outlet property="pauseButton" destination="bAR-50-nYa" id="T05-RC-Icm"/>
+                        <outlet property="startButton" destination="MyQ-gI-KK7" id="G0U-vh-YZD"/>
+                        <outlet property="stopButton" destination="q2o-v9-mhL" id="FWB-Ak-h4p"/>
+                        <outlet property="workStatusLabel" destination="cPG-lF-3tm" id="jAI-7E-QJl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-32" y="31"/>
+        </scene>
+    </scenes>
+</document>
