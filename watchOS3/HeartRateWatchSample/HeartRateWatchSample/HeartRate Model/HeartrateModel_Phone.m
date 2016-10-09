@@ -59,7 +59,7 @@
                  
                  if (success){
                      [self startReading_HeartrateData];
-                     [self messageStartWorkout];
+                     [self messageStartWorkout:false];
                  }
              }];
         }
@@ -76,7 +76,7 @@
     }
     else
     {
-        [self messageStartWorkout];
+        [self messageStartWorkout:true];
     }
 }//eom
 
@@ -87,7 +87,7 @@
 }//eom
 
 #pragma mark - Live Message Start Workout
--(void)messageStartWorkout
+-(void)messageStartWorkout:(BOOL)reportFailure
 {
     NSDictionary<NSString *, id> * messageToSend = [[NSDictionary alloc]initWithObjectsAndKeys:
                                                     hrModelKeysToString(monitorKey_Command), hrModelKeysToString(monitor_key),
@@ -99,7 +99,9 @@
          
      } errorHandler:^(NSError * _Nonnull error) {
          //communication not possible
-         [delegate heartrateModelStartWorkResult:false  withError:error];
+         if (reportFailure) {
+             [delegate heartrateModelStartWorkResult:false  withError:error];
+         }
      }];
 }//eom
 
@@ -115,6 +117,7 @@
          NSLog(@"reply message: %@", replyMessage);
      } errorHandler:^(NSError * _Nonnull error)
      {
+         //sending background message - optional
          [comm sendApplicationContext:messageToSend];
      }];
 }//eom
