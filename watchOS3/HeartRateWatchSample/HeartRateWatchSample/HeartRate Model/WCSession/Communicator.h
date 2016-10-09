@@ -10,7 +10,6 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 
 
-
 typedef enum {
     notSupported = -2,
     failed = -1,
@@ -26,11 +25,20 @@ typedef enum {
  */
 -(void)communicatorActionStatus:(communicatorStatus)status;
 
+
+#pragma mark - Live messages
 /*!
- * @brief This method is called when WCSession activated with status provided
+ * @brief This method is called when a Live message has been received
  */
 -(NSDictionary<NSString *,id> *)communicatorDidReceivedLiveMessage:(NSDictionary<NSString *,id> *)message;
 
+
+#pragma mark - Background messages
+/*!
+ * @brief This method is called when a background message has been received
+ */
+
+-(void)communicatorDidReceivedBackgroundMessage:(NSDictionary<NSString *,id> *)message;
 
 @end
 
@@ -38,11 +46,13 @@ typedef enum {
 @interface Communicator : NSObject<WCSessionDelegate>
 
 @property (nonatomic, weak) id<CommunicatorDelegate> delegate;
-
 @property (nonatomic, readonly) communicatorStatus activationStatus;
 @property (nonatomic, retain) WCSession * session;
 
 
 -(void)start;
+
+#pragma mark - Background messages
+-(void)sendApplicationContext:(NSDictionary<NSString *, id> *) messageToSend;
 
 @end

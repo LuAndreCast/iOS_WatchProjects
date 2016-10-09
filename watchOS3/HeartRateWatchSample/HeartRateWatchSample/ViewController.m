@@ -18,14 +18,21 @@
 @implementation ViewController
 
 @synthesize hrValueLabel,hrStartDateLabel, hrEndDateLabel;
+@synthesize hrStatusLabel;
+@synthesize hrStartButton, hrEndButton;
 
 #pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    hrValueLabel .text = @" ";
-    hrStartDateLabel .text = @" ";
-    hrEndDateLabel .text = @" ";
+    hrValueLabel.text = @" ";
+    hrStartDateLabel.text = @" ";
+    hrEndDateLabel.text = @" ";
+    hrStatusLabel.text = @" ";
+    hrStartButton.layer.borderWidth = 0.8;
+    hrStartButton.layer.cornerRadius = 25;
+    hrEndButton.layer.borderWidth = 0.8;
+    hrEndButton.layer.cornerRadius = 25;
     
     df = [[NSDateFormatter alloc]init];
     df.dateStyle = NSDateFormatterShortStyle;
@@ -40,11 +47,41 @@
         
     }];
     
-    //request to start workout
     [hrModel start];
 }//eom
 
+- (IBAction)StartWorkout:(id)sender
+{
+    [hrModel start];
+}//eo-a
+
+- (IBAction)EndWorkout:(id)sender
+{
+    [hrModel end];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        hrStatusLabel.text = @" ";
+    });
+}//eo-a
+
 #pragma mark - HR Model Delegates
+-(void)heartrateModelStartWorkResult:(BOOL)startWorkStatus withError:(NSError *)error
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (startWorkStatus)
+        {
+            hrStatusLabel.text = @"Started Workout";
+        }
+        else
+        {
+            NSString * workoutErrorMessage = [NSString stringWithFormat:@"%@", [error localizedDescription]];
+            workoutErrorMessage = [NSString stringWithFormat:@"Un-able to Start Workout \n%@",workoutErrorMessage];
+            hrStatusLabel.text = workoutErrorMessage;
+        }
+    });
+    
+}//eom
+
 -(void)heartrateModelDidReceiveHeartrate:(double)hrValue
                            withStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate
 {

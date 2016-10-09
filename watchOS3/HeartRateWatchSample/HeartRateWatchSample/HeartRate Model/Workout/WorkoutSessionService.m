@@ -74,7 +74,9 @@
 
 -(void)endWorkout
 {
-    [healthService.hkStore endWorkoutSession:session];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [healthService.hkStore endWorkoutSession:session];
+    });
 }//eom
 
 

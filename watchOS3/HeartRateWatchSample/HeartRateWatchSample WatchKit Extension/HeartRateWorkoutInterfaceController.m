@@ -59,7 +59,7 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
-    
+//    [wkService startWorkout];
 }//eom
 
 - (void)didDeactivate {
@@ -79,6 +79,7 @@
 
 -(void)updateUI:(BOOL)startedWorkout
 {
+    /*
     if (startedWorkout) {
         [startWkButton setHidden:true];
         [endWkButton setHidden:false];
@@ -86,29 +87,38 @@
         [startWkButton setHidden:false];
         [endWkButton setHidden:true];
     }
+     */
 }//eom
 
 #pragma mark - Service Delegates
 -(void)WorkoutSessionServiceDidStartWorkoutAtDate:(NSDate *)date
 {
-    //update UI
-    NSString * startedString = [dateF stringFromDate:date];
-    startedString = [NSString stringWithFormat:@"Start: %@", startedString];
-    [wkStartDateLabel setText:startedString];
-    [self updateUI:true];
+    dispatch_async(dispatch_get_main_queue(),
+   ^{
+        //update UI
+        NSString * startedString = [dateF stringFromDate:date];
+        startedString = [NSString stringWithFormat:@"Start: %@", startedString];
+        [wkStartDateLabel setText:startedString];
+        [self updateUI:true];
+   });
     
+    //status to phone
     wkStatus = started;
     [self sendPhoneWorkoutStatus];
 }//eom
 
 -(void)WorkoutSessionServiceDidStopWorkoutAtDate:(NSDate *)date
 {
-    //update UI
-    NSString * endedString = [dateF stringFromDate:date];
-    endedString = [NSString stringWithFormat:@"End: %@", endedString];
-    [wkEndDateLabel setText:endedString];
-    [self updateUI:false];
+    dispatch_async(dispatch_get_main_queue(),
+   ^{
+        //update UI
+        NSString * endedString = [dateF stringFromDate:date];
+        endedString = [NSString stringWithFormat:@"End: %@", endedString];
+        [wkEndDateLabel setText:endedString];
+        [self updateUI:false];
+   });
     
+    //status to phone
     wkStatus = ended;
     [self sendPhoneWorkoutStatus];
 }//eom
@@ -124,9 +134,12 @@
 
 -(void)WorkoutSessionServiceErrorOccurred:(NSError *)error
 {
-    //ui update
-    [self updateUI:false];
-    [wkStartDateLabel setText:[error localizedDescription]];
+    dispatch_async(dispatch_get_main_queue(),
+   ^{
+       //ui update
+       [self updateUI:false];
+        [wkStartDateLabel setText:[error localizedDescription]];
+   });
     
     //status to phone
     wkStatus = error_workout;
@@ -194,6 +207,10 @@
     return reply;
 }//eom
 
+-(void)communicatorDidReceivedBackgroundMessage:(NSDictionary<NSString *,id> *)message
+{
+    [self handleMessageReceived:message];
+}//eom
 
 #pragma mark - Communicator Helpers
 
@@ -210,7 +227,7 @@
     //error
     else if ([keyReceived isEqualToString: hrModelKeysToString(monitorKey_Error)])
     {
-        NSString * errorReceived = [messageRcvd objectForKey:hrModelErrorToString(monitor_Response)];
+        NSString * errorReceived = [messageRcvd objectForKey:hrModelErrorToString(monitor_Error)];
         [self handleMessage_Error:errorReceived];
     }
     //Command
@@ -239,11 +256,11 @@
    ^{
        if ([commandRcvd isEqualToString:hrModelCommandToString(monitorCommand_start)])
        {
-           [self StartWorkout];
+           [wkService startWorkout];
        }
        else  if ([commandRcvd isEqualToString:hrModelCommandToString(monitorCommand_end)])
        {
-           [self EndWorkout];
+           [wkService endWorkout];
        }
        else  if ([commandRcvd isEqualToString:hrModelCommandToString(monitorCommand_status)])
        {
@@ -289,7 +306,7 @@
             break;
     }
     
-    [[comm session]
+    [(comm .session)
      sendMessage:messageToSend
          replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage)
          {

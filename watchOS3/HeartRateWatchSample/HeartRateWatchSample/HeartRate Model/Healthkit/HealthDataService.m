@@ -33,6 +33,11 @@
     if (self) {
         hkStore = [[HKHealthStore alloc]init];
         hrUnit = [HKUnit unitFromString:@"count/min"];
+        hrQueryTimer = nil;
+        hrSampleQuery = nil;
+        hrAnchor = nil;
+        hrAnchorQuery = nil;
+        workOutsQuery = nil;
     }
     
     return self;
@@ -116,22 +121,25 @@
 -(void)startHeartrateWithPollingTime:(NSTimeInterval)pollingInterval
               andSamplesWithSecondsBack:(NSTimeInterval)timeSecondsInterval
 {
-    //sample
-    HKSampleType * hrSampleType = [HKSampleType quantityTypeForIdentifier: HKQuantityTypeIdentifierHeartRate];
-    
-    //predicate
-    NSDate * startDate = [NSDate dateWithTimeIntervalSinceNow:timeSecondsInterval];
-    NSDate * endDate = nil;
-    HKQueryOptions queryOptions = HKQueryOptionNone;
-    NSPredicate * queryPredicate =  [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:queryOptions];
-    
-    hrQueryTimer = [NSTimer
-                    scheduledTimerWithTimeInterval:pollingInterval
-                    repeats:true
-    block:^(NSTimer * _Nonnull timer)
+    if (hrQueryTimer == nil)
     {
-        [self querySampleWithType:hrSampleType withPredicate:queryPredicate];
-    }];
+        //sample
+        HKSampleType * hrSampleType = [HKSampleType quantityTypeForIdentifier: HKQuantityTypeIdentifierHeartRate];
+        
+        //predicate
+        NSDate * startDate = [NSDate dateWithTimeIntervalSinceNow:timeSecondsInterval];
+        NSDate * endDate = nil;
+        HKQueryOptions queryOptions = HKQueryOptionNone;
+        NSPredicate * queryPredicate =  [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:queryOptions];
+        
+        hrQueryTimer = [NSTimer
+                        scheduledTimerWithTimeInterval:pollingInterval
+                        repeats:true
+        block:^(NSTimer * _Nonnull timer)
+        {
+            [self querySampleWithType:hrSampleType withPredicate:queryPredicate];
+        }];
+    }
 }//eom
 
 -(void)querySampleWithType:(HKSampleType *)sampleType
@@ -162,7 +170,9 @@
 
 -(void)stopPollingHeartrates
 {
+    [hkStore stopQuery:hrSampleQuery];
     [hrQueryTimer invalidate];
+    hrQueryTimer = nil;
 }//eom
 
 #pragma mark - Query Helpers

@@ -40,7 +40,83 @@
 #pragma mark - Setup | Chart
 -(void)start
 {
+    NSOperatingSystemVersion osVersion = [[NSProcessInfo processInfo]operatingSystemVersion];
+    NSInteger currOSVersion = osVersion.majorVersion;
     
+    if (currOSVersion >= 10)
+    {
+        if( ((comm .session) .isPaired)
+           && ((comm .session) .isWatchAppInstalled) )
+        {
+            HKWorkoutConfiguration * wkConfig = [[HKWorkoutConfiguration alloc]init];
+            wkConfig.activityType = HKWorkoutActivityTypeOther;
+            wkConfig.locationType = HKWorkoutSessionLocationTypeUnknown;
+            
+            [(hkService .hkStore) startWatchAppWithWorkoutConfiguration:wkConfig
+                      completion:^(BOOL success, NSError * _Nullable error)
+             {
+                 [delegate heartrateModelStartWorkResult:success withError:error];
+                 
+                 if (success){
+                     [self startReading_HeartrateData];
+                     [self messageStartWorkout];
+                 }
+             }];
+        }
+        else
+        {
+            //communication not possible
+            NSErrorDomain errorDomain= @"";
+            NSInteger errorCode = 1111;
+            NSError * error = [NSError errorWithDomain:errorDomain
+                                                  code:errorCode
+                                              userInfo:nil];
+            [delegate heartrateModelStartWorkResult:false  withError:error];
+        }
+    }
+    else
+    {
+        [self messageStartWorkout];
+    }
+}//eom
+
+-(void)end
+{
+    [self stopReading_HeartrateData];
+    [self messageEndWorkout];
+}//eom
+
+#pragma mark - Live Message Start Workout
+-(void)messageStartWorkout
+{
+    NSDictionary<NSString *, id> * messageToSend = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                                    hrModelKeysToString(monitorKey_Command), hrModelKeysToString(monitor_key),
+                                                    hrModelCommandToString(monitorCommand_start),hrModelCommandToString(monitor_Command), nil];
+    
+    [(comm .session) sendMessage:messageToSend
+                    replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage)
+     {
+         
+     } errorHandler:^(NSError * _Nonnull error) {
+         //communication not possible
+         [delegate heartrateModelStartWorkResult:false  withError:error];
+     }];
+}//eom
+
+-(void)messageEndWorkout
+{
+    NSDictionary<NSString *, id> * messageToSend = [[NSDictionary alloc]initWithObjectsAndKeys:
+    hrModelKeysToString(monitorKey_Command), hrModelKeysToString(monitor_key),
+    hrModelCommandToString(monitorCommand_end),hrModelCommandToString(monitor_Command), nil];
+    
+    [(comm .session) sendMessage:messageToSend
+                    replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage)
+     {
+         NSLog(@"reply message: %@", replyMessage);
+     } errorHandler:^(NSError * _Nonnull error)
+     {
+         [comm sendApplicationContext:messageToSend];
+     }];
 }//eom
 
 #pragma mark - Health Store Permission
@@ -66,6 +142,11 @@
         initWithObjectsAndKeys:@"Success", @"Received", nil];
     
     return reply;
+}//eom
+
+-(void)communicatorDidReceivedBackgroundMessage:(NSDictionary<NSString *,id> *)message
+{
+    //notthing to do - not implemented for phone to received background messages
 }//eom
 
 #pragma mark Communication Helpers
@@ -149,16 +230,20 @@
 #pragma mark - Health Store Heartrate Reading
 -(void)startReading_HeartrateData
 {
-    [hkService startHeartrateWithPollingTime:1.5
-                   andSamplesWithSecondsBack:-40.0];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [hkService startHeartrateWithPollingTime:1.5
+                   andSamplesWithSecondsBack:-25.0];
+    });
 }//eom
 
 -(void)stopReading_HeartrateData
 {
-    [hkService stopPollingHeartrates];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [hkService stopPollingHeartrates];
+   });
 }//eom
 
-#pragma mark -
+#pragma mark - HealthData Service Delegates
 -(void)healthDataServicePollingSamplesReceived:(NSArray<__kindof HKSample *> *)samples
 {
     dispatch_async(dispatch_get_main_queue(), ^{

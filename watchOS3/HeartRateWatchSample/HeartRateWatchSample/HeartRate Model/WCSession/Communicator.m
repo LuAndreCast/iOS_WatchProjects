@@ -81,10 +81,21 @@ activationDidCompleteWithState:(WCSessionActivationState)activationState
     else
     {
         NSDictionary<NSString *,id> * reply = [delegate communicatorDidReceivedLiveMessage:message];
-        
         replyHandler(reply);
     }
 }//eom
 
+#pragma mark - Background Messaging
+-(void)session:(WCSession *)session
+    didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext
+{
+    [delegate communicatorDidReceivedBackgroundMessage:applicationContext];
+}//eom
+
+-(void)sendApplicationContext:(NSDictionary<NSString *, id> *) messageToSend
+{
+    NSError * errorOccurred = nil;
+    [session updateApplicationContext:messageToSend error:&errorOccurred];
+}//eom
 
 @end

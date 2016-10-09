@@ -17,6 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *hrValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hrStartDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hrEndDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hrStatusLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *hrStartButton;
+@property (weak, nonatomic) IBOutlet UIButton *hrEndButton;
+
 
 @end
 

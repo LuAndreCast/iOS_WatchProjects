@@ -22,23 +22,21 @@
                            withStartDate:(NSDate *)startDate
                               andEndDate:(NSDate *)endDate;
 
+/*!
+ * @brief This method is called when an anchored query receives new heart rate data
+ */
+-(void)heartrateModelStartWorkResult:(BOOL) startWorkStatus withError:(NSError *) error;
 
 @end
 
 
-
 @interface HeartrateModel_Phone : NSObject<CommunicatorDelegate, healthDateServiceDelegate>
-
 
 @property (nonatomic, weak) id<HeartrateModelDelegate> delegate;
 
-
-
 -(void)requestPermission:(void (^)(BOOL success, NSError *error)) completionBlock;
+
 -(void)start;
-
-
-
-
+-(void)end;
 
 @end
