@@ -9,16 +9,32 @@
 #import <Foundation/Foundation.h>
 
 
+#pragma mark - messenger
+
 //Keys
-typedef enum {command, state, error} hrModelKey;
-#define hrModelKeyToString(enum) [@[@"command",@"state",@"error"] objectAtIndex:enum]
+typedef enum {monitor_key, monitorKey_Command, monitorKey_Response, monitorKey_Error} hrModelKeys;
+#define hrModelKeysToString(enum) [@[@"monitor_key",@"Command",@"Response",@"Error"] objectAtIndex:enum]
 
-//Values - Command
-typedef enum {monitor_start, monitor_end, monitor_status} hrModelCommand;
-#define hrModelCommandToString(enum) [@[@"monitor_start",@"monitor_end",@"monitor_status"] objectAtIndex:enum]
+//Command
+typedef enum {monitor_Command, monitorCommand_start, monitorCommand_end, monitorCommand_status} hrModelMonitorCommand;
+#define hrModelCommandToString(enum) [@[@"monitor_Command",@"start",@"end",@"status"] objectAtIndex:enum]
 
-//Values - State
-typedef enum {state_started, state_ended, state_paused} hrModelState;
-#define hrModelStateToString(enum) [@[@"state_started",@"state_paused"] objectAtIndex:enum]
+//Response
+typedef enum {monitor_Response, monitorResponse_started, monitorResponse_ended, monitorResponse_notStarted} hrModelMonitorResponse;
+#define hrModelResponseToString(enum) [@[@"monitor_Response",@"started",@"ended",@"notStarted"] objectAtIndex:enum]
 
-//Values - Error
+//Error
+typedef enum {monitor_Error, monitorError_workout, monitorError_healthkit, monitorError_communicator} hrModelMonitorError;
+#define hrModelErrorToString(enum) [@[@"monitor_Error",@"workout",@"healthkit",@"communicator"] objectAtIndex:enum]
+
+#pragma mark - workout - watch only
+typedef enum {
+    error_healthkit = -3,
+    error_communicator = -2,
+    error_workout = -1,
+    notActivated = 0,
+    ended = 1,
+    started = 2,
+    alreadyStarted = 3
+} workoutStatus;
+

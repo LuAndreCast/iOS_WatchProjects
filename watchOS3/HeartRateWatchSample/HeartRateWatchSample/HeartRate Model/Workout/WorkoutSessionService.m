@@ -139,7 +139,8 @@
 -(void)startMonitoringHeartrate:(NSDate *)date
 {
     //start monitoring data
-    [healthService readHeartrates:date completion:^(NSArray<__kindof HKSample *> *samples, NSError *error) {
+    [healthService startStreamingHeartratesFromLocalDevice:date
+       completion:^(NSArray<__kindof HKSample *> *samples, NSError *error) {
         if([samples count] > 0)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -159,7 +160,7 @@
     endDate = date;
     
     //stop monitoring data
-    [healthService stopReadingHeartrates];
+    [healthService stopStreamingHeartrates];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [delegate WorkoutSessionServiceDidStopWorkoutAtDate:date];

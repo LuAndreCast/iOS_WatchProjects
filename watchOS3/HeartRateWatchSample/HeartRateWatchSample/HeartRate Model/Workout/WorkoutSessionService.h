@@ -29,24 +29,20 @@
 */
 -(void)WorkoutSessionServiceDidReceiveHeartrate:(double) hrValue;
 
-
 /*!
  * @brief This method is called when an errors occurs
  */
 -(void)WorkoutSessionServiceErrorOccurred:(NSError *) error;
-
 
 /*!
  * @brief This method is called when an session has
  */
 -(void)WorkoutSessionServiceAnotherSessionAlreadyStarted;
 
-
 /*!
  * @brief This method is called when an errors occurs
  */
 -(void)WorkoutSessionServiceHealthPermissionFailed:(NSError *) error;
-
 
 /*!
  * @brief This method is called when

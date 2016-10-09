@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		F71CF1061DA58ABB0015461E /* HealthDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1041DA58ABB0015461E /* HealthDataService.m */; };
 		F71CF10B1DA58C270015461E /* HealthDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1041DA58ABB0015461E /* HealthDataService.m */; };
-		F71CF10C1DA58C2B0015461E /* HealthDataService_Watch.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */; };
 		F71CF10D1DA58C320015461E /* WorkoutSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */; };
+		F7458D8A1DA830B60035EB0D /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F7458D891DA830B60035EB0D /* Communicator.m */; };
+		F7458D8B1DA830B60035EB0D /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F7458D891DA830B60035EB0D /* Communicator.m */; };
+		F7458D931DA864000035EB0D /* HeartrateModel_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = F7458D901DA864000035EB0D /* HeartrateModel_Phone.m */; };
 		F76E00001DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F76EFFFF1DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F76E00081DA421CF00A92F8D /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76E00071DA421CF00A92F8D /* InterfaceController.m */; };
+		F76E00081DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76E00071DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.m */; };
 		F76E000B1DA421CF00A92F8D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */; };
 		F76E00101DA421CF00A92F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76E000F1DA421CF00A92F8D /* Assets.xcassets */; };
 		F76E00211DA421D300A92F8D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76E00201DA421D300A92F8D /* HealthKit.framework */; };
@@ -73,13 +75,15 @@
 /* Begin PBXFileReference section */
 		F71CF0FE1DA58AB20015461E /* WorkoutSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSessionService.h; path = "HeartRate Model/Workout/WorkoutSessionService.h"; sourceTree = "<group>"; };
 		F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSessionService.m; path = "HeartRate Model/Workout/WorkoutSessionService.m"; sourceTree = "<group>"; };
-		F71CF1011DA58ABB0015461E /* HealthDataService_Watch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthDataService_Watch.h; path = "HeartRate Model/Healthkit/HealthDataService_Watch.h"; sourceTree = "<group>"; };
-		F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthDataService_Watch.m; path = "HeartRate Model/Healthkit/HealthDataService_Watch.m"; sourceTree = "<group>"; };
 		F71CF1031DA58ABB0015461E /* HealthDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthDataService.h; path = "HeartRate Model/Healthkit/HealthDataService.h"; sourceTree = "<group>"; };
 		F71CF1041DA58ABB0015461E /* HealthDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthDataService.m; path = "HeartRate Model/Healthkit/HealthDataService.m"; sourceTree = "<group>"; };
 		F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeartRateModelConstants.h; path = "HeartRate Model/HeartRateModelConstants.h"; sourceTree = "<group>"; };
-		F76E00061DA421CF00A92F8D /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		F76E00071DA421CF00A92F8D /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		F7458D881DA830B60035EB0D /* Communicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Communicator.h; path = "HeartRate Model/WCSession/Communicator.h"; sourceTree = "<group>"; };
+		F7458D891DA830B60035EB0D /* Communicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Communicator.m; path = "HeartRate Model/WCSession/Communicator.m"; sourceTree = "<group>"; };
+		F7458D8F1DA864000035EB0D /* HeartrateModel_Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeartrateModel_Phone.h; path = "HeartRate Model/HeartrateModel_Phone.h"; sourceTree = "<group>"; };
+		F7458D901DA864000035EB0D /* HeartrateModel_Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeartrateModel_Phone.m; path = "HeartRate Model/HeartrateModel_Phone.m"; sourceTree = "<group>"; };
+		F76E00061DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateWorkoutInterfaceController.h; sourceTree = "<group>"; };
+		F76E00071DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartRateWorkoutInterfaceController.m; sourceTree = "<group>"; };
 		F76E00091DA421CF00A92F8D /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
 		F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		F76E000F1DA421CF00A92F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,19 +134,26 @@
 			children = (
 				F71CF1031DA58ABB0015461E /* HealthDataService.h */,
 				F71CF1041DA58ABB0015461E /* HealthDataService.m */,
-				F71CF1011DA58ABB0015461E /* HealthDataService_Watch.h */,
-				F71CF1021DA58ABB0015461E /* HealthDataService_Watch.m */,
 			);
 			name = Healthkit;
 			sourceTree = "<group>";
 		};
-		F71CF0F91DA58A290015461E /* Workout */ = {
+		F71CF0F91DA58A290015461E /* Workout - Watch ONLY */ = {
 			isa = PBXGroup;
 			children = (
 				F71CF0FE1DA58AB20015461E /* WorkoutSessionService.h */,
 				F71CF0FF1DA58AB20015461E /* WorkoutSessionService.m */,
 			);
-			name = Workout;
+			name = "Workout - Watch ONLY";
+			sourceTree = "<group>";
+		};
+		F7458D871DA830750035EB0D /* WCSession */ = {
+			isa = PBXGroup;
+			children = (
+				F7458D881DA830B60035EB0D /* Communicator.h */,
+				F7458D891DA830B60035EB0D /* Communicator.m */,
+			);
+			name = WCSession;
 			sourceTree = "<group>";
 		};
 		F76E00031DA421CF00A92F8D /* HeartRateWatchSample WatchKit Extension */ = {
@@ -151,8 +162,8 @@
 				F76E00231DA421E600A92F8D /* HeartRateWatchSample WatchKit Extension.entitlements */,
 				F76E00091DA421CF00A92F8D /* ExtensionDelegate.h */,
 				F76E000A1DA421CF00A92F8D /* ExtensionDelegate.m */,
-				F76E00061DA421CF00A92F8D /* InterfaceController.h */,
-				F76E00071DA421CF00A92F8D /* InterfaceController.m */,
+				F76E00061DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.h */,
+				F76E00071DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.m */,
 				F76E000F1DA421CF00A92F8D /* Assets.xcassets */,
 				F76E00111DA421CF00A92F8D /* Info.plist */,
 				F76E00041DA421CF00A92F8D /* Supporting Files */,
@@ -179,9 +190,12 @@
 		F76E00261DA4236100A92F8D /* Heartrate Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7458D8F1DA864000035EB0D /* HeartrateModel_Phone.h */,
+				F7458D901DA864000035EB0D /* HeartrateModel_Phone.m */,
 				F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */,
-				F71CF0F91DA58A290015461E /* Workout */,
 				F71CF0F81DA58A130015461E /* Healthkit */,
+				F7458D871DA830750035EB0D /* WCSession */,
+				F71CF0F91DA58A290015461E /* Workout - Watch ONLY */,
 			);
 			name = "Heartrate Model";
 			path = HeartRateWatchSample;
@@ -398,9 +412,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F76EFFE41DA421CE00A92F8D /* ViewController.m in Sources */,
+				F7458D931DA864000035EB0D /* HeartrateModel_Phone.m in Sources */,
 				F76EFFE11DA421CE00A92F8D /* AppDelegate.m in Sources */,
 				F71CF1061DA58ABB0015461E /* HealthDataService.m in Sources */,
 				F76EFFDE1DA421CE00A92F8D /* main.m in Sources */,
+				F7458D8A1DA830B60035EB0D /* Communicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,10 +424,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7458D8B1DA830B60035EB0D /* Communicator.m in Sources */,
 				F76E000B1DA421CF00A92F8D /* ExtensionDelegate.m in Sources */,
-				F71CF10C1DA58C2B0015461E /* HealthDataService_Watch.m in Sources */,
 				F71CF10D1DA58C320015461E /* WorkoutSessionService.m in Sources */,
-				F76E00081DA421CF00A92F8D /* InterfaceController.m in Sources */,
+				F76E00081DA421CF00A92F8D /* HeartRateWorkoutInterfaceController.m in Sources */,
 				F71CF10B1DA58C270015461E /* HealthDataService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

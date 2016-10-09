@@ -10,9 +10,11 @@
 #import <Foundation/Foundation.h>
 
 #import "WorkoutSessionService.h"
+#import "Communicator.h"
+#import "HeartRateModelConstants.h"
 
 
-@interface InterfaceController : WKInterfaceController<WorkoutSessionServiceDelegate>
+@interface HeartRateWorkoutInterfaceController : WKInterfaceController<WorkoutSessionServiceDelegate, CommunicatorDelegate>
 
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *wkStartDateLabel;

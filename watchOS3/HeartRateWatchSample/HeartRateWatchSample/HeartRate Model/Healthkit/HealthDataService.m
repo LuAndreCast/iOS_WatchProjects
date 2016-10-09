@@ -14,12 +14,17 @@
     //workouts
     HKSampleQuery * workOutsQuery;
     
-    //heartrate
+    //heartrate - streaming
     HKQueryAnchor * hrAnchor;
-    HKAnchoredObjectQuery * hrQuery;
+    HKAnchoredObjectQuery * hrAnchorQuery;
+    
+    //heartrate - sample query
+    HKSampleQuery * hrSampleQuery;
+    NSTimer * hrQueryTimer;
 }
 @synthesize hkStore;
 @synthesize hrUnit;
+@synthesize delegate;
 
 #pragma mark Init
 -(id)init
@@ -34,7 +39,7 @@
 }//eom
 
 
-#pragma mark Permission
+#pragma mark - Permission
 -(void)requestPermission:( void (^)(BOOL success, NSError * error))completionBlock
 {
     //types
@@ -51,84 +56,16 @@
      completion:^(BOOL success, NSError * _Nullable error)
      {
          completionBlock(success, error);
-         
-         //TODO: REMOVE ME
-         if (error != nil) {
-             NSLog(@"%@", [error localizedDescription]);
-         }
-         else
-         {
-             NSLog(@"HK Permission Requested");
-         }
-         //
      }];
 }//eom
 
 
-#pragma mark - Read Data (Samples)
-
-
-#pragma mark Workouts
--(void)readWorkouts:( void (^)(NSArray<HKWorkout *> * workouts, NSError * error))completionBlock
-{
-    //this app
-    NSPredicate *sourcePredicate = [HKQuery predicateForObjectsFromSource:[HKSource defaultSource]];
-    
-    //amount of time
-    NSPredicate * workOutPredicates = [HKQuery predicateForWorkoutsWithOperatorType:NSGreaterThanPredicateOperatorType duration:0];
-    
-    NSArray<NSPredicate *> * predicateList = [[NSArray alloc]
-                                              initWithObjects:sourcePredicate, workOutPredicates, nil];
-    
-   NSCompoundPredicate * predicate = [[NSCompoundPredicate alloc]
-                                      initWithType:NSAndPredicateType subpredicates:predicateList];
-    
-    //type
-    HKSampleType * sampleType = [HKWorkoutType workoutType];
-    
-    //limit
-    NSUInteger queryLimit = 0;
-    
-    //sort
-    NSSortDescriptor * querySort = [[NSSortDescriptor alloc]initWithKey:HKSampleSortIdentifierStartDate
-                                                              ascending:false];
-    NSArray<NSSortDescriptor *> * queryDescriptors = [[NSArray alloc] initWithObjects:querySort, nil];
-    
-    
-   //query
-   workOutsQuery =  [[HKSampleQuery alloc]initWithSampleType:sampleType
-                                                           predicate:predicate
-                                                               limit:queryLimit
-                                                     sortDescriptors:queryDescriptors
-                 resultsHandler:^(HKSampleQuery * _Nonnull query,
-                 NSArray<__kindof HKSample *> * _Nullable results,
-                 NSError * _Nullable error)
-    {
-        NSArray<HKWorkout *> * workouts = results;
-        
-        //TODO: REMOVE ME
-        if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        else
-        {
-            NSLog(@"%@", results);
-        }
-        //
-        
-        completionBlock(workouts, error);
-    }];
-    [hkStore executeQuery:workOutsQuery];
-    
-}//eom
-
--(void)stopReadingWorkouts
-{
-    [hkStore stopQuery:workOutsQuery];
-}//eom
-
-#pragma mark Heartrate
--(void)readHeartrates:(NSDate *) date
+#pragma mark - Heartrate Streaming Query
+/*!
+ * @discussion Heartrate Streaming Query
+ * brief Query from local device
+ */
+-(void)startStreamingHeartratesFromLocalDevice:(NSDate *) date
            completion:( void (^)(NSArray<__kindof HKSample *> * samples, NSError * error))completionBlock
 {
     HKQuantityType * hrType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
@@ -137,10 +74,10 @@
     
     NSUInteger queryLimit = HKObjectQueryNoLimit;
     
-    hrQuery = [[HKAnchoredObjectQuery alloc]initWithType:hrType
-                                                                    predicate:predicate
-                                                                    anchor:hrAnchor
-                                                                    limit:queryLimit
+    hrAnchorQuery = [[HKAnchoredObjectQuery alloc]initWithType:hrType
+                                                predicate:predicate
+                                                anchor:hrAnchor
+                                                limit:queryLimit
     resultsHandler:^(HKAnchoredObjectQuery * _Nonnull query,
                      NSArray<__kindof HKSample *> * _Nullable sampleObjects,
                      NSArray<HKDeletedObject *> * _Nullable deletedObjects,
@@ -149,21 +86,9 @@
         {
             hrAnchor = newAnchor;
             completionBlock(sampleObjects, error);
-            
-            //TODO: REMOVE ME
-            if (error != nil) {
-                NSLog(@"%@", [error localizedDescription]);
-            }
-            else
-            {
-                NSLog(@"%@", sampleObjects);
-            }
-            //
-            
     }];
     
-    
-    hrQuery.updateHandler = ^(HKAnchoredObjectQuery * _Nonnull query,
+    hrAnchorQuery.updateHandler = ^(HKAnchoredObjectQuery * _Nonnull query,
                             NSArray<__kindof HKSample *> * _Nullable sampleObjects,
                             NSArray<HKDeletedObject *> * _Nullable deletedObjects,
                             HKQueryAnchor * _Nullable newAnchor,
@@ -171,29 +96,76 @@
     {
         hrAnchor = newAnchor;
         completionBlock(sampleObjects, error);
-        
-        //TODO: REMOVE ME
-        if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        else
-        {
-            NSLog(@"%@", sampleObjects);
-        }
-        //
     };
     
-    [hkStore executeQuery:hrQuery];
+    [hkStore executeQuery:hrAnchorQuery];
 }//eom
 
--(void)stopReadingHeartrates
+-(void)stopStreamingHeartrates
 {
-    [hkStore stopQuery:hrQuery];
+    if (hrAnchorQuery != nil) {
+        [hkStore stopQuery:hrAnchorQuery];
+    }
 }//eom
 
+#pragma mark - Heartrate Polling Query
+/*!
+* @discussion Heartrate Polling Query
+* brief Generic query, ideal from iphone or watch
+*/
+-(void)startHeartrateWithPollingTime:(NSTimeInterval)pollingInterval
+              andSamplesWithSecondsBack:(NSTimeInterval)timeSecondsInterval
+{
+    //sample
+    HKSampleType * hrSampleType = [HKSampleType quantityTypeForIdentifier: HKQuantityTypeIdentifierHeartRate];
+    
+    //predicate
+    NSDate * startDate = [NSDate dateWithTimeIntervalSinceNow:timeSecondsInterval];
+    NSDate * endDate = nil;
+    HKQueryOptions queryOptions = HKQueryOptionNone;
+    NSPredicate * queryPredicate =  [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:queryOptions];
+    
+    hrQueryTimer = [NSTimer
+                    scheduledTimerWithTimeInterval:pollingInterval
+                    repeats:true
+    block:^(NSTimer * _Nonnull timer)
+    {
+        [self querySampleWithType:hrSampleType withPredicate:queryPredicate];
+    }];
+}//eom
 
-#pragma mark - Helpers
+-(void)querySampleWithType:(HKSampleType *)sampleType
+             withPredicate:(NSPredicate *)queryPredicate
+{
+    //sorter
+    NSSortDescriptor * querySort = [NSSortDescriptor sortDescriptorWithKey:HKSampleSortIdentifierEndDate ascending:false];
+    NSArray<NSSortDescriptor *> * querySortDesc = [[NSArray alloc]initWithObjects:querySort, nil];
+    
+    //limit
+    NSUInteger queryLimit = HKObjectQueryNoLimit;
+    
+    hrSampleQuery = [[HKSampleQuery alloc]
+                        initWithSampleType:sampleType
+                        predicate:queryPredicate
+                        limit:queryLimit
+                        sortDescriptors:querySortDesc
+        resultsHandler:^(HKSampleQuery * _Nonnull query,
+                         NSArray<__kindof HKSample *> * _Nullable results,
+                         NSError * _Nullable error)
+        {
+            if ([results count] > 0) {
+                [delegate healthDataServicePollingSamplesReceived:results];
+            }
+        }];
+    [hkStore executeQuery:hrSampleQuery];
+}//eom
 
+-(void)stopPollingHeartrates
+{
+    [hrQueryTimer invalidate];
+}//eom
+
+#pragma mark - Query Helpers
 -(NSCompoundPredicate *)genericSamplePredicateWithStartDate:(NSDate *)startDate
                            withLocalDevice:(BOOL)localDevice
                              withSource:(BOOL)defualtSource
@@ -206,7 +178,6 @@
                                                                    endDate:nil
                                                                    options:HKQueryOptionStrictStartDate];
     [predicateList addObject:datePredicate];
-    
     
     //device
     if (localDevice)
@@ -222,12 +193,61 @@
         NSPredicate * sourcePredicate = [HKQuery predicateForObjectsFromSource:[HKSource defaultSource]];
         [predicateList addObject:sourcePredicate];
     }
-    
-    
     NSCompoundPredicate * compound = [[NSCompoundPredicate alloc]
                                       initWithType:compoundPredicate subpredicates:predicateList];
     
     return compound;
+}//eom
+
+
+
+#pragma mark - Read Data (Samples)
+#pragma mark Workouts
+-(void)readWorkouts:( void (^)(NSArray<HKWorkout *> * workouts, NSError * error))completionBlock
+{
+    //this app
+    NSPredicate *sourcePredicate = [HKQuery predicateForObjectsFromSource:[HKSource defaultSource]];
+    
+    //amount of time
+    NSPredicate * workOutPredicates = [HKQuery predicateForWorkoutsWithOperatorType:NSGreaterThanPredicateOperatorType duration:0];
+    
+    NSArray<NSPredicate *> * predicateList = [[NSArray alloc]
+                                              initWithObjects:sourcePredicate, workOutPredicates, nil];
+    
+    NSCompoundPredicate * predicate = [[NSCompoundPredicate alloc]
+                                       initWithType:NSAndPredicateType subpredicates:predicateList];
+    
+    //type
+    HKSampleType * sampleType = [HKWorkoutType workoutType];
+    
+    //limit
+    NSUInteger queryLimit = 0;
+    
+    //sort
+    NSSortDescriptor * querySort = [[NSSortDescriptor alloc]initWithKey:HKSampleSortIdentifierStartDate
+                                                              ascending:false];
+    NSArray<NSSortDescriptor *> * queryDescriptors = [[NSArray alloc] initWithObjects:querySort, nil];
+    
+    
+    //query
+    workOutsQuery =  [[HKSampleQuery alloc]initWithSampleType:sampleType
+                                                    predicate:predicate
+                                                        limit:queryLimit
+                                              sortDescriptors:queryDescriptors
+                                               resultsHandler:^(HKSampleQuery * _Nonnull query,
+                                                                NSArray<__kindof HKSample *> * _Nullable results,
+                                                                NSError * _Nullable error)
+                      {
+                          NSArray<HKWorkout *> * workouts = results;
+                          completionBlock(workouts, error);
+                      }];
+    [hkStore executeQuery:workOutsQuery];
+    
+}//eom
+
+-(void)stopReadingWorkouts
+{
+    [hkStore stopQuery:workOutsQuery];
 }//eom
 
 @end

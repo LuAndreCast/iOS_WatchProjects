@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#import "HealthDataService.h"
+#import "HeartrateModel_Phone.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<HeartrateModelDelegate>
 
+
+
+@property (weak, nonatomic) IBOutlet UILabel *hrValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hrStartDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hrEndDateLabel;
 
 @end
 
