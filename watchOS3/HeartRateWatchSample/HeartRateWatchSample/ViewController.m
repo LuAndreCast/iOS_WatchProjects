@@ -65,7 +65,8 @@
 }//eo-a
 
 #pragma mark - HR Model Delegates
--(void)heartrateModelStartWorkResult:(BOOL)startWorkStatus withError:(NSError *)error
+-(void)heartrateModelStartWorkResult:(BOOL)startWorkStatus
+                           withError:(NSError *)error
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (startWorkStatus)

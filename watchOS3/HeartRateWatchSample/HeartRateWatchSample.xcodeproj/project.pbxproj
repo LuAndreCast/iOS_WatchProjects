@@ -190,9 +190,9 @@
 		F76E00261DA4236100A92F8D /* Heartrate Model */ = {
 			isa = PBXGroup;
 			children = (
+				F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */,
 				F7458D8F1DA864000035EB0D /* HeartrateModel_Phone.h */,
 				F7458D901DA864000035EB0D /* HeartrateModel_Phone.m */,
-				F71CF1071DA58ADB0015461E /* HeartRateModelConstants.h */,
 				F71CF0F81DA58A130015461E /* Healthkit */,
 				F7458D871DA830750035EB0D /* WCSession */,
 				F71CF0F91DA58A290015461E /* Workout - Watch ONLY */,
