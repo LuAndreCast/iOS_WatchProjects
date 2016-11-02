@@ -38,7 +38,7 @@
     df.dateStyle = NSDateFormatterShortStyle;
     df.timeStyle = NSDateFormatterMediumStyle;
     
-    hrModel = [ [HeartrateModel_Phone alloc] init];
+    hrModel = [[HeartrateModel_Phone alloc] init];
     hrModel.delegate = self;
     
     //permission
