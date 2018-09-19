@@ -11,14 +11,14 @@ import HealthKit
 
 
 protocol HealthStoreWorkoutDelegate {
-    func healthStoreWorkout_stateChanged(state:HKWorkoutSessionState)
-    func healthStoreWorkout_error(error:NSError)
+    func healthStoreWorkout_stateChanged(_ state:HKWorkoutSessionState)
+    func healthStoreWorkout_error(_ error:NSError)
 }
 
 @objc
 final class HealthStoreWorkout: NSObject, HKWorkoutSessionDelegate
 {
-    private var session: HKWorkoutSession?
+    fileprivate var session: HKWorkoutSession?
         {
         didSet
         {
@@ -46,7 +46,7 @@ final class HealthStoreWorkout: NSObject, HKWorkoutSessionDelegate
     var delegate:HealthStoreWorkoutDelegate?
     
     //MARK: - Start Workout
-    func startWorkout(workoutSession:HKWorkoutSession = HKWorkoutSession(activityType: .Running, locationType: .Indoor) )
+    func startWorkout(_ workoutSession:HKWorkoutSession = HKWorkoutSession(activityType: .running, locationType: .indoor) )
     {
         //health data avaliable?
         guard HKHealthStore.isHealthDataAvailable() else
@@ -73,7 +73,7 @@ final class HealthStoreWorkout: NSObject, HKWorkoutSessionDelegate
         }
     
         //starting session
-        self.healthStore?.startWorkoutSession(currSession)
+        self.healthStore?.start(currSession)
     }//eom
     
     //MARK: - End Workout
@@ -105,46 +105,48 @@ final class HealthStoreWorkout: NSObject, HKWorkoutSessionDelegate
         }
         
         //ending session
-        self.healthStore?.endWorkoutSession(currSession)
+        self.healthStore?.end(currSession)
     }//eom
     
     
     //MARK: Delegates
-    func workoutSession(workoutSession: HKWorkoutSession,
-                        didChangeToState toState: HKWorkoutSessionState,
-                                         fromState: HKWorkoutSessionState,
-                                         date: NSDate)
+    func workoutSession(_ workoutSession: HKWorkoutSession,
+                        didChangeTo toState: HKWorkoutSessionState,
+                                         from fromState: HKWorkoutSessionState,
+                                         date: Date)
     {
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         { [unowned self] in
             switch toState
             {
-                case .NotStarted:
+                case .notStarted:
                     if verbose {  print("workoutSession Changed to 'Not Started'") }
                     
                     //notify listener
-                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.NotStarted)
+                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.notStarted)
                     break
-                case .Running:
+                case .running:
                     if verbose {  print("workoutSession Changed to 'Running'") }
                     
                     //notify listener
-                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.Running)
-                case .Ended:
+                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.running)
+                case .ended:
                     if verbose {  print("workoutSession Changed to 'Ended'") }
                     
                     //notify listener
-                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.Ended)
+                    self.delegate?.healthStoreWorkout_stateChanged(HKWorkoutSessionState.ended)
+                default:
+                    break
             }
             
         }
     }//eom
     
-    func workoutSession(workoutSession: HKWorkoutSession,
-                        didFailWithError error: NSError)
+    func workoutSession(_ workoutSession: HKWorkoutSession,
+                        didFailWithError error: Error)
     {
         //notify listener
-        self.delegate?.healthStoreWorkout_error(error)
+        self.delegate?.healthStoreWorkout_error(error as NSError)
     }//eom
 
     

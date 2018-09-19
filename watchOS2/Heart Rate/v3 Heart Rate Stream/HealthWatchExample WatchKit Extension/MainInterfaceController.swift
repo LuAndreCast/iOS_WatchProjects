@@ -20,8 +20,8 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
     
     
     //MARK: - Loading
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         // Configure interface objects here.
     }//eom
@@ -69,19 +69,19 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
     
     
     //MARK: - Monitoring Delegates
-    func heartRateMonitorError(error: NSError) {
+    func heartRateMonitorError(_ error: NSError) {
         self.messageLabel.setText("Sending Error: \(error.localizedDescription)")
         
-        let errorSending:String = "\(response.ErrorMonitoring.toString()) | \(error.localizedDescription)"
+        let errorSending:String = "\(response.errorMonitoring.toString()) | \(error.localizedDescription)"
         
-        let messageFromWatch = [ keys.Response.toString(): errorSending ]
-        wMessenger.sendMessage(messageFromWatch)
-        { (reply:[String : AnyObject]?, error:NSError?) in
+        let messageFromWatch = [ keys.response.toString(): errorSending ]
+        wMessenger.sendMessage(messageFromWatch as [String : AnyObject])
+        { (reply:[String : Any]?, error:Error?) in
             
         }
     }//eom
     
-    func heartRateMonitorStateChanged(isMonitoring: Bool)
+    func heartRateMonitorStateChanged(_ isMonitoring: Bool)
     {
         if isMonitoring
         {
@@ -98,7 +98,7 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
         self.updateStatusToPhone(isMonitoring)
     }//eom
     
-    func heartRateMonitorResponse(result: [HeartRate]) {
+    func heartRateMonitorResponse(_ result: [HeartRate]) {
         if result.count > 0
         {
             let lastHr:HeartRate = result.last!
@@ -109,14 +109,14 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
             
             let messageFromWatch:[String:AnyObject] =
                 [
-                    keys.Response.toString() : response.Data.toString(),
-                    keys.HeartRate.toString() : lastHr.value,
-                    keys.Time.toString() : lastHr.timeString,
-                    keys.Date.toString() : lastHr.dateString
+                    keys.response.toString() : response.data.toString() as AnyObject,
+                    keys.heartRate.toString() : lastHr.value as AnyObject,
+                    keys.time.toString() : lastHr.timeString as AnyObject,
+                    keys.date.toString() : lastHr.dateString as AnyObject
             ]
             
             wMessenger.sendMessage(messageFromWatch)
-            { (reply:[String : AnyObject]?, error:NSError?) in
+            { (reply:[String : Any]?, error:Error?) in
                 
             }
             
@@ -129,37 +129,37 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
     
     
     //MARK: - Messeger
-    func updateStatusToPhone(isMonitoring:Bool)
+    func updateStatusToPhone(_ isMonitoring:Bool)
     {
         var messageToSend:[String:AnyObject] = [:]
         
         if isMonitoring
         {
-            messageToSend = [keys.Response.toString():response.StartedMonitoring.toString()]
+            messageToSend = [keys.response.toString():response.startedMonitoring.toString() as AnyObject]
         }
         else
         {
-            messageToSend = [keys.Response.toString():response.EndedMonitoring.toString()]
+            messageToSend = [keys.response.toString():response.endedMonitoring.toString() as AnyObject]
         }
         
         wMessenger.sendMessage(messageToSend)
-        { (reply:[String : AnyObject]?, error:NSError?) in
+        { (reply:[String : Any]?, error:Error?) in
             
         }
     
     }//eom
     
     //MARK: - Messeger Delegates
-    func watchMessenger_didReceiveMessage(message: [String : AnyObject]) {
+    func watchMessenger_didReceiveMessage(_ message: [String : AnyObject]) {
         
-        if let commandReceived:String = message[keys.Command.toString()] as? String
+        if let commandReceived:String = message[keys.command.toString()] as? String
         {
             switch commandReceived
             {
-                case command.StartMonitoring.toString():
+                case command.startMonitoring.toString():
                     self.start()
                     break
-                case command.EndMonitoring.toString():
+                case command.endMonitoring.toString():
                    self.end()
                     break
                 default:
@@ -172,7 +172,7 @@ class MainInterfaceController: WKInterfaceController, watchMessengerDelegate, he
         }
     }//eom
     
-    func watchMessenger_startResults(started: Bool, error: NSError?) {
+    func watchMessenger_startResults(_ started: Bool, error: NSError?) {
         
     }//eom
 }//eoc
