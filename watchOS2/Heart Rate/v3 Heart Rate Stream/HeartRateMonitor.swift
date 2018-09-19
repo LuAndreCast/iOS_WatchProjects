@@ -10,9 +10,9 @@ import Foundation
 import HealthKit
 
 protocol heartRateMonitorDelegate {
-    func heartRateMonitorStateChanged(isMonitoring:Bool)
-    func heartRateMonitorError(error:NSError)
-    func heartRateMonitorResponse(heartRates:[HeartRate])
+    func heartRateMonitorStateChanged(_ isMonitoring:Bool)
+    func heartRateMonitorError(_ error:NSError)
+    func heartRateMonitorResponse(_ heartRates:[HeartRate])
 }
 
 class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkoutDelegate {
@@ -23,7 +23,7 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     let healthMonitor = HealthStoreMonitor()
     let hrParser = HeartRateParser()
     
-    private var _isMonitoring = false
+    fileprivate var _isMonitoring = false
     
     var isMonitoring:Bool{
         return _isMonitoring
@@ -76,7 +76,7 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     }//eom
     
     //MARK: - WorkOut Delegates
-    func healthStoreWorkout_error(error: NSError)
+    func healthStoreWorkout_error(_ error: NSError)
     {
         let errorNum:Int = error.code
         switch errorNum
@@ -99,36 +99,38 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
         }
     }//eom
     
-    func healthStoreWorkout_stateChanged(state: HKWorkoutSessionState)
+    func healthStoreWorkout_stateChanged(_ state: HKWorkoutSessionState)
     {
         switch state
         {
-            case .Running:
-                if let hrSampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+            case .running:
+                if let hrSampleType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
                 {
                     self.healthMonitor.startMonitoring(healthStore, sampleType: hrSampleType)
                 }
                 break
-            case .Ended:
+            case .ended:
                     self.healthMonitor.endMonitoring()
                 break
-            case .NotStarted:
+            case .notStarted:
                 //nothing to do - just incase
                 self._isMonitoring = false
                 self.delegate?.heartRateMonitorStateChanged(false)
+                break
+            default:
                 break
         }
     }//eom
     
     //MARK: - Monitoring Delegates
-    func healthStoreMonitorResults(results:[HKSample])
+    func healthStoreMonitorResults(_ results:[HKSample])
     {
         let parsedResults:[HeartRate] = hrParser.parse(results)
         
         self.delegate?.heartRateMonitorResponse(parsedResults)
     }//eom
     
-    func healthStoreMonitorError(error:NSError)
+    func healthStoreMonitorError(_ error:NSError)
     {
         let errorNum = error.code
         switch errorNum
@@ -148,7 +150,7 @@ class HeartRateMonitor: NSObject, healthStoreMonitorDelegate, HealthStoreWorkout
     }//eom
 
     //MARK: - Errors
-    private func stopAndSendError(error:NSError, endWorkOut:Bool = false, endMonitor:Bool = false)
+    fileprivate func stopAndSendError(_ error:NSError, endWorkOut:Bool = false, endMonitor:Bool = false)
     {
         self._isMonitoring = false
         self.delegate?.heartRateMonitorStateChanged(false)

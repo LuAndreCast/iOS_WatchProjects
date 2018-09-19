@@ -11,9 +11,9 @@ import HealthKit
 
 class HeartRateParser: NSObject {
     
-    private let heartRateUnit:HKUnit = HKUnit(fromString: "count/min")
+    fileprivate let heartRateUnit:HKUnit = HKUnit(from: "count/min")
     
-    func parse(samples:[HKSample])->[HeartRate]
+    func parse(_ samples:[HKSample])->[HeartRate]
     {
         var list:[HeartRate] = []
         
@@ -41,8 +41,8 @@ class HeartRateParser: NSObject {
 //                print("---------------------------------\n")
             }
            
-            let heartRate:Double = currSample.quantity.doubleValueForUnit(self.heartRateUnit)
-            let endData:NSDate = currSample.endDate
+            let heartRate:Double = currSample.quantity.doubleValue(for: self.heartRateUnit)
+            let endData:Date = currSample.endDate
 
             let hr:HeartRate = HeartRate(value: heartRate, date: endData)
             list .append(hr)

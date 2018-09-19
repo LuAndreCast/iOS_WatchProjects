@@ -31,22 +31,22 @@ class MainViewController: UIViewController,watchMessengerDelegate
         self.wMessenger.start()
     }//eom
 
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         self.requestHeartRatePermission()
     }//eom
 
     //MARK: - Actions
-    @IBAction func startEndMonitoring(sender: AnyObject)
+    @IBAction func startEndMonitoring(_ sender: AnyObject)
     {
-        if self.startEndMonitoringButton.selected
+        if self.startEndMonitoringButton.isSelected
         {
-            self.startEndMonitoringButton.selected = false
+            self.startEndMonitoringButton.isSelected = false
             self.end()
         }
         else
         {
-            self.startEndMonitoringButton.selected = true
+            self.startEndMonitoringButton.isSelected = true
             self.start()
         }
     }//eom
@@ -54,13 +54,13 @@ class MainViewController: UIViewController,watchMessengerDelegate
     //MARK: Start / End Monitoring
     func start()
     {
-        let messageFromPhone = [ keys.Command.toString() : command.StartMonitoring.toString() ]
-        wMessenger.sendMessage(messageFromPhone)
-        { (reply:[String : AnyObject]?, error:NSError?) in
+        let messageFromPhone = [ keys.command.toString() : command.startMonitoring.toString() ]
+        wMessenger.sendMessage(messageFromPhone as [String : AnyObject])
+        { (reply:[String : Any]?, error:Error?) in
             
             if error != nil
             {
-                self.startEndMonitoringButton.selected = false
+                self.startEndMonitoringButton.isSelected = false
                 self.updateUI()
                 
                 //show error
@@ -75,13 +75,13 @@ class MainViewController: UIViewController,watchMessengerDelegate
     
     func end()
     {
-        let messageFromPhone = [ keys.Command.toString() : command.EndMonitoring.toString() ]
-        wMessenger.sendMessage(messageFromPhone)
-        { (reply:[String : AnyObject]?, error:NSError?) in
+        let messageFromPhone = [ keys.command.toString() : command.endMonitoring.toString() ]
+        wMessenger.sendMessage(messageFromPhone as [String : AnyObject])
+        { (reply:[String : Any]?, error:Error?) in
             
             if error != nil
             {
-                self.startEndMonitoringButton.selected = true
+                self.startEndMonitoringButton.isSelected = true
                 self.updateUI()
                 
                 //show error
@@ -94,42 +94,42 @@ class MainViewController: UIViewController,watchMessengerDelegate
     }//eom
     
     
-    private func updateUI()
+    fileprivate func updateUI()
     {
-        if self.startEndMonitoringButton.selected
+        if self.startEndMonitoringButton.isSelected
         {
             self.messageLabel.text = "Started Monitoring"
-            self.startEndMonitoringButton.setTitle("End Monitoring", forState: UIControlState.Normal)
+            self.startEndMonitoringButton.setTitle("End Monitoring", for: UIControlState())
         }
         else
         {
             self.messageLabel.text = "Ended Monitoring"
-            self.startEndMonitoringButton.setTitle("Start Monitoring", forState: UIControlState.Normal)
+            self.startEndMonitoringButton.setTitle("Start Monitoring", for: UIControlState())
         }
     }//eom
     
     //MARK: - Messenger Delegates
-    func watchMessenger_didReceiveMessage(message: [String : AnyObject])
+    func watchMessenger_didReceiveMessage(_ message: [String : AnyObject])
     {
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             
             //reponses
-            if let commandReceived:String = message[keys.Response.toString()] as? String
+            if let commandReceived:String = message[keys.response.toString()] as? String
             {
                 switch commandReceived
                 {
-                    case response.StartedMonitoring.toString():
-                        self.startEndMonitoringButton.selected = true
+                    case response.startedMonitoring.toString():
+                        self.startEndMonitoringButton.isSelected = true
                         self.updateUI()
                         break
-                    case response.EndedMonitoring.toString():
-                        self.startEndMonitoringButton.selected = false
+                    case response.endedMonitoring.toString():
+                        self.startEndMonitoringButton.isSelected = false
                         self.updateUI()
                         break
-                    case response.Data.toString():
-                        let hrValue:Double? = message[keys.HeartRate.toString()] as? Double
-                        let hrTime:String? = message[keys.Time.toString()] as? String
-                        let hrDate:String? = message[keys.Date.toString()] as? String
+                    case response.data.toString():
+                        let hrValue:Double? = message[keys.heartRate.toString()] as? Double
+                        let hrTime:String? = message[keys.time.toString()] as? String
+                        let hrDate:String? = message[keys.date.toString()] as? String
                         
                         if hrValue != nil && hrTime != nil && hrDate != nil
                         {
@@ -137,10 +137,10 @@ class MainViewController: UIViewController,watchMessengerDelegate
                         }
                         
                         break
-                    case response.ErrorHealthKit.toString():
+                    case response.errorHealthKit.toString():
                         self.messageLabel.text = "Error with HealthKit"
                             break
-                    case response.ErrorMonitoring.toString():
+                    case response.errorMonitoring.toString():
                         self.messageLabel.text = "Error with Monitoring"
                         break
                     default:
@@ -156,7 +156,7 @@ class MainViewController: UIViewController,watchMessengerDelegate
         }
     }//eom
     
-    func watchMessenger_startResults(started: Bool, error: NSError?)
+    func watchMessenger_startResults(_ started: Bool, error: NSError?)
     {
         if error != nil
         {

@@ -10,8 +10,8 @@
 import HealthKit
 
 protocol healthStoreMonitorDelegate {
-    func healthStoreMonitorResults(results:[HKSample])
-    func healthStoreMonitorError(error:NSError)
+    func healthStoreMonitorResults(_ results:[HKSample])
+    func healthStoreMonitorError(_ error:NSError)
 }
 
 
@@ -21,14 +21,14 @@ class HealthStoreMonitor: NSObject {
     var delegate:healthStoreMonitorDelegate?
     
     /* time looking back (in seconds) when performing sample query */
-    private let dateInterval:NSTimeInterval = -40.0
+    fileprivate let dateInterval:TimeInterval = -40.0
     
     /* Polling time (in seconds) */
-    private static let pollingInterval:NSTimeInterval = 1.5
-    private var continuePolling:Bool = true
+    fileprivate static let pollingInterval:TimeInterval = 1.5
+    fileprivate var continuePolling:Bool = true
     
-    private var sampleType:HKSampleType?
-    private var healthStore:HKHealthStore?
+    fileprivate var sampleType:HKSampleType?
+    fileprivate var healthStore:HKHealthStore?
     
     //limit
     var limit:Int = Int(HKObjectQueryNoLimit)
@@ -38,7 +38,7 @@ class HealthStoreMonitor: NSObject {
     
     
     //MARK: - Start / End Monitoring
-    func startMonitoring(healthStore:HKHealthStore, sampleType:HKSampleType)
+    func startMonitoring(_ healthStore:HKHealthStore, sampleType:HKSampleType)
     {
         self.continuePolling = true
         self.healthStore = healthStore
@@ -55,11 +55,10 @@ class HealthStoreMonitor: NSObject {
     
     //MARK: - Polling
     
-    private func scheduleNextPoll()
+    fileprivate func scheduleNextPoll()
     {
-        dispatch_after(
-            dispatch_time(DISPATCH_TIME_NOW,Int64(self.dynamicType.pollingInterval * Double(NSEC_PER_SEC))),
-                       dispatch_get_main_queue())
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(type(of: self).pollingInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC))
         {
             if self.continuePolling
             {
@@ -70,7 +69,7 @@ class HealthStoreMonitor: NSObject {
     }//eom
     
     //MARK: - Query
-    private func querySample()
+    fileprivate func querySample()
     {
         //type
         guard let queryType:HKSampleType = self.sampleType
@@ -83,10 +82,10 @@ class HealthStoreMonitor: NSObject {
         }
         
         //date (predicate)
-        let startDate:NSDate?  = NSDate(timeIntervalSinceNow: self.dateInterval)
-        let endDate:NSDate?    = nil
-        let queryOptions:HKQueryOptions = HKQueryOptions.None
-        let datePredicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: endDate, options: queryOptions)
+        let startDate:Date?  = Date(timeIntervalSinceNow: self.dateInterval)
+        let endDate:Date?    = nil
+        let queryOptions:HKQueryOptions = HKQueryOptions()
+        let datePredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: queryOptions)
         
         /*
         //device (predicate)
@@ -103,10 +102,8 @@ class HealthStoreMonitor: NSObject {
         //query
         let query:HKSampleQuery = HKSampleQuery(sampleType: queryType,
                                                 predicate: datePredicate,
-                                                limit: self.limit,
-                                                sortDescriptors: [sorting])
-        { (query:HKSampleQuery, samples:[HKSample]?, error:NSError?) in
-            
+                                                limit: limit,
+                                                sortDescriptors: [sorting]) { (query:HKSampleQuery, samples:[HKSample]?, error:Error?) in
             //errors
             if error != nil
             {
@@ -118,7 +115,7 @@ class HealthStoreMonitor: NSObject {
                 //data
                 if let queryResults:[HKSample] = samples
                 {
-                    
+
                     if verbose {  print("[\(self)] results:  \(queryResults.count) samples") }
                     
                     if queryResults.count > 0
@@ -135,14 +132,15 @@ class HealthStoreMonitor: NSObject {
                     //empty results
                 }
             }
-        }//eo-query
-    
-        self.healthStore?.executeQuery(query)
+        }
+        
+        
+        self.healthStore?.execute(query)
     }//eom
     
     
     //MARK: - Error
-    func sendError(error:NSError)
+    func sendError(_ error:NSError)
     {
         if verbose {  print("[\(self)] ERROR: \(error.localizedDescription)") }
         

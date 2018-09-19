@@ -11,11 +11,11 @@ import HealthKit
 
 class HeartRatePermission: NSObject
 {
-    let heartRateQuantityType:HKQuantityType?   = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+    let heartRateQuantityType:HKQuantityType?   = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)
     
-    func requestPermission(healthStore:HKHealthStore,
+    func requestPermission(_ healthStore:HKHealthStore,
                            withWriting:Bool = false,
-                           completionHandler:(Bool, NSError?)->Void )
+                           completionHandler:@escaping (Bool, NSError?)->Void )
     {
         //health data available?
         if HKHealthStore.isHealthDataAvailable()
@@ -40,9 +40,9 @@ class HeartRatePermission: NSObject
             
             
             //auth request
-            healthStore.requestAuthorizationToShareTypes(writing, readTypes: reading, completion: { (success:Bool, error:NSError?) in
+            healthStore.requestAuthorization(toShare: writing, read: reading, completion: { (success:Bool, error:NSError?) in
                 completionHandler(success, error)
-            })
+            } as! (Bool, Error?) -> Void)
         }
         else
         {

@@ -10,8 +10,8 @@ import Foundation
 
 @objc
 class HeartRate:NSObject {
-    private var _value:Double
-    private var _date:NSDate
+    fileprivate var _value:Double
+    fileprivate var _date:Date
     
     var value: Double
     {
@@ -22,35 +22,35 @@ class HeartRate:NSObject {
         return roundAnswer
     }
     
-    var date:NSDate
+    var date:Date
     {
         return _date
     }
     
     var dateString:String
     {
-        let formmater = NSDateFormatter()
-        formmater.timeStyle = NSDateFormatterStyle.NoStyle
-        formmater.dateStyle = NSDateFormatterStyle.MediumStyle
+        let formmater = DateFormatter()
+        formmater.timeStyle = DateFormatter.Style.none
+        formmater.dateStyle = DateFormatter.Style.medium
         
-        return formmater.stringFromDate(_date)
+        return formmater.string(from: _date)
     }
     
     var timeString:String
     {
-        let formmater = NSDateFormatter()
-        formmater.timeStyle = NSDateFormatterStyle.MediumStyle
-        formmater.dateStyle = NSDateFormatterStyle.NoStyle
+        let formmater = DateFormatter()
+        formmater.timeStyle = DateFormatter.Style.medium
+        formmater.dateStyle = DateFormatter.Style.none
         
-        return formmater.stringFromDate(_date)
+        return formmater.string(from: _date)
     }
     
     override init() {
         self._value = 0
-        self._date = NSDate()
+        self._date = Date()
     }//eom
     
-    init(value:Double, date:NSDate) {
+    init(value:Double, date:Date) {
         self._value = value
         self._date = date
     }

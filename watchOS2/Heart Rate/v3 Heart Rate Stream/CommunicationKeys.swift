@@ -10,25 +10,25 @@ import Foundation
 
 @objc enum keys:Int
 {
-    case Command
-    case HeartRate
-    case Time
-    case Date
-    case Response
+    case command
+    case heartRate
+    case time
+    case date
+    case response
     
     func toString()->String
     {
         switch self
         {
-        case .Command:
+        case .command:
             return "Command"
-        case .HeartRate:
+        case .heartRate:
             return "HeartRate"
-        case .Time:
+        case .time:
             return "Time"
-        case .Date:
+        case .date:
             return "Date"
-        case .Response:
+        case .response:
             return "Response"
         }
     }
@@ -36,16 +36,16 @@ import Foundation
 
 @objc enum command:Int
 {
-    case StartMonitoring
-    case EndMonitoring
+    case startMonitoring
+    case endMonitoring
     
     func toString()->String
     {
         switch self
         {
-        case .StartMonitoring:
+        case .startMonitoring:
             return "StartMonitoring"
-        case .EndMonitoring:
+        case .endMonitoring:
             return "EndMonitoring"
         }
     }
@@ -53,28 +53,28 @@ import Foundation
 
 @objc enum response:Int
 {
-    case Acknowledge
-    case Data
-    case StartedMonitoring
-    case EndedMonitoring
-    case ErrorMonitoring
-    case ErrorHealthKit
+    case acknowledge
+    case data
+    case startedMonitoring
+    case endedMonitoring
+    case errorMonitoring
+    case errorHealthKit
     
     func toString()->String
     {
         switch self
         {
-        case .Acknowledge:
+        case .acknowledge:
             return "Acknowledge"
-        case .StartedMonitoring:
+        case .startedMonitoring:
             return "StartedMonitoring"
-        case .EndedMonitoring:
+        case .endedMonitoring:
             return "EndedMonitoring"
-        case .Data:
+        case .data:
             return "Data"
-        case .ErrorMonitoring:
+        case .errorMonitoring:
             return "ErrorMonitoring"
-        case .ErrorHealthKit:
+        case .errorHealthKit:
             return "ErrorHealthKit"
         }
     }
